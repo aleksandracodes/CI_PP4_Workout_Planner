@@ -54,14 +54,38 @@
 
 ### About
 
+The Workout Planner is an application for creating weekly training rota which also gives users ideas of exercises for their next training session.
+
 ### User Goals
 
+- Be able to plan their workouts
+- Be able to amend their plan at any point
+- View the plan at any time
+
 ### Site Owner Goals
+
+- Provide an online solution for users to plan their weekly workouts
+- Create visually appealing design
+- Provide fully responsive application with straightforward navigation
 
 
 ## User Experience
 
 ### Target Audience
+- People who want to be more organised with their workouts
+- Gym enthusiasts who focus on training different body parts and want to plan their weekly schedule to potentially avoid repetitions in their training
+- People who want to keep track of their workout/fitness routine
+- People who don’t want to think back and remember which day of the week they trained a specific part of the body
+
+### User Requirements and Expectations
+
+- Straightforward navigation
+- Easy to use
+- A responsive application that allows the user to access their plan on any devise
+- Visually appealing design for all screen size
+- Links and functions that work as expected
+- An easy way to contact the developer
+- Accessibility
 
 ### User Requirements and Expectations
 
