@@ -87,8 +87,6 @@ The Workout Planner is an application for creating weekly training rota which al
 - An easy way to contact the developer
 - Accessibility
 
-### User Requirements and Expectations
-
 ##### Back to [top](#table-of-contents)
 
 
@@ -96,7 +94,25 @@ The Workout Planner is an application for creating weekly training rota which al
 
 ### Users
 
+1.	I want to see the home page with explanation of the app
+2.	I want to be able to easily navigate around the application to different pages
+3.	I want to create my account to be able to plan my workouts
+4.	I want to prepare a plan for multiple weeks in advance
+5.	I want to be able to edit my current plans at any point
+6.	I want to delete my plan if no longer needed
+7.	I want to see feedback messages so that I know that my plan was created, edited or deleted
+8.	I want to be able to view previous plans to help me prepare the following week’s workout
+9.	I want to find inspiration for my workouts
+10.	As a returning user, I want to log in to the app to see my current plans
+
 ### Site Owner
+11.	I want every site visitor to be able to view the catalogue of exercises
+12.	I want only the logged-in users to be able to create their plans
+13.	I want users to be able to create the plan on any day that suits their needs
+14.	I want data entry to be validated on sign-up page
+15.	I want the user to come to a 404 error page instead of having to use the browser back button if they enter a URL that does not exist
+16.	I want user to be able to contact me and provide their feedback
+17.	I want my site to be fully responsive
 
 ##### Back to [top](#table-of-contents)
 
