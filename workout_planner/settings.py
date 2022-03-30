@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'planner',
     'home',
-    'exercise',
+    'exercises',
 ]
 
 MIDDLEWARE = [
