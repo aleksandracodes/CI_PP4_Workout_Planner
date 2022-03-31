@@ -1,11 +1,19 @@
-<h1>Exercises page</h1>
+{% extends 'home/base.html' %}
 
-{% for exercise in exercise_list %}
 
-<p> {{ exercise.name}}, {{ exercise.type }}, {{ exercise.level }}, {{ exercise.body_part }}<p>
+{% block content %}
+
+    <h1>Exercises page</h1>
+
+    {% for exercise in exercise_list %}
+
+    <p> {{ exercise.name}}, {{ exercise.type }}, {{ exercise.level }}, {{ exercise.body_part }}<p>
+        <hr>
+    <p> {{ exercise.description }}</p>
     <hr>
-<p> {{ exercise.description }}</p>
-<hr>
-<br>
+    <br>
 
-{% endfor %}
+    {% endfor %}
+
+
+{% endblock %}
