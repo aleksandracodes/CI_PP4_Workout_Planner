@@ -1,7 +1,7 @@
-from django.shortcuts import render
-from .models import Exercise
+from django.views.generic import ListView
+from exercises.models import Exercise
 
 
-def exercises(request):
-    exercise_list = Exercise.objects.all
-    return render(request, 'exercises/exercises.html', {'exercise_list': exercise_list})
+class ExercisesView(ListView):
+    model = Exercise
+    template_name = "exercises/exercises.html"
