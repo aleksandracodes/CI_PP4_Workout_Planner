@@ -1,19 +1,50 @@
 {% extends 'home/base.html' %}
 
-
 {% block content %}
 
-    <h1>Exercises page</h1>
 
-    {% for exercise in exercise_list %}
+    <section class="py-3 text-center container">
+        <div class="row py-lg-3">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">Exercises</h1>
+                <p class="lead text-muted">Get inspired...</p>
+            </div>
+        </div>
+    </section>
 
-    <p> {{ exercise.name}}, {{ exercise.type }}, {{ exercise.level }}, {{ exercise.body_part }}<p>
-        <hr>
-    <p> {{ exercise.description }}</p>
-    <hr>
-    <br>
 
-    {% endfor %}
+  <div class="card py-5 bg-light">
+    <div class="container">
+      
+      
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+        
+        <!-- Exercise entries -->
+        
+        <div class="col">
+            {% for exercise in exercise_list %}
+                <div class="card mb-3">
+
+                        <img src=" {{ exercise.image.url }} " class="card-img-top" alt="..." style="max-width: 100%;">
+                        <div class="card-body">
+                        <h5 class="card-title">{{ exercise }}</h5>
+                        <p class="card-text">Body part: {{ exercise.body_part}} <br/>
+                            Difficulty: {{ exercise.level }} <br/>
+                            Type: {{ exercise.type }}
+                        </p>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                            </div>
+                        </div>
+                </div>            
+
+        </div>
+        <div class="col">
+        {% endfor %}
+    </div>
+</div>
 
 
 {% endblock %}
