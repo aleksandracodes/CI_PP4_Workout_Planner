@@ -9,7 +9,9 @@ class ExercisesView(ListView):
 
 
 class SingleExercise(View):
-    template_name = 'exercises/exercise.html'
-    def get(self, request, exercise_id, **kwargs):
-        single_exercise = Exercise.objects.get(pk=exercise_id)
-        return render(request, 'exercises/exercise.html', {'single_exercise': single_exercise})
+    def get(self, request, exercise_id):
+        exercise = Exercise.objects.get(pk=exercise_id)
+        return render(request, 'exercises/exercise.html', 
+                      {'exercise': exercise})
+    
+    
