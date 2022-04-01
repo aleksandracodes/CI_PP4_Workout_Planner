@@ -25,7 +25,7 @@
             {% for exercise in exercise_list %}
                 <div class="card mb-3">
 
-                        <img src=" {{ exercise.image.url }} " class="card-img-top" alt="..." style="max-width: 100%;">
+                        <img src=" {{ exercise.image.url }} " class="card-img-top" alt="Image of {{ exercise.name }} exercise" style="max-width: 100%;">
                         <div class="card-body">
                         <h5 class="card-title">{{ exercise }}</h5>
                         <p class="card-text">Body part: {{ exercise.body_part}} <br/>
