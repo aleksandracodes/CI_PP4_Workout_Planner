@@ -1,11 +1,18 @@
 from django.shortcuts import render
 from django.views.generic import ListView, View
 from exercises.models import Exercise
+from .filters import ExerciseFilter
 
 
 class ExercisesView(ListView):
     model = Exercise
     template_name = "exercises/exercises-list.html"
+
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['filter'] = ExerciseFilter(self.request.GET, queryset=self.get_queryset())
+        return context
 
 
 class SingleExercise(View):
@@ -15,3 +22,7 @@ class SingleExercise(View):
                       {'exercise': exercise})
     
     
+
+def exercise_list(request):
+    f = ExerciseFilter(request.GET, queryset=Exercise.objects.all())
+    return render(request, 'exercises/exercise.html', {'filter': f})

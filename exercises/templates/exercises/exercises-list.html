@@ -8,43 +8,55 @@
             <div class="col-lg-6 col-md-8 mx-auto">
                 <h1 class="fw-light">Exercises</h1>
                 <p class="lead text-muted">Get inspired...</p>
+                <br/>                
             </div>
+            <form method="GET">
+                    {{ filter.form }}        
+                    <button type="submit" class="btn btn-sm btn-outline-secondary">Search</button>
+                </form>
+
+                <ul>
+                    {% for exercise in filter.qs %}
+                        <li>
+                            {{ exercise.name }}
+                        </li>
+                    {% endfor %}
+                </ul>
         </div>
     </section>
 
-
-  <div class="card py-5 bg-light">
-    <div class="container">
-      
-      
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
+    <div class="card py-5 bg-light">
+        <div class="container">
         
-        <!-- Exercise entries -->
         
-        <div class="col">
-            {% for exercise in exercise_list %}
-                <div class="card mb-3 h-100">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
+            
+            <!-- Exercise entries -->
+            
+            <div class="col">
+                {% for exercise in exercise_list %}
+                    <div class="card mb-3 h-100">
 
-                        <img src=" {{ exercise.image.url }} " class="card-img-top" alt="Image of {{ exercise.name }} exercise" style="max-width: 100%;">
-                        <div class="card-body">
-                        <h5 class="card-title">{{ exercise }}</h5>
-                        <p class="card-text">Body part: {{ exercise.body_part}} <br/>
-                            Difficulty: {{ exercise.level }} <br/>
-                            Type: {{ exercise.type }}
-                        </p>
-                        </div>
-                        <div class="text-center py-2">
-                            <div class="btn-group">
-                                <a href="{% url 'show_exercise' exercise.id %}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
+                            <img src=" {{ exercise.image.url }} " class="card-img-top" alt="Image of {{ exercise.name }} exercise" style="max-width: 100%;">
+                            <div class="card-body">
+                            <h5 class="card-title">{{ exercise }}</h5>
+                            <p class="card-text">Body part: {{ exercise.body_part}} <br/>
+                                Level: {{ exercise.level }} <br/>
+                                Type: {{ exercise.type }}
+                            </p>
                             </div>
-                        </div>
-                </div>            
+                            <div class="text-center py-2">
+                                <div class="btn-group">
+                                    <a href="{% url 'show_exercise' exercise.id %}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
+                                </div>
+                            </div>
+                    </div>            
 
+            </div>
+            <div class="col">
+            {% endfor %}
         </div>
-        <div class="col">
-        {% endfor %}
     </div>
-</div>
 
 
 {% endblock %}
