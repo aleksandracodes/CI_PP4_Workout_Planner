@@ -2,7 +2,7 @@ import django_filters
 from .models import Exercise
 
 class ExerciseFilter(django_filters.FilterSet):
-    name = django_filters.CharFilter(lookup_expr='icontains')
+    name = django_filters.CharFilter(lookup_expr='icontains', label="Name")
 
     class Meta:
         model = Exercise

@@ -13,15 +13,9 @@
             <form method="GET">
                     {{ filter.form }}        
                     <button type="submit" class="btn btn-sm btn-outline-secondary">Search</button>
-                </form>
+                    <button class="btn btn-sm btn-outline-secondary"><a href="{% url 'exercises' %}">Clear</a></button>
+            </form>
 
-                <ul>
-                    {% for exercise in filter.qs %}
-                        <li>
-                            {{ exercise.name }}
-                        </li>
-                    {% endfor %}
-                </ul>
         </div>
     </section>
 
@@ -34,7 +28,7 @@
             <!-- Exercise entries -->
             
             <div class="col">
-                {% for exercise in exercise_list %}
+                {% for exercise in filter.qs %}
                     <div class="card mb-3 h-100">
 
                             <img src=" {{ exercise.image.url }} " class="card-img-top" alt="Image of {{ exercise.name }} exercise" style="max-width: 100%;">
@@ -50,11 +44,12 @@
                                     <a href="{% url 'show_exercise' exercise.id %}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
                                 </div>
                             </div>
-                    </div>            
+                    </div>
 
             </div>
             <div class="col">
-            {% endfor %}
+                {% endfor %}
+
         </div>
     </div>
 
