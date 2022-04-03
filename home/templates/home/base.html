@@ -31,18 +31,31 @@
               <li class="nav-item">
                 <a class="nav-link" href="/exercises">Exercises</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
+
+
+              {% if request.user.is_authenticated %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                </li>
+              {% else %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+              {% endif %}
             </ul>
             
           </div>
         </div>
       </nav>
 
+      <!-- message displayed if there is no user found -->
+    {% if messages %}
+      <ul class="messages">
+          {% for message in messages %}
+          <li>{{ message }}</li>
+          {% endfor %}
+      </ul>
+    {% endif %}
 
 
     {% block content %}
