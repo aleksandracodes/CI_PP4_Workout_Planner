@@ -34,13 +34,32 @@
 
 
               {% if request.user.is_authenticated %}
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Profile
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="{% url 'profile' user.username%}">Profile</a></li>
+                    <li><a class="dropdown-item" href="{% url 'logout' %}">Log out</a></li>
+
+                  </ul>
                 </li>
+
+
               {% else %}
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'login' %}">Login</a>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Log in
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="{% url 'register' %}">Register</a></li>
+                    <li><a class="dropdown-item" href="{% url 'login' %}">Log in</a></li>
+
+                  </ul>
                 </li>
+
               {% endif %}
             </ul>
             

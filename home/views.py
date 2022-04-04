@@ -5,6 +5,11 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 
 
+def userProfile(request, pk):
+    user = User.objects.get(username=pk)
+    return render(request, 'home/profile.html', {'user': user})
+
+
 def loginPage(request):
     page ='login'
     if request.user.is_authenticated:
