@@ -5,6 +5,9 @@ from django.contrib.auth import authenticate, login, logout
 
 
 def loginPage(request):
+    page ='login'
+    if request.user.is_authenticated:
+        return redirect('home')
     
     if request.method =='POST':
         username = request.POST.get('username')
@@ -23,13 +26,18 @@ def loginPage(request):
         else:
             messages.error(request, 'User name or password not exist')
         
-    context = {}
+    context = {'page' :page}
     return render(request, 'home/login-register.html', context)
 
 
 def logoutUser(request):
     logout(request)
     return redirect('home')
+
+
+def registerPage(request):
+    page = 'register'
+    return render(request, 'home/login-register.html')
 
 
 def home(request):
