@@ -16,7 +16,7 @@ def loginPage(request):
         return redirect('home')
     
     if request.method =='POST':
-        username = request.POST.get('username').lower()
+        username = request.POST.get('username').capitalize()
         password = request.POST.get('password')
         
         try:
@@ -30,9 +30,9 @@ def loginPage(request):
             login(request, user)
             return redirect('home')
         else:
-            messages.error(request, 'User name or password not exist')
+            messages.error(request, "User name or password don't exist")
         
-    context = {'page' :page}
+    context = {'page': page}
     return render(request, 'home/login-register.html', context)
 
 
@@ -48,7 +48,7 @@ def registerPage(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save(commit=False)
-            user.username = user.username.lower()
+            user.username = user.username.capitalize()
             user.save()
             login(request, user)
             return redirect('home')
