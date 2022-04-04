@@ -18,8 +18,8 @@
             <input type="submit" value="Login"/>
 
         </form>
-        <p>Haven't signed up yet?</p>
-        <a href="{% url 'register' %}">Sign up</a>
+        <p>Don't have an account? Click <a href="{% url 'register' %}">here</a> sign up.</p>
+        
     </div>
 
 
@@ -28,13 +28,12 @@
     <div>
         <form method="POST" action="">
             {% csrf_token %}
-
+            {{ form.as_p }}
             <input type="submit" value="Register"/>
 
         </form>
 
-        <p>Already signed up?</p>
-        <a href="{% url 'login' %}">Log in</a>
+        <p>Already have an account?. Sign in to your account <a href="{% url 'login' %}">here</a></p>
     </div>
 
 {% endif %}
