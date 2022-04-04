@@ -10,11 +10,17 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 def userProfile(request, pk):
+    """
+    A view to display user profile
+    """
     user = User.objects.get(username=pk)
     return render(request, 'home/profile.html', {'user': user})
 
 
 def loginPage(request):
+    """
+    A view to display user profile
+    """
     page ='login'
     if request.user.is_authenticated:
         return redirect('home')
@@ -41,11 +47,17 @@ def loginPage(request):
 
 
 def logoutUser(request):
+    """
+    A view to log out the user
+    """
     logout(request)
     return redirect('home')
 
 
 def registerPage(request):
+    """
+    A view to register new user
+    """
     form = UserCreationForm()
     
     if request.method == 'POST':
@@ -63,4 +75,7 @@ def registerPage(request):
 
 
 def home(request):
+    """
+    A view to display home page
+    """
     return render(request, 'home/index.html')

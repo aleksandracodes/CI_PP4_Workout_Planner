@@ -17,7 +17,13 @@ admin.site.register(Level)
 
 @admin.register(Exercise)
 class ExerciseAdmin(SummernoteModelAdmin):
-    list_display = ('name', 'body_part', 'level')
+    """
+    Admin class for the Exercise model
+    """
+    list_display = (
+        'name',
+        'body_part',
+        'level')
     ordering = ('name',)
     search_fields = ('name',)
     summernote_fields = ('description')

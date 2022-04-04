@@ -9,6 +9,9 @@ from .models import Exercise
 
 
 class ExerciseFilter(django_filters.FilterSet):
+    """
+    A class for exercises filtering
+    """
     name = django_filters.CharFilter(lookup_expr='icontains', label="Name")
 
     class Meta:
