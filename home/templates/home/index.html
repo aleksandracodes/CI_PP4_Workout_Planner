@@ -2,11 +2,29 @@
 
 {% block content %}
 
+<div class="py-3 text-center container">
 {% if request.user.is_authenticated %}
-    <h1>Hello {{ request.user }} !</h1>
-
+    <h1>Great to have you back {{ request.user }} !</h1>
+    <p>What would you like to do?</p>
+    <a href="#"><button type="button" class="btn btn-sm btn-outline-secondary">View my current workout plan</button></a>
+    <a href="#"><button type="button" class="btn btn-sm btn-outline-secondary">Add a new plan</button></a>
+    
 {% else %}
-    <h1>Hello World!</h1>
+
+    <h1>Welcome to your weekly training planner</h1>
+    <ul>
+        <li>start planning you workout routine and put all excuses away</li>
+        <li>plan what type of training you want to do each day</li>
+        <li>you can start your plan any day of the week and edit it if needed</li>
+        <li>make it become your weekly habit and stick to it</li>
+        <li> don't forget to have some rest days!</li>
+    </ul>
+
+    <a href="{% url 'login' %}"><button type="button" class="btn btn-sm btn-outline-secondary">Log in</button></a>
+    <a href="{% url 'register' %}"><button type="button" class="btn btn-sm btn-outline-secondary">Sign up</button></a>
+
+</div>
+
 {% endif %}
 
 {% endblock %}
