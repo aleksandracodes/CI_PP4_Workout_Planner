@@ -1,7 +1,13 @@
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django.shortcuts import render
 from django.views.generic import ListView, View
+
+# Internal
 from .models import Exercise
 from .filters import ExerciseFilter
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 class ExercisesView(ListView):

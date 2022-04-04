@@ -1,6 +1,13 @@
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django.contrib import admin
-from .models import Exercise, BodyPart, Type, Equipment, Level
 from django_summernote.admin import SummernoteModelAdmin
+
+# Internal:
+from .models import Exercise, BodyPart, Type, Equipment, Level
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 admin.site.register(BodyPart)
 admin.site.register(Type)
