@@ -37,7 +37,7 @@ class Workout(models.Model):
     workout_plan = models.ForeignKey(
         WorkoutPlan,
         on_delete=models.CASCADE,
-        related_name='workout_plan'
+        related_name='plan'
     )
     day = models.DateTimeField()
 
