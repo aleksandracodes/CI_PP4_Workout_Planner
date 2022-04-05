@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'django_summernote',
     'django_filters',
-    'planner',
+    'plannerapp',
     'home',
     'exercises',
 ]
