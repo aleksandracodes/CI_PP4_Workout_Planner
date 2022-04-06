@@ -1,0 +1,14 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+
+    <p>Add plan</p>
+
+    <form action="add" method="POST">
+        {% csrf_token %}
+        {{ workout_form.as_p }}
+        <button type="submit">Add plan</button>
+    </form>
+
+{% endblock %}
+
