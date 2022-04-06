@@ -1,0 +1,16 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+
+    <div>
+        <form method="POST" action="choose_date">
+            <p>When would you like to start your plan?</p>
+            {% csrf_token %}
+            {{ workout_plan_form.as_table }}
+
+            <input type="submit" value="Choose" />
+        </form>
+    </div>
+
+{% endblock %}
+
