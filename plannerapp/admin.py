@@ -7,13 +7,18 @@ from django.contrib import admin
 from .models import WorkoutTime, WorkoutPlan, Workout
 
 
-admin.site.register(WorkoutPlan)
-
-
 @admin.register(WorkoutTime)
 class WorkoutTimeAdmin(admin.ModelAdmin):
     list_display = ('workout_time_name',)
 
+
+@admin.register(WorkoutPlan)
+class WorkoutPlanAdmin(admin.ModelAdmin):
+    list_display = (
+        'user', 
+        'first_day',
+        )
+    
 
 @admin.register(Workout)
 class WorkoutAdmin(admin.ModelAdmin):

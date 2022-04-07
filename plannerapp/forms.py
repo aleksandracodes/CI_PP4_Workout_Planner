@@ -17,9 +17,9 @@ class WorkoutPlanForm(forms.ModelForm):
 
     class Meta:
         model = WorkoutPlan
-        fields = ('weekday',)
+        fields = ('first_day',)
         widgets = {
-            'weekday': DateInput(),
+            'first_day': DateInput(),
         }
 
 
