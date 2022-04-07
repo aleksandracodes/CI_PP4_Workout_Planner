@@ -3,7 +3,7 @@
 {% block content %}
 
     <div>
-        <form method="POST" action="choose_date">
+        <form method="POST" action="">
             <p>When would you like to start your plan?</p>
             {% csrf_token %}
             {{ workout_plan_form.as_table }}
@@ -13,4 +13,3 @@
     </div>
 
 {% endblock %}
-

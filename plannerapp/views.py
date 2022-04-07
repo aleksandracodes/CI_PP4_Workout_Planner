@@ -19,28 +19,33 @@ class PlannerView(ListView):
             return render(request, 'plannerapp/planner.html')
 
 
-class ChooseDate(ListView):
+class ChooseDate(View):
     """
     A class view to display a workout date picker
     """
     def get(self, request):
-        return render(request, 'plannerapp/choose-date.html', 
+        return render(request, 'plannerapp/choose_date.html', 
                       {'workout_plan_form': WorkoutPlanForm()})
 
 
-    def selectWorkoutDate(request):
-        if request.method == 'POST':
-            workout_plan_form = WorkoutPlanForm(data=request.POST)
-            if workout_plan_form.is_valid():
-                user = request.user
-                weekday = workout_plan_form.cleaned_data.get('weekday')
-                workout_plan = WorkoutPlan(user=user, weekday=weekday,)
-                workout_plan.save()
-                return redirect('plannerapp/add-plan.html')
+    def post(self, request):
+        """
+         A view to select the workout start date
+        """        
+        workout_plan_form = WorkoutPlanForm(request.POST)
+            
+        if workout_plan_form.is_valid():
+            user = request.user
+            first_day = workout_plan_form.cleaned_data.get('first_day')
+            workout_plan = WorkoutPlan(user=user, first_day=first_day,)
+            workout_plan.save()
+            return redirect('add_plan')
+        
         else:
             workout_plan_form = WorkoutPlanForm()
             context = {'workout_plan_form': workout_plan_form}
-            return render(request, 'plannerapp/choose-date.html', context)
+        return render(request, 'plannerapp/planner.html', context)
+        
 
 
 class AddPlan(View):
@@ -48,4 +53,4 @@ class AddPlan(View):
     A class view to display a page to add wokrout plan
     """
     def get(self, request):
-        return render(request, 'plannerapp/add-plan.html', {'workout_form': WorkoutForm()})
+        return render(request, 'plannerapp/add_plan.html', {'workout_form': WorkoutForm()})
