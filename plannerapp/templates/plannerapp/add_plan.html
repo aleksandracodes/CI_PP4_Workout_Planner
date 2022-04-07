@@ -1,13 +1,77 @@
+
+
 {% extends 'home/base.html' %}
 
 {% block content %}
 
-    <p>Add plan</p>
+<div class="table-responsive">
+  <table class="table align-middle">
+    <thead>
+        <tr>
+            <td></td>
+            <th>Day 1</th>
+            <th>Day 2</th>
+            <th>Day 3</th>
+            <th>Day 4</th>
+            <th>Day 5</th>
+            <th>Day 6</th>
+            <th>Day 7</th>
+        </tr>
+        </thead>
+    
+    <tbody>
+        <tr>
+            <th scope="row" rowspan="2">AM</th>
+            <td>_____</td>
+            <td>_____</td>
+            <td>_____</td>
+            <td>_____</td>
+            <td>_____</td>
+            <td>_____</td>
+            <td>_____</td>
+          </tr>
 
-    <form method="POST" action="">
-        {% csrf_token %}
-        {{ workout_form.as_p }}
-        <button type="submit">Add plan</button>
-    </form>
+          <tr>
+            <td>_____</td>
+            <td>_____</td>
+            <td>_____</td>
+            <td>_____</td>
+            <td>_____</td>
+            <td>_____</td>
+            <td>_____</td>
+          </tr>
+
+          <tr>
+            <th scope="row" rowspan="2">PM</th>
+            <td>_____</td>
+            <td>_____</td>
+            <td>_____</td>
+            <td>_____</td>
+            <td>_____</td>
+            <td>_____</td>
+            <td>_____</td>
+          </tr>
+
+          <tr>
+            <td>_____</td>
+            <td>_____</td>
+            <td>_____</td>
+            <td>_____</td>
+            <td>_____</td>
+            <td>_____</td>
+            <td>_____</td>
+          </tr>
+    </tbody>
+  
+</table>
+</div>
+
+
+<form method="POST" action="">
+    {% csrf_token %}
+    {{ workout_form.as_table }}
+    <button type="submit">Add plan</button>
+</form>
+
 
 {% endblock %}

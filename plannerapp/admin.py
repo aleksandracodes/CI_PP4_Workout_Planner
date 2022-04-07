@@ -17,6 +17,7 @@ class WorkoutPlanAdmin(admin.ModelAdmin):
     list_display = (
         'user', 
         'first_day',
+        'id',
         )
     
 
@@ -26,5 +27,5 @@ class WorkoutAdmin(admin.ModelAdmin):
         'workout_name', 
         'workout_time', 
         'workout_plan', 
-        'day'
+        'day',
     )
