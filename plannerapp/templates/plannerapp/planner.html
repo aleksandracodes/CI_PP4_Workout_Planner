@@ -3,22 +3,26 @@
 {% block content %}
 
 
+<div class="py-3 text-center container">
+        
+    {% if request.user.is_authenticated %}
+        <h1>Hi {{ request.user }}, welcome to your weekly workout planner</h1>
+        <p>What would you like to do?</p>
+        <a href="#"><button type="button" class="btn btn-sm btn-outline-secondary">View my current workout plan</button></a>
+        <a href="{% url 'choose_date' %}"><button type="button" class="btn btn-sm btn-outline-secondary">Add a new plan</button></a>
+        
+    {% else %}
+    
+        <h1>How does it work?</h1>
+        <p>Here will be an example of the planner and instructions how to fill it in.</p>
+        <br/>
+        <p>To create your plan:</p>
+        <a href="{% url 'login' %}"><button type="button" class="btn btn-sm btn-outline-secondary">Log in</button></a> or 
+        <a href="{% url 'register' %}"><button type="button" class="btn btn-sm btn-outline-secondary">Sign up</button></a>
+        <br/>
+</div>
 
-{% if not user.is_authenticated %}
+    {% endif %}
 
-    <h1>Planner page</h1>
-    <p>Here will be an example of the planner and instructions how to fill it in.</p>
-    <br/>
-    <p>To create your planner</p>
-    <a href="{% url 'login' %}"><button type="button" class="btn btn-sm btn-outline-secondary">Log in</button></a> or 
-    <a href="{% url 'register' %}"><button type="button" class="btn btn-sm btn-outline-secondary">Sign up</button></a>
-    <br/>
-
-{% else %}
-
-    <p>Hi {{ request.user }}</p>
-    <p>You currently have no workout plans</p>
-    <a href="{% url 'choose_date' %}"><button type="button" class="btn btn-sm btn-outline-secondary">Add a new plan</button></a>
-{% endif %}
 
 {% endblock %}

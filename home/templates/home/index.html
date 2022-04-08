@@ -2,29 +2,54 @@
 
 {% block content %}
 
-<div class="py-3 text-center container">
-{% if request.user.is_authenticated %}
-    <h1>Great to have you back {{ request.user }} !</h1>
-    <p>What would you like to do?</p>
-    <a href="#"><button type="button" class="btn btn-sm btn-outline-secondary">View my current workout plan</button></a>
-    <a href="#"><button type="button" class="btn btn-sm btn-outline-secondary">Add a new plan</button></a>
+<section>
+    <div class="container">
+    <div class="row">
+        <!-- left column -->
+        <div class="col-sm">
+            <img src="https://img.freepik.com/free-vector/personal-training-concept-coach-athlete-vector-characters-training-plan-flat-fitness-illustration-training-personal-fitness-gym-exercise-workout_53562-11867.jpg?w=2000"
+            style="width: 100%; height: 100%; object-fit: contain;" alt="">
+        </div>
+
+        <!-- right column -->
+        <div class="col-sm">
+        <h1>The journey to healthier you<br>
+            starts now</h1>
+        <ul>
+            <li>Start planning you workout routine and put all excuses away</li>
+            <li>Plan what type of training you want to do each day</li>
+            <li>You can start your plan any day of the week and edit it if needed</li>
+            <li>It shouldn't take you long to create. Your time should be spent doing the work, not recording it.</li>
+            <li>Make it become your weekly habit and stick to it</li>
+            <li>Don't forget to have some rest days!</li>
+        </ul>
+        
+        <a href="/planner"><button type="button" class="btn btn-sm btn-outline-secondary">start now</button></a>
+        </div>
+    </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+        <!-- left column -->
+        <div class="col-sm left-alignment">
+            <h1>Get inspired!</h1>
+            <p>Browse through exercises or movements that target specific areas of the body. 
+                Each comes with a detailed description and photos to help ensure proper form.</p>
     
-{% else %}
-
-    <h1>Welcome to your weekly training planner</h1>
-    <ul>
-        <li>start planning you workout routine and put all excuses away</li>
-        <li>plan what type of training you want to do each day</li>
-        <li>you can start your plan any day of the week and edit it if needed</li>
-        <li>make it become your weekly habit and stick to it</li>
-        <li> don't forget to have some rest days!</li>
-    </ul>
-
-    <a href="{% url 'login' %}"><button type="button" class="btn btn-sm btn-outline-secondary">Log in</button></a>
-    <a href="{% url 'register' %}"><button type="button" class="btn btn-sm btn-outline-secondary">Sign up</button></a>
-
-</div>
-
-{% endif %}
+                <a href="/exercises"><button type="button" class="btn btn-sm btn-outline-secondary">check them out</button></a>
+        </div>
+            
+        <!-- right column -->
+        <div class="col-sm">
+            <img src="https://www.pngall.com/wp-content/uploads/5/Female-Workout-PNG-Free-Image.png"
+            style="width: 100%; height: 100%; object-fit: contain;" alt="">
+        </div>
+        </div>
+    </div>
+    
+</section>
 
 {% endblock %}
