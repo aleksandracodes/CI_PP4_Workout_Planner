@@ -28,3 +28,6 @@ class WorkoutForm(forms.ModelForm):
     class Meta:
         model = Workout
         fields = ('workout_name',)
+        labels = {
+                    "workout_name": ""
+                }
