@@ -4,6 +4,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, View
 from django.contrib.auth.models import User
+from django.forms import formset_factory
 from datetime import timedelta
 
 # Internal:
@@ -70,9 +71,11 @@ class AddPlan(View):
         day6 = day1 + timedelta(days=5)
         day7 = day1 + timedelta(days=6)
         
+        formset = formset_factory(WorkoutForm, extra=28) # 28 -> 4 rows for 7 days
+        
         print(workout_plan_id)
         print(workout_plan)
         print(day7)
         context = {'day1': day1,'day2': day2, 'day3': day3, 'day4': day4, 
-                   'day5': day5,'day6': day6, 'day7': day7,}
+                   'day5': day5,'day6': day6, 'day7': day7,'formset': formset,}
         return render(request, 'plannerapp/add_plan.html', context)

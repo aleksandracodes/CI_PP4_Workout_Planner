@@ -1,5 +1,3 @@
-
-
 {% extends 'home/base.html' %}
 
 {% block content %}
@@ -16,62 +14,52 @@
             <th>{{ day5 | date:"l" }}</th>
             <th>{{ day6 | date:"l" }}</th>
             <th>{{ day7 | date:"l" }}</th>
-        </tr>
+          </tr>
         </thead>
     
-    <tbody>
-        <tr>
-            <th scope="row" rowspan="2">AM</th>
-            <td>_____</td>
-            <td>_____</td>
-            <td>_____</td>
-            <td>_____</td>
-            <td>_____</td>
-            <td>_____</td>
-            <td>_____</td>
-          </tr>
+        <tbody>
+          {% for form in formset %}
+              {% if forloop.counter == 1 %}
+                  <tr>
+                      <th scope="row" rowspan="2">AM</th>
+              {% endif %}
+                  {% if forloop.counter >= 1 and forloop.counter <= 7 %}
+                      <td class="border-0">{{ form.as_p }}</td>
+                  {% endif %}
+              {% if forloop.counter == 8 %}
+                  </tr>
+                  <tr>
+              {% endif %}
+                  {% if forloop.counter >= 8 and forloop.counter <= 14 %}
+                      <td>{{ form.as_p }}</td>
+                  {% endif %}
 
-          <tr>
-            <td>_____</td>
-            <td>_____</td>
-            <td>_____</td>
-            <td>_____</td>
-            <td>_____</td>
-            <td>_____</td>
-            <td>_____</td>
-          </tr>
+              {% if forloop.counter == 15 %}
+                  </tr>
+                  <tr>
+                    <th scope="row" rowspan="2">PM</th>
+              {% endif %}
+                  {% if forloop.counter >= 15 and forloop.counter <= 21 %}
+                      <td class="border-0">{{ form.as_p }}</td>
+                  {% endif %}
+              {% if forloop.counter == 21 %}
+                  </tr>
+                  <tr>
+              {% endif %}
+                  {% if forloop.counter >= 21 and forloop.counter <= 27 %}
+                      <td>{{ form.as_p }}</td>
+                  {% endif %}
 
-          <tr>
-            <th scope="row" rowspan="2">PM</th>
-            <td>_____</td>
-            <td>_____</td>
-            <td>_____</td>
-            <td>_____</td>
-            <td>_____</td>
-            <td>_____</td>
-            <td>_____</td>
-          </tr>
-
-          <tr>
-            <td>_____</td>
-            <td>_____</td>
-            <td>_____</td>
-            <td>_____</td>
-            <td>_____</td>
-            <td>_____</td>
-            <td>_____</td>
-          </tr>
-    </tbody>
-  
+          {% endfor %}
+                  </tr>   
+      </tbody>  
 </table>
 </div>
-
 
 <form method="POST" action="">
     {% csrf_token %}
     {{ workout_form.as_table }}
     <button type="submit">Add plan</button>
 </form>
-
 
 {% endblock %}
