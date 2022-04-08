@@ -4,6 +4,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, View
 from django.contrib.auth.models import User
+from datetime import timedelta
 
 # Internal:
 from .models import WorkoutPlan
@@ -39,6 +40,10 @@ class ChooseDate(View):
             first_day = workout_plan_form.cleaned_data.get('first_day')
             workout_plan = WorkoutPlan(user=user, first_day=first_day,)
             workout_plan.save()
+            
+            # get workout plan ID
+            request.session['workout_plan.id'] = workout_plan.pk
+            print(workout_plan.pk)
             return redirect('add_plan')
         
         else:
@@ -52,5 +57,22 @@ class AddPlan(View):
     """
     A class view to display a page to add wokrout plan
     """
+    
     def get(self, request):
-        return render(request, 'plannerapp/add_plan.html', {'workout_form': WorkoutForm()})
+        # based on the current session ID (first day of schedule)
+        workout_plan_id = request.session.get('workout_plan.id')
+        workout_plan = WorkoutPlan.objects.get(pk=workout_plan_id)
+        day1 = workout_plan.first_day    
+        day2 = day1 + timedelta(days=1)
+        day3 = day1 + timedelta(days=2)
+        day4 = day1 + timedelta(days=3)
+        day5 = day1 + timedelta(days=4)
+        day6 = day1 + timedelta(days=5)
+        day7 = day1 + timedelta(days=6)
+        
+        print(workout_plan_id)
+        print(workout_plan)
+        print(day7)
+        context = {'day1': day1,'day2': day2, 'day3': day3, 'day4': day4, 
+                   'day5': day5,'day6': day6, 'day7': day7,}
+        return render(request, 'plannerapp/add_plan.html', context)
