@@ -44,7 +44,6 @@ class ChooseDate(View):
             
             # get workout plan ID
             request.session['workout_plan.id'] = workout_plan.pk
-            # print(workout_plan.pk)
             return redirect('add_plan')
         
         else:
@@ -72,8 +71,6 @@ class AddPlan(View):
         
         formset = formset_factory(WorkoutForm, extra=28) # 28 -> 4 rows for 7 days
         
-        # print(workout_plan_id)
-        # print(workout_plan)
         context = {'day1': day1,'day2': day2, 'day3': day3, 'day4': day4, 
                    'day5': day5,'day6': day6, 'day7': day7,'formset': formset,}
         return render(request, 'plannerapp/add_plan.html', context)
@@ -108,9 +105,6 @@ class AddPlan(View):
                     workout_name = ''
                 workout_day = week[field % 7]
                 
-                print(workout_day)
-                print(field)
-
                 if field < 14:
                     workout_time = WorkoutTime.objects.get(workout_time_name='AM')
                 else:
@@ -125,3 +119,8 @@ class AddPlan(View):
                 workout.save()
                 field += 1
             return redirect('planner_page')
+        
+
+class ViewPlans(ListView):
+    model = WorkoutPlan
+    template_name = 'plannerapp/view_plans.html'
