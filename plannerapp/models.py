@@ -27,7 +27,9 @@ class WorkoutPlan(models.Model):
 class Workout(models.Model):
     workout_name = models.CharField(
         max_length=50,
-        blank=True
+        blank=True,
+        null=False,
+        default='',
     )
     workout_time = models.ForeignKey(
         WorkoutTime,

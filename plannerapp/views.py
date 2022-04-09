@@ -8,8 +8,8 @@ from django.forms import formset_factory
 from datetime import timedelta
 
 # Internal:
-from .models import WorkoutPlan
-from .forms import WorkoutPlanForm, WorkoutForm
+from .models import WorkoutPlan, WorkoutTime, Workout
+from .forms import *
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -44,26 +44,25 @@ class ChooseDate(View):
             
             # get workout plan ID
             request.session['workout_plan.id'] = workout_plan.pk
-            print(workout_plan.pk)
+            # print(workout_plan.pk)
             return redirect('add_plan')
         
         else:
             workout_plan_form = WorkoutPlanForm()
             context = {'workout_plan_form': workout_plan_form}
         return render(request, 'plannerapp/planner.html', context)
-        
 
 
 class AddPlan(View):
     """
-    A class view to display a page to add wokrout plan
+    A class view to display a page to add workout plan
     """
     
     def get(self, request):
         # based on the current session ID (first day of schedule)
         workout_plan_id = request.session.get('workout_plan.id')
         workout_plan = WorkoutPlan.objects.get(pk=workout_plan_id)
-        day1 = workout_plan.first_day    
+        day1 = workout_plan.first_day
         day2 = day1 + timedelta(days=1)
         day3 = day1 + timedelta(days=2)
         day4 = day1 + timedelta(days=3)
@@ -73,9 +72,56 @@ class AddPlan(View):
         
         formset = formset_factory(WorkoutForm, extra=28) # 28 -> 4 rows for 7 days
         
-        print(workout_plan_id)
-        print(workout_plan)
-        print(day7)
+        # print(workout_plan_id)
+        # print(workout_plan)
         context = {'day1': day1,'day2': day2, 'day3': day3, 'day4': day4, 
                    'day5': day5,'day6': day6, 'day7': day7,'formset': formset,}
         return render(request, 'plannerapp/add_plan.html', context)
+
+
+    def post(self, request):
+        """
+        A view to fill in the workout plan
+        """           
+        workout_plan_id = request.session.get('workout_plan.id')
+        workout_plan = WorkoutPlan.objects.get(pk=workout_plan_id)
+        
+        day1 = workout_plan.first_day
+        week = [
+            day1,
+            day1 + timedelta(days=1),
+            day1 + timedelta(days=2),
+            day1 + timedelta(days=3),
+            day1 + timedelta(days=4),
+            day1 + timedelta(days=5),
+            day1 + timedelta(days=6),
+        ]
+
+        schedule_fields = formset_factory(WorkoutForm, extra=28)
+        formset = schedule_fields(request.POST)
+
+        if formset.is_valid():
+            field = 0
+            for form in formset:
+                workout_name = form.cleaned_data.get('workout_name')
+                if workout_name is None:
+                    workout_name = ''
+                workout_day = week[field % 7]
+                
+                print(workout_day)
+                print(field)
+
+                if field < 14:
+                    workout_time = WorkoutTime.objects.get(workout_time_name='AM')
+                else:
+                    workout_time = WorkoutTime.objects.get(workout_time_name='PM')
+                
+                workout = Workout(
+                    workout_name=workout_name,
+                    workout_time=workout_time,
+                    workout_plan=workout_plan,
+                    day=workout_day
+                )
+                workout.save()
+                field += 1
+            return redirect('planner_page')

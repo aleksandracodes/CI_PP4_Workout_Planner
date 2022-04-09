@@ -50,14 +50,14 @@
                     </tr>
                     <tr>
                 {% endif %}
-                    {% if forloop.counter >= 21 and forloop.counter <= 27 %}
+                    {% if forloop.counter > 21 and forloop.counter <= 28 %}
                         <td>{{ form.as_p }}</td>
                     {% endif %}
 
             {% endfor %}
                     </tr>   
         </tbody>  
-  </table>
+    </table>
   </div>
   <button type="submit" class="btn btn-sm btn-outline-secondary">Add plan</button>
   
