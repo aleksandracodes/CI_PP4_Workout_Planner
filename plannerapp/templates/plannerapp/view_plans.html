@@ -2,6 +2,64 @@
 
 {% block content %}
 
-Display user workout plans here
+    {% for workoutplan in workoutplan_list %}
+    <h2>Hi {{ workoutplan.user }}, here are your plans:</h2>
+    <h3>Workout plan from: {{ workoutplan.first_day | date }}</h3>
 
+        {% with plans=workoutplan.plan.all %}
+        <div class="table-responsive">
+            <table class="table align-middle">
+            <thead>
+                <tr>
+                    <td></td>
+                    <th>{{ day1 | date:"l" }}</th>
+                    <th>{{ day2 | date:"l" }}</th>
+                    <th>{{ day3 | date:"l" }}</th>
+                    <th>{{ day4 | date:"l" }}</th>
+                    <th>{{ day5 | date:"l" }}</th>
+                    <th>{{ day6 | date:"l" }}</th>
+                    <th>{{ day7 | date:"l" }}</th>
+                    </tr>
+                </thead>
+            
+                <tbody>
+                    {% for plan in plans %}
+                        {% if forloop.counter == 1 %}
+                            <tr>
+                                <th scope="row" rowspan="2">AM</th>
+                        {% endif %}
+                            {% if forloop.counter >= 1 and forloop.counter <= 7 %}
+                                <td class="border-0">{{ plan }}</td>
+                            {% endif %}
+                        {% if forloop.counter == 8 %}
+                            </tr>
+                            <tr>
+                        {% endif %}
+                            {% if forloop.counter >= 8 and forloop.counter <= 14 %}
+                                <td>{{ plan }}</td>
+                            {% endif %}
+
+                        {% if forloop.counter == 15 %}
+                            </tr>
+                            <tr>
+                            <th scope="row" rowspan="2">PM</th>
+                        {% endif %}
+                            {% if forloop.counter >= 15 and forloop.counter <= 21 %}
+                                <td class="border-0">{{ plan }}</td>
+                            {% endif %}
+                        {% if forloop.counter == 21 %}
+                            </tr>
+                            <tr>
+                        {% endif %}
+                            {% if forloop.counter > 21 and forloop.counter <= 28 %}
+                                <td>{{ plan }}</td>
+                            {% endif %}
+
+                    {% endfor %}
+                            </tr>   
+                </tbody>  
+            </table>
+        </div>
+        {% endwith %}
+    {% endfor %}
 {% endblock %}
