@@ -20,6 +20,9 @@ class WorkoutPlan(models.Model):
         related_name='workout_plan'
     )
 
+    class Meta:
+        ordering = ['-first_day']
+        
     def __str__(self):
         return 'workoutplan for {}'.format(self.first_day)
 
@@ -43,5 +46,6 @@ class Workout(models.Model):
     )
     day = models.DateTimeField()
 
+    
     def __str__(self):
         return self.workout_name
