@@ -1,102 +1,102 @@
 {% extends 'home/base.html' %}
+
 {% block content %}
 
-    {% if workoutplan_list %}
-        {% for workoutplan in workoutplan_list %}
-        <h2 class="text-center">Hi {{ workoutplan.user }}, here are your plans:</h2>
+{% if workoutplan_list %}
+    {% for workoutplan in workoutplan_list %}
+    <h2 class="text-center">Hi {{ workoutplan.user }}, here are your plans:</h2>
 
-        {% comment %} code to paginate plans was taken from Code Institute course materials {% endcomment %}
-        {% if is_paginated %}
-        <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center">
-                {% if page_obj.has_next %}
-                <li><a href="?page={{ page_obj.next_page_number }}"
-                    class="page-link">&#x21e6;</a></li>
-                {% endif %}
+    {% comment %} code to paginate plans was taken from Code Institute course materials {% endcomment %}
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}"
+                class="page-link">&#x21e6;</a></li>
+            {% endif %}
 
-                <h3>workout plan from: {{ workoutplan.first_day | date:"jS M" }} - 
-                    {{ workoutplan.plan.all.6.day  | date:"jS M Y" }}</h3>
+            <h3>workout plan from: {{ workoutplan.first_day | date:"jS M" }} - 
+                {{ workoutplan.plan.all.6.day  | date:"jS M Y" }}</h3>
 
-                {% if page_obj.has_previous %}
-                <li><a href="?page={{ page_obj.previous_page_number }}"
-                    class="page-link">&#x21e8;</a></li>
-                {% endif %}
-
-            </ul>
-        </nav>
-        {% else %}
-        <h3 class="text-center">workout plan from: {{ workoutplan.first_day | date:"jS M" }} - 
-            {{ workoutplan.plan.all.6.day  | date:"jS M Y" }}</h3>
-        {% endif %}
-
-            {% with plans=workoutplan.plan.all %}
-
-            <div class="table-responsive">
-                <table class="table align-middle">
-                <thead>
-                    <tr>
-                        <td></td>
-                        <th>{{ workoutplan.first_day | date:"l" }}</th>
-                        <th>{{ plans.1.day | date:"l" }}</th>
-                        <th>{{ plans.2.day | date:"l" }}</th>
-                        <th>{{ plans.3.day | date:"l" }}</th>
-                        <th>{{ plans.4.day | date:"l" }}</th>
-                        <th>{{ plans.5.day | date:"l" }}</th>
-                        <th>{{ plans.6.day | date:"l" }}</th>
-                        </tr>
-                    </thead>
-                
-                    <tbody>
-                        {% for plan in plans %}
-                            {% if forloop.counter == 1 %}
-                                <tr>
-                                    <th scope="row" rowspan="2">AM</th>
-                            {% endif %}
-                                {% if forloop.counter >= 1 and forloop.counter <= 7 %}
-                                    <td class="border-0">{{ plan }}</td>
-                                {% endif %}
-                            {% if forloop.counter == 8 %}
-                                </tr>
-                                <tr>
-                            {% endif %}
-                                {% if forloop.counter >= 8 and forloop.counter <= 14 %}
-                                    <td>{{ plan }}</td>
-                                {% endif %}
-
-                            {% if forloop.counter == 15 %}
-                                </tr>
-                                <tr>
-                                <th scope="row" rowspan="2">PM</th>
-                            {% endif %}
-                                {% if forloop.counter >= 15 and forloop.counter <= 21 %}
-                                    <td class="border-0">{{ plan }}</td>
-                                {% endif %}
-                            {% if forloop.counter == 21 %}
-                                </tr>
-                                <tr>
-                            {% endif %}
-                                {% if forloop.counter > 21 and forloop.counter <= 28 %}
-                                    <td>{{ plan }}</td>
-                                {% endif %}
-
-                        {% endfor %}
-                                </tr>   
-                    </tbody>  
-                </table>
-            </div>
-            {% endwith %}
-        {% endfor %}
-
-        <div class="text-center">
-            <a href="{% url 'edit_plan' %}"><i class="fa-solid fa-pen-to-square"></i></a>
-            <a href="{% url 'choose_date' %}"><i class="fa-regular fa-square-plus"></i></a>
-            <a href="#"><i class="fa-regular fa-trash-can"></i></a>
-        </div>
-
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}"
+                class="page-link">&#x21e8;</a></li>
+            {% endif %}
+        </ul>
+    </nav>
     {% else %}
-    <p>You have no saved plans.</p>
-    <a href="{% url 'choose_date' %}"><button type="button" class="btn btn-sm btn-outline-secondary">Create a plan</button></a>
+    <h3 class="text-center">workout plan from: {{ workoutplan.first_day | date:"jS M" }} - 
+        {{ workoutplan.plan.all.6.day  | date:"jS M Y" }}</h3>
     {% endif %}
 
-    
+        {% with plans=workoutplan.plan.all %}
+
+        <div class="table-responsive">
+            <table class="table align-middle">
+            <thead>
+                <tr>
+                    <td></td>
+                    <th>{{ workoutplan.first_day | date:"l" }}</th>
+                    <th>{{ plans.1.day | date:"l" }}</th>
+                    <th>{{ plans.2.day | date:"l" }}</th>
+                    <th>{{ plans.3.day | date:"l" }}</th>
+                    <th>{{ plans.4.day | date:"l" }}</th>
+                    <th>{{ plans.5.day | date:"l" }}</th>
+                    <th>{{ plans.6.day | date:"l" }}</th>
+                    </tr>
+                </thead>
+            
+                <tbody>
+                    {% for plan in plans %}
+                        {% if forloop.counter == 1 %}
+                            <tr>
+                                <th scope="row" rowspan="2">AM</th>
+                        {% endif %}
+                            {% if forloop.counter >= 1 and forloop.counter <= 7 %}
+                                <td class="border-0">{{ plan }}</td>
+                            {% endif %}
+                        {% if forloop.counter == 8 %}
+                            </tr>
+                            <tr>
+                        {% endif %}
+                            {% if forloop.counter >= 8 and forloop.counter <= 14 %}
+                                <td>{{ plan }}</td>
+                            {% endif %}
+
+                        {% if forloop.counter == 15 %}
+                            </tr>
+                            <tr>
+                            <th scope="row" rowspan="2">PM</th>
+                        {% endif %}
+                            {% if forloop.counter >= 15 and forloop.counter <= 21 %}
+                                <td class="border-0">{{ plan }}</td>
+                            {% endif %}
+                        {% if forloop.counter == 21 %}
+                            </tr>
+                            <tr>
+                        {% endif %}
+                            {% if forloop.counter > 21 and forloop.counter <= 28 %}
+                                <td>{{ plan }}</td>
+                            {% endif %}
+
+                    {% endfor %}
+                            </tr>   
+                </tbody>  
+            </table>
+        </div>
+        {% endwith %}
+    {% endfor %}
+
+    <div class="text-center">
+        <a href="{% url 'edit_plan' %}"><i class="fa-solid fa-pen-to-square"></i></a>
+        <a href="{% url 'choose_date' %}"><i class="fa-regular fa-square-plus"></i></a>
+        <a href="#"><i class="fa-regular fa-trash-can"></i></a>
+    </div>
+
+{% else %}
+<p>You have no saved plans.</p>
+<a href="{% url 'choose_date' %}"><button type="button" class="btn btn-sm btn-outline-secondary">Create a plan</button></a>
+{% endif %}
+
+
 {% endblock %}

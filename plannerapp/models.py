@@ -21,7 +21,7 @@ class WorkoutPlan(models.Model):
     )
 
     class Meta:
-        ordering = ['-first_day']
+        ordering = ['first_day']
         
     def __str__(self):
         return 'workoutplan for {}'.format(self.first_day)
