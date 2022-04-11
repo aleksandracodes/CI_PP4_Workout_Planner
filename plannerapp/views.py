@@ -132,3 +132,10 @@ class ViewPlans(generic.ListView):
         Display workout plans for currently logged
         """
         return WorkoutPlan.objects.filter(user=self.request.user)
+
+
+class EditPlan(View):
+    def get(self, request):
+        return render(request, 'plannerapp/edit_plan.html')
+    
+ 
