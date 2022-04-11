@@ -2,6 +2,7 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # 3rd party:
 from django.shortcuts import render, redirect
+from django.views import generic
 from django.views.generic import ListView, View
 from django.contrib.auth.models import User
 from django.forms import formset_factory
@@ -121,9 +122,10 @@ class AddPlan(View):
             return redirect('planner_page')
         
 
-class ViewPlans(ListView):
+class ViewPlans(generic.ListView):
     model = WorkoutPlan
     template_name = 'plannerapp/view_plans.html'
+    paginate_by = 1
     
     def get_queryset(self):
         """

@@ -8,7 +8,7 @@
     {% if request.user.is_authenticated %}
         <h1>Hi {{ request.user }}, welcome to your weekly workout planner</h1>
         <p>What would you like to do?</p>
-        <a href="#"><button type="button" class="btn btn-sm btn-outline-secondary">View my current workout plan</button></a>
+        <a href="{% url 'view_plans' %}"><button type="button" class="btn btn-sm btn-outline-secondary">View my current workout plan</button></a>
         <a href="{% url 'choose_date' %}"><button type="button" class="btn btn-sm btn-outline-secondary">Add a new plan</button></a>
         
     {% else %}
