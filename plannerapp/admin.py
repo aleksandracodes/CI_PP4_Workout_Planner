@@ -19,6 +19,7 @@ class WorkoutPlanAdmin(admin.ModelAdmin):
         'first_day',
         'id',
         )
+    list_filter = ('user', 'first_day',)
     
 
 @admin.register(Workout)
@@ -28,4 +29,7 @@ class WorkoutAdmin(admin.ModelAdmin):
         'workout_time', 
         'workout_plan', 
         'day',
+    )
+    list_filter = (
+        'workout_plan',
     )

@@ -13,7 +13,7 @@ class WorkoutTime(models.Model):
 
 
 class WorkoutPlan(models.Model):
-    first_day = models.DateTimeField()
+    first_day = models.DateField()
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
@@ -44,7 +44,7 @@ class Workout(models.Model):
         on_delete=models.CASCADE,
         related_name='plan'
     )
-    day = models.DateTimeField()
+    day = models.DateField()
 
     
     def __str__(self):
