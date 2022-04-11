@@ -126,7 +126,7 @@ class ViewPlans(ListView):
     template_name = 'plannerapp/view_plans.html'
     
     def get_queryset(self):
-        '''
-        Display workout plans for currently logged user
-        '''
-            return WorkoutPlan.objects.filter(user=self.request.user)
+        """
+        Display workout plans for currently logged
+        """
+        return WorkoutPlan.objects.filter(user=self.request.user)
