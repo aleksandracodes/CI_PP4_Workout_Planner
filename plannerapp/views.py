@@ -135,7 +135,44 @@ class ViewPlans(generic.ListView):
 
 
 class EditPlan(View):
-    def get(self, request):
-        return render(request, 'plannerapp/edit_plan.html')
-    
- 
+    # def get(self, request):
+    #     return render(request, 'plannerapp/edit_plan.html')
+
+    def get(self, request, **kwargs):
+
+        # workout_plan_id = request.session.get('workout_plan.id')
+        workout_plan_id = self.kwargs['workout_plan_id']
+        workout_plan = WorkoutPlan.objects.get(pk=workout_plan_id)
+        
+        day1 = workout_plan.first_day
+        day2 = day1 + timedelta(days=1)
+        day3 = day1 + timedelta(days=2)
+        day4 = day1 + timedelta(days=3)
+        day5 = day1 + timedelta(days=4)
+        day6 = day1 + timedelta(days=5)
+        day7 = day1 + timedelta(days=6)
+
+        workouts = Workout.objects.filter(workout_plan=workout_plan_id)
+        schedule_fields = formset_factory(WorkoutForm, extra=0)
+        field_value = []
+        for workout in workouts:
+            field_value.append({'workout_name': workout.workout_name})
+        formset = schedule_fields(initial=field_value)
+        
+        print('_________________________')
+        print(workout_plan_id)
+        print('-----------------')
+        print(workout_plan)
+        print('.........................')
+        print(day1)
+        print(day2)
+        print('_________________________')
+        print(workouts)      
+        
+        context = {'day1': day1,'day2': day2, 'day3': day3, 'day4': day4, 
+                   'day5': day5,'day6': day6, 'day7': day7,'workout_plan': workout_plan, 'formset': formset,}
+        
+        return render(request, 'plannerapp/edit_plan.html', context)
+
+        
+        
