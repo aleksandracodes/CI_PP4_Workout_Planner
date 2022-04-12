@@ -57,8 +57,10 @@ class AddPlan(View):
     """
     A class view to display a page to add workout plan
     """
-    
     def get(self, request):
+        """
+        Display a field for each day to add a single workout
+        """
         # based on the current session ID (first day of schedule)
         workout_plan_id = request.session.get('workout_plan.id')
         workout_plan = WorkoutPlan.objects.get(pk=workout_plan_id)
@@ -79,7 +81,7 @@ class AddPlan(View):
 
     def post(self, request):
         """
-        A view to fill in the workout plan
+        A view to fill in the workout plan fields
         """           
         workout_plan_id = request.session.get('workout_plan.id')
         workout_plan = WorkoutPlan.objects.get(pk=workout_plan_id)
@@ -123,24 +125,27 @@ class AddPlan(View):
         
 
 class ViewPlans(generic.ListView):
+    """
+    A class view to render all plans for each user
+    One plan displayed per page  
+    
+    """
     model = WorkoutPlan
     template_name = 'plannerapp/view_plans.html'
     paginate_by = 1
     
     def get_queryset(self):
-        """
-        Display workout plans for currently logged
-        """
         return WorkoutPlan.objects.filter(user=self.request.user)
 
 
 class EditPlan(View):
-    # def get(self, request):
-    #     return render(request, 'plannerapp/edit_plan.html')
-
+    """
+    A class view for editing existing plans for each user
+    """
     def get(self, request, **kwargs):
-
-        # workout_plan_id = request.session.get('workout_plan.id')
+        """
+        Display a formset with fields corresponding to a specific plan id
+        """
         workout_plan_id = self.kwargs['workout_plan_id']
         workout_plan = WorkoutPlan.objects.get(pk=workout_plan_id)
         
@@ -157,17 +162,7 @@ class EditPlan(View):
         field_value = []
         for workout in workouts:
             field_value.append({'workout_name': workout.workout_name})
-        formset = schedule_fields(initial=field_value)
-        
-        print('_________________________')
-        print(workout_plan_id)
-        print('-----------------')
-        print(workout_plan)
-        print('.........................')
-        print(day1)
-        print(day2)
-        print('_________________________')
-        print(workouts)      
+        formset = schedule_fields(initial=field_value)   
         
         context = {'day1': day1,'day2': day2, 'day3': day3, 'day4': day4, 
                    'day5': day5,'day6': day6, 'day7': day7,'workout_plan': workout_plan, 'formset': formset,}
