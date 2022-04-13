@@ -169,5 +169,80 @@ class EditPlan(View):
         
         return render(request, 'plannerapp/edit_plan.html', context)
 
-        
-        
+
+    def post(self, request, **kwargs):
+                workout_plan_id = self.kwargs['workout_plan_id']
+                workout_plan = WorkoutPlan.objects.get(pk=workout_plan_id)
+                
+                print('-----------------')
+                print(workout_plan)
+                print(workout_plan_id)
+                
+                day1 = workout_plan.first_day
+                week = [
+                    day1,
+                    day1 + timedelta(days=1),
+                    day1 + timedelta(days=2),
+                    day1 + timedelta(days=3),
+                    day1 + timedelta(days=4),
+                    day1 + timedelta(days=5),
+                    day1 + timedelta(days=6),
+                ]
+
+                schedule_fields = formset_factory(WorkoutForm, extra=28)
+                formset = schedule_fields(request.POST)
+                workouts = Workout.objects.filter(workout_plan=workout_plan)
+                
+                if formset.is_valid():
+                    field = 0
+                    for form in formset:
+                        if workouts:
+                            workout_name = form.cleaned_data.get('workout_name')
+                            workout = workouts[field]
+                            workout.workout_name = workout_name
+                            workout.save()
+                        
+                        else:
+                            workout_name = form.cleaned_data.get('workout_name')
+                            if workout_name is None:
+                                workout_name = ''
+                            workout_day = week[field % 7]
+                        
+                            if field < 14:
+                                workout_time = WorkoutTime.objects.get(workout_time_name='AM')
+                            else:
+                                workout_time = WorkoutTime.objects.get(workout_time_name='PM')
+                        
+                            workout = Workout(
+                                workout_name=workout_name,
+                                workout_time=workout_time,
+                                workout_plan=workout_plan,
+                                day=workout_day
+                            )
+                            workout.save()
+                        field += 1
+                    return redirect('view_plans')
+                
+                # as for AddPlan
+                elif formset.is_valid():
+                    field = 0
+                    for form in formset:
+                        workout_name = form.cleaned_data.get('workout_name')
+                        if workout_name is None:
+                            workout_name = ''
+                        workout_day = week[field % 7]
+                        
+                        if field < 14:
+                            workout_time = WorkoutTime.objects.get(workout_time_name='AM')
+                        else:
+                            workout_time = WorkoutTime.objects.get(workout_time_name='PM')
+                        
+                        workout = Workout(
+                            workout_name=workout_name,
+                            workout_time=workout_time,
+                            workout_plan=workout_plan,
+                            day=workout_day
+                        )
+                        workout.save()
+                        field += 1
+                    return redirect('view_plans')
