@@ -13,15 +13,17 @@
   </head>
   <body id="background-image">
 
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light py-3 border-bottom"> 
+    <nav class="navbar sticky-top navbar-expand-md navbar-light bg-light py-3 border-bottom"> 
       <div class="container">
           <div class="navbar-brand">
               <img src="https://raw.githubusercontent.com/aleksandracodes/activelifestyle/main/img/dumbell.png" alt="Page dumbbell logo" width="35" height="35" class="d-inline-block align-bottom">
               Workout Planner
             </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+            <button class="navbar-toggler d-flex d-md-none flex-column justify-content-around collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="toggler-icon top-bar"></span>
+              <span class="toggler-icon middle-bar"></span>
+              <span class="toggler-icon bottom-bar"></span>
+            </button>
         <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto text-center">
             <li class="nav-item">
@@ -33,7 +35,6 @@
             <li class="nav-item">
               <a class="nav-link" href="/exercises">Exercises</a>
             </li>
-
 
             {% if request.user.is_authenticated %}
 
@@ -114,4 +115,3 @@
 
   </body>
 </html>
-
