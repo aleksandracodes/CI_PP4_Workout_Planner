@@ -1,0 +1,39 @@
+/* Google Fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Junge&family=Roboto:wght@300;400;500;700&display=swap');
+
+/* Colors pallet */
+:root {
+    --rose-gold: #f5cccc;
+    --light-gray: #969696;
+    --dark-gray: #484f5c;
+    --background: #949494;
+    --rose: #ebcfcc;
+    --body-color: #212529;
+  }
+
+  
+/* Highlighting of text */
+::selection {
+    background-color: var(--rose-gold);
+  }
+
+/* Remove default values */
+  * {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  body {
+    line-height: 1.7;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+#background-image {
+    background: url("/static/images/background.jpg") no-repeat center fixed;
+    background-size: cover;
+    height: 100vh;
+
+}
+
