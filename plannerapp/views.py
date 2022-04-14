@@ -157,17 +157,21 @@ class EditPlan(View):
         day6 = day1 + timedelta(days=5)
         day7 = day1 + timedelta(days=6)
 
-        workouts = Workout.objects.filter(workout_plan=workout_plan_id)
-        schedule_fields = formset_factory(WorkoutForm, extra=0)
-        field_value = []
-        for workout in workouts:
-            field_value.append({'workout_name': workout.workout_name})
-        formset = schedule_fields(initial=field_value)   
-        
-        context = {'day1': day1,'day2': day2, 'day3': day3, 'day4': day4, 
-                   'day5': day5,'day6': day6, 'day7': day7,'workout_plan': workout_plan, 'formset': formset,}
-        
-        return render(request, 'plannerapp/edit_plan.html', context)
+        if request.user == workout_plan.user:
+            workouts = Workout.objects.filter(workout_plan=workout_plan_id)
+            schedule_fields = formset_factory(WorkoutForm, extra=0)
+            field_value = []
+            for workout in workouts:
+                field_value.append({'workout_name': workout.workout_name})
+            formset = schedule_fields(initial=field_value)   
+            
+            context = {'day1': day1,'day2': day2, 'day3': day3, 'day4': day4, 
+                    'day5': day5,'day6': day6, 'day7': day7,'workout_plan': workout_plan, 'formset': formset,}
+            
+            return render(request, 'plannerapp/edit_plan.html', context)
+
+        else:
+            return redirect('planner_page')
 
 
     def post(self, request, **kwargs):
