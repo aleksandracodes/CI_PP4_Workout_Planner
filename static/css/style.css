@@ -3,11 +3,10 @@
 
 /* Colors pallet */
 :root {
-    --rose-gold: #f5cccc;
-    --light-gray: #969696;
+    --rose-gold: #ebcfcc;
+    --light-gray: #e2e1e1;
     --dark-gray: #484f5c;
     --background: #949494;
-    --rose: #ebcfcc;
     --body-color: #212529;
   }
 
@@ -128,4 +127,32 @@
 /* Color of 3 hamburger lines */
 .navbar-toggler.collapsed .toggler-icon {
   background: linear-gradient( 200deg, var(--dark-gray) 0%, var(--rose-gold) 100% )
+}
+
+/* Home page sections */
+.home {
+  padding-bottom: 60px;
+}
+
+.home .button {
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+.right-alignment {
+  text-align: right;
+}
+
+
+button {
+  color: var(--dark-gray);
+  border: 1px solid var(--rose-gold);
+  background: var(--rose-gold);
+  padding: 5px 25px;
+  font-weight: bold;
+}
+
+button:hover {
+  border: 1px solid var(--rose-gold);
+  background: var(--light-gray);
 }
