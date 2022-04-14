@@ -38,6 +38,7 @@ def loginPage(request):
         
         if user is not None:
             login(request, user)
+            messages.success(request, "You've been successfully logged in.")
             return redirect('planner_page')
         else:
             messages.error(request, "User name or password don't exist")
@@ -51,6 +52,7 @@ def logoutUser(request):
     A view to log out the user
     """
     logout(request)
+    messages.info(request, "You have logged out.")
     return redirect('home')
 
 
@@ -67,6 +69,7 @@ def registerPage(request):
             user.username = user.username.capitalize()
             user.save()
             login(request, user)
+            messages.success(request, "Registration has been successful.")
             return redirect('planner_page')
         else:
             messages.error(request, 'An error occurred during registration.')   

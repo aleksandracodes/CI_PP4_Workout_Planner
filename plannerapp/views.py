@@ -5,6 +5,7 @@ from django.shortcuts import render, redirect
 from django.views import generic
 from django.views.generic import ListView, View
 from django.contrib.auth.models import User
+from django.contrib import messages
 from django.forms import formset_factory
 from datetime import timedelta
 
@@ -121,6 +122,7 @@ class AddPlan(View):
                 )
                 workout.save()
                 field += 1
+            messages.success(request, 'Your plan has been created.')
             return redirect('planner_page')
         
 
@@ -171,6 +173,7 @@ class EditPlan(View):
             return render(request, 'plannerapp/edit_plan.html', context)
 
         else:
+            messages.info(request, "You cannot edit other user's plans.")
             return redirect('planner_page')
 
 
@@ -244,6 +247,7 @@ class EditPlan(View):
                         )
                         workout.save()
                         field += 1
+                    messages.success(request, "Your plan has been amended.")
                     return redirect('view_plans')
 
 
@@ -254,5 +258,6 @@ class DeletePlan(View):
     def post(self, request, **kwargs):
         record = WorkoutPlan.objects.get(pk=self.kwargs['workout_plan_id'])
         if request.method == "POST":
-            record.delete()            
+            record.delete()
+            messages.success(request, "You plan has been deleted.")
             return redirect('view_plans')
