@@ -171,12 +171,7 @@ class EditPlan(View):
 
 
     def post(self, request, **kwargs):
-                workout_plan_id = self.kwargs['workout_plan_id']
-                workout_plan = WorkoutPlan.objects.get(pk=workout_plan_id)
-                
-                print('-----------------')
-                print(workout_plan)
-                print(workout_plan_id)
+                workout_plan = WorkoutPlan.objects.get(pk=self.kwargs['workout_plan_id'])
                 
                 day1 = workout_plan.first_day
                 week = [
@@ -246,3 +241,14 @@ class EditPlan(View):
                         workout.save()
                         field += 1
                     return redirect('view_plans')
+
+
+class DeletePlan(View):
+    """
+    A class view for deleting existing plan
+    """
+    def post(self, request, **kwargs):
+        record = WorkoutPlan.objects.get(pk=self.kwargs['workout_plan_id'])
+        if request.method == "POST":
+            record.delete()            
+            return redirect('view_plans')
