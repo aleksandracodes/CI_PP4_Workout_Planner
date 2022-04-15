@@ -129,6 +129,11 @@
   background: linear-gradient( 200deg, var(--dark-gray) 0%, var(--rose-gold) 100% )
 }
 
+
+.dropdown-menu a:hover {
+  background-color: var(--rose-gold);
+}
+
 /* Home page sections */
 .home {
   padding-bottom: 60px;
@@ -165,6 +170,26 @@ button:hover {
 }
 
 
-.planner-section {
-  height: 66.5vh;
+.adjust-footer {
+  height: 67.2vh;
+}
+
+/* Login / sign up form */
+.form-control {
+  border-color: var(--rose-gold);
+}
+
+.form-control:focus {
+  box-shadow: 1px 1px 10px var(--rose-gold);
+  border: 1px solid var(--rose-gold);
+}
+
+/* Style link in login/sign in form */
+a {
+  color: var(--dark-gray);
+  font-weight: bold;
+}
+
+a:hover {
+  color: var(--rose-gold)
 }

@@ -2,10 +2,19 @@
 
 {% block content %}
 
-    <h2>Testing user:</h2>
-    <p>Username: {{ user.username }}</p>
-    <p>Id: {{ user.id }}</p>
-    <p>Name: {{ user.first_name }}</p>
-    <p>Surname: {{ user.last_name }}</p>
+
+<section class="adjust-footer">
+    <div class="py-3 text-center container">
+            
+        <h2>Testing user:</h2>
+        <p>Username: {{ user.username }}</p>
+        <p>Id: {{ user.id }}</p>
+        <p>Name: {{ user.first_name }}</p>
+        <p>Surname: {{ user.last_name }}</p>
+
+
+    </div>
+</section>
+
 
 {% endblock content %}
