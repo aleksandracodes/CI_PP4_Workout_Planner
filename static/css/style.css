@@ -184,6 +184,7 @@ button:hover {
   border: 1px solid var(--rose-gold);
 }
 
+
 /* Style link in login/sign in form */
 a {
   color: var(--dark-gray);
@@ -193,3 +194,9 @@ a {
 a:hover {
   color: var(--rose-gold)
 }
+
+/* Display password criteria in registration form */
+.criteria-font-size {
+  font-size: 0.85rem;
+}
+
