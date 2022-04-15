@@ -49,7 +49,7 @@
     margin-left: 15px;
 }
 
-.nav-link:hover {
+.nav-link:hover, footer a:hover {
     color: var(--rose-gold) !important;
 }
 
@@ -132,6 +132,7 @@
 /* Home page sections */
 .home {
   padding-bottom: 60px;
+  font-size: 110%;
 }
 
 .home .button {
@@ -143,7 +144,7 @@
   text-align: right;
 }
 
-
+/* Buttons */
 button {
   color: var(--dark-gray);
   border: 1px solid var(--rose-gold);
@@ -155,4 +156,15 @@ button {
 button:hover {
   border: 1px solid var(--rose-gold);
   background: var(--light-gray);
+}
+
+
+/* Icons in footer */
+.btn-lg {
+  font-size: 1.5rem !important;
+}
+
+
+.planner-section {
+  height: 66.5vh;
 }

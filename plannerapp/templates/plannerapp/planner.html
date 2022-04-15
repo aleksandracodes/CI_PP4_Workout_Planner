@@ -1,28 +1,26 @@
 {% extends 'home/base.html' %}
 
 {% block content %}
-
-
-<div class="py-3 text-center container">
+<section class="planner-section">
+    <div class="py-3 text-center container">
+            
+        {% if request.user.is_authenticated %}
+            <h2 class="mb-4">Hi {{ request.user }}, welcome to your weekly workout planner</h2>
+            <h5 class="mb-4">What would you like to do?</h5>
+            <a href="{% url 'view_plans' %}"><button type="button" class="button">View my current workout plan</button></a>
+            <a href="{% url 'choose_date' %}"><button type="button" class="button ms-4">Add a new plan</button></a>
+            
+        {% else %}
         
-    {% if request.user.is_authenticated %}
-        <h1>Hi {{ request.user }}, welcome to your weekly workout planner</h1>
-        <p>What would you like to do?</p>
-        <a href="{% url 'view_plans' %}"><button type="button" class="btn btn-sm btn-outline-secondary">View my current workout plan</button></a>
-        <a href="{% url 'choose_date' %}"><button type="button" class="btn btn-sm btn-outline-secondary">Add a new plan</button></a>
-        
-    {% else %}
-    
-        <h1>How does it work?</h1>
-        <p>Here will be an example of the planner and instructions how to fill it in.</p>
-        <br/>
-        <p>To create your plan:</p>
-        <a href="{% url 'login' %}"><button type="button" class="btn btn-sm btn-outline-secondary">Log in</button></a> or 
-        <a href="{% url 'register' %}"><button type="button" class="btn btn-sm btn-outline-secondary">Sign up</button></a>
-        <br/>
-</div>
+            <h1>How does it work?</h1>
+            <p>Here will be an example of the planner and instructions how to fill it in.</p>
+            <br/>
+            <p>To create your plan:</p>
+            <a href="{% url 'login' %}"><button type="button" class="button">Log in</button></a> or 
+            <a href="{% url 'register' %}"><button type="button" class="button">Sign up</button></a>
+            <br/>
 
-    {% endif %}
-
-
+        {% endif %}
+    </div>
+</section>
 {% endblock %}

@@ -13,6 +13,7 @@
   </head>
   <body id="background-image">
 
+    <!-- Navigation bar-->
     <nav class="navbar sticky-top navbar-expand-md navbar-light bg-light py-3 border-bottom"> 
       <div class="container">
           <div class="navbar-brand">
@@ -58,7 +59,6 @@
                 <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="{% url 'register' %}">Register</a></li>
                   <li><a class="dropdown-item" href="{% url 'login' %}">Log in</a></li>
-
                 </ul>
               </li>
 
@@ -82,22 +82,39 @@
         </div>
     </div>
 
+
     {% block content %}
 
     {% endblock %}
 
-    <footer class="mt-5">
-        <div class="float-start">
-            <p>© Created by Aleksandra H.</p>
-        </div>
-            
-        <!-- Links  -->
-        <div class="float-end">
-            <a href="" aria-label="Contact Us"><i class="far fa-envelope"></i></a>
-            <a href="https://github.com/aleksandracodes/CI_PP4_Workout_Planner" target="_blank" rel="noopener" aria-label="Check the website GitHub page"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/aleksandrahaniok/" target="_blank" rel="noopener" aria-label="Visit us on LinkedIn (opens in new tab)"><i class="fab fa-linkedin"></i></a>
-        </div>
+
+    <footer class="text-center text-white" style="background-color: #f1f1f1;">
+      <div class="container pt-3">
+        <!-- Social media icons -->
+        <section class="mb-3 my">
+          <a class="btn btn-link btn-floating btn-lg text-dark m-1"
+             href="#" role="button"
+             aria-label="Contact Us"><i class="far fa-envelope"></i></a>
+          
+          <a class="btn btn-link btn-floating btn-lg text-dark m-1"
+             href="https://www.linkedin.com/in/aleksandrahaniok/"
+             role="button" target="_blank"
+             aria-label="Visit us on LinkedIn (opens in new tab)"><i class="fab fa-linkedin"></i></a>
+
+          <a class="btn btn-link btn-floating btn-lg text-dark m-1"
+             href="https://github.com/aleksandracodes/CI_PP4_Workout_Planner"
+             role="button" target="_blank" 
+             aria-label="Check the website GitHub page"><i class="fab fa-github"></i></a>
+        </section>
+      </div>
+    
+      <!-- Copyright -->
+      <div class="text-center text-dark p-2" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2022 Copyright: Aleksandra H.
+      </div>
+      <!-- Copyright -->
     </footer>
+
 
     <!-- Font Awesome script -->
     <script src="https://kit.fontawesome.com/b75c116a85.js" crossorigin="anonymous"></script>
