@@ -27,13 +27,9 @@
     line-height: 1.7;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-}
-
-#background-image {
     background: url("/static/images/background.jpg") no-repeat center fixed;
     background-size: cover;
     height: 100vh;
-
 }
 
 /* Navigation bar */
@@ -149,6 +145,27 @@
   text-align: right;
 }
 
+/* Adjustment of page content to place footer at the bottom */
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 6rem;
+}
+
+footer {
+  background-color: #f1f1f1;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.copyright {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
 /* Buttons */
 button {
   color: var(--dark-gray);
@@ -163,15 +180,9 @@ button:hover {
   background: var(--light-gray);
 }
 
-
 /* Icons in footer */
 .btn-lg {
   font-size: 1.5rem !important;
-}
-
-
-.adjust-footer {
-  height: 67.2vh;
 }
 
 /* Login / sign up form */
@@ -183,7 +194,6 @@ button:hover {
   box-shadow: 1px 1px 10px var(--rose-gold);
   border: 1px solid var(--rose-gold);
 }
-
 
 /* Style link in login/sign in form */
 a {
@@ -199,4 +209,3 @@ a:hover {
 .criteria-font-size {
   font-size: 0.85rem;
 }
-

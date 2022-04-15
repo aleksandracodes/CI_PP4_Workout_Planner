@@ -11,8 +11,9 @@
     
     <title>Workout Planner</title>
   </head>
-  <body id="background-image">
+  <body>
 
+  <div id="page-container">
     <!-- Navigation bar-->
     <nav class="navbar sticky-top navbar-expand-md navbar-light bg-light py-3 border-bottom"> 
       <div class="container">
@@ -82,13 +83,15 @@
         </div>
     </div>
 
+    <div id="content-wrap">
 
-    {% block content %}
+      {% block content %}
 
-    {% endblock %}
+      {% endblock %}
 
+    </div>
 
-    <footer class="text-center text-white" style="background-color: #f1f1f1;">
+    <footer class="text-center text-white">
       <div class="container pt-3">
         <!-- Social media icons -->
         <section class="mb-3 my">
@@ -106,15 +109,16 @@
              role="button" target="_blank" 
              aria-label="Check the website GitHub page"><i class="fab fa-github"></i></a>
         </section>
+        
       </div>
     
       <!-- Copyright -->
-      <div class="text-center text-dark p-2" style="background-color: rgba(0, 0, 0, 0.2);">
+      <div class="text-center text-dark p-2 copyright">
         © 2022 Copyright: Aleksandra H.
       </div>
       <!-- Copyright -->
     </footer>
-
+  </div>
 
     <!-- Font Awesome script -->
     <script src="https://kit.fontawesome.com/b75c116a85.js" crossorigin="anonymous"></script>

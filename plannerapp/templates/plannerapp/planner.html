@@ -1,7 +1,6 @@
 {% extends 'home/base.html' %}
 
 {% block content %}
-<section class="adjust-footer">
     <div class="py-3 text-center container">
             
         {% if request.user.is_authenticated %}
@@ -12,7 +11,7 @@
             
         {% else %}
         
-            <h1>How does it work?</h1>
+            <h2>How does it work?</h2>
             <p>Here will be an example of the planner and instructions how to fill it in.</p>
             <br/>
             <p>To create your plan:</p>
@@ -22,5 +21,4 @@
 
         {% endif %}
     </div>
-</section>
 {% endblock %}
