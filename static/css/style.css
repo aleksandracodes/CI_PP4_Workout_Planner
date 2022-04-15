@@ -34,7 +34,8 @@
 
 /* Navigation bar */
 
-.nav-link, .navbar-brand {
+.nav-link,
+.navbar-brand {
     color: var(--dark-gray) !important;
     font-size: 110%;
     letter-spacing: 2px;
@@ -209,4 +210,34 @@ a:hover {
 /* Display password criteria in registration form */
 .criteria-font-size {
   font-size: 0.85rem;
+}
+
+/* Style date picker on planner page*/
+.choose-date label {
+  display: none;
+}
+
+.choose-date input[type="date"], 
+.choose-date button {
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+  border: 2px solid var(--rose-gold);
+  padding: 0.5rem;
+}
+
+.choose-date input[type="date"] {
+  letter-spacing: 0.1rem;
+}
+
+.choose-date input[type="date"]:focus {
+  background-color: var(--light-gray)
+}
+
+.choose-date input[type="date"]::-webkit-calendar-picker-indicator {
+  width: 25px;
+  height: 25px;
+}
+
+.choose-date button {
+  margin-left: 0.5rem;
 }
