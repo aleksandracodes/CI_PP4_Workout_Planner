@@ -264,3 +264,9 @@ a:hover {
 .filter-exercises input:focus {
   background-color: var(--light-gray)
 }
+
+/* Exercise image */
+.exercise-image {
+  max-width: 100%;
+  border: 1px solid var(--rose-gold);
+}

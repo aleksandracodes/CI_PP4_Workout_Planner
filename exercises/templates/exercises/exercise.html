@@ -2,7 +2,6 @@
 
 {% block content %}
 
-
     <section class="py-3 text-center container">
         <div class="row py-lg-3">
             <div class="col-lg-6 col-md-8 mx-auto">
@@ -15,20 +14,20 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-12 col-md-4 border border-light">
-                    <img src=" {{ exercise.image.url }} " alt="Image of {{ exercise.name }} exercise" style="max-width: 100%;">
-                    <p class="card-text">Body part: {{ exercise.body_part}} <br/>
+                <div class="col-12 col-md-4">
+                    <img src=" {{ exercise.image.url }} " alt="Image of {{ exercise.name }} exercise" class="exercise-image">
+                    <p class="card-text py-2">Body part: {{ exercise.body_part}} <br/>
                         Difficulty: {{ exercise.level }} <br/>
                         Type: {{ exercise.type }}
                     </p>
                 </div>
-                <div class="col-12 col-md-8 border border-light">
+                <div class="col-12 col-md-8">
                     {{ exercise.description|safe }}
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 d-flex justify-content-center border border-light">
-                    <a href="{% url 'exercises' %}"><p class="lead text-muted">go back to all list</p></a>
+                <div class="col-12 d-flex justify-content-center py-5">
+                    <a href="{% url 'exercises' %}"><button class="button">go back to all list</button></a>
                 </div>
         </div>
     </section>
