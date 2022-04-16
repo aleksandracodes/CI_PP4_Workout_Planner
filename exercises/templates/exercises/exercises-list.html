@@ -2,7 +2,6 @@
 
 {% block content %}
 
-
     <section class="py-3 text-center container">
         <div class="row py-lg-3">
             <div class="col-lg-6 col-md-8 mx-auto">
@@ -10,34 +9,32 @@
                 <p class="lead text-muted">Get inspired...</p>
                 <br/>                
             </div>
-            <form method="GET">
-                    {{ filter.form }}        
-                    <button type="submit" class="btn btn-sm btn-outline-secondary">Search</button>
-                    <button class="btn btn-sm btn-outline-secondary"><a href="{% url 'exercises' %}">Clear</a></button>
-            </form>
-
+            <div class="filter-exercises">
+                <form method="GET">
+                        {{ filter.form }}
+                    <button type="submit" class="button">Search</button>
+                    <a href="{% url 'exercises' %}"> <button class="button">Clear</button></a>
+                </form>
+            </div> 
         </div>
     </section>
 
     <div class="card py-5 bg-light">
         <div class="container">
-        
-        
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
             
             <!-- Exercise entries -->
-            
             <div class="col">
-                {% for exercise in filter.qs %}
+                {% for exercise in filter.qs %}    
+                 
                     <div class="card mb-3 h-100">
-
                             <img src=" {{ exercise.image.url }} " class="card-img-top" alt="Image of {{ exercise.name }} exercise" style="max-width: 100%;">
                             <div class="card-body">
-                            <h5 class="card-title">{{ exercise }}</h5>
-                            <p class="card-text">Body part: {{ exercise.body_part}} <br/>
+                                <h5 class="card-title">{{ exercise }}</h5>
+                                <p class="card-text">Body part: {{ exercise.body_part}} <br/>
                                 Level: {{ exercise.level }} <br/>
                                 Type: {{ exercise.type }}
-                            </p>
+                                </p>
                             </div>
                             <div class="text-center py-2">
                                 <div class="btn-group">
@@ -45,13 +42,12 @@
                                 </div>
                             </div>
                     </div>
-
             </div>
             <div class="col">
-                {% endfor %}
 
+                {% endfor %}
         </div>
     </div>
-
+</div>
 
 {% endblock %}

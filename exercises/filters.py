@@ -16,4 +16,4 @@ class ExerciseFilter(django_filters.FilterSet):
 
     class Meta:
         model = Exercise
-        fields = ['body_part', 'level']
+        fields = ['body_part', 'level', 'type']

@@ -241,3 +241,26 @@ a:hover {
 .choose-date button {
   margin-left: 0.5rem;
 }
+
+/* Style exercises filter */
+.filter-exercises label {
+  font-size: 1.1rem;
+}
+
+.filter-exercises select, .filter-exercises input {
+  border: 2px solid var(--rose-gold);
+  padding: 0.5rem;
+  margin: 0 0.5rem;
+}
+
+.filter-exercises select {
+  padding: 0.5rem;
+}
+
+.filter-exercises input {
+  padding: 0.25rem;
+}
+
+.filter-exercises input:focus {
+  background-color: var(--light-gray)
+}
