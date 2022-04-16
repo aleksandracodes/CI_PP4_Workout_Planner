@@ -1,28 +1,30 @@
 {% extends 'home/base.html' %}
 
-
 {% block content %}
-<div class="text-center">
+
+<div class="text-center pb-3">
     <h4>Edit workout plan from {{ day1 | date:"jS M" }} - 
         {{ day7  | date:"jS M Y" }}</h4>
 </div>
 <form method="POST" action="">
     {% csrf_token %}
     {{ formset.management_form}}
+
     <div class="table-responsive">
         <table class="table align-middle">
-          <thead>
-                <tr>
-                    <td aria-hidden="true"></td>
-                    <th>{{ day1 | date:"l" }}</th>
-                    <th>{{ day2 | date:"l" }}</th>
-                    <th>{{ day3 | date:"l" }}</th>
-                    <th>{{ day4 | date:"l" }}</th>
-                    <th>{{ day5 | date:"l" }}</th>
-                    <th>{{ day6 | date:"l" }}</th>
-                    <th>{{ day7 | date:"l" }}</th>
+            <thead>
+              <tr>
+                  <td></td>
+                  <th>{{ day1 | date:"l" }}</th>
+                  <th>{{ day2 | date:"l" }}</th>
+                  <th>{{ day3 | date:"l" }}</th>
+                  <th>{{ day4 | date:"l" }}</th>
+                  <th>{{ day5 | date:"l" }}</th>
+                  <th>{{ day6 | date:"l" }}</th>
+                  <th>{{ day7 | date:"l" }}</th>
                 </tr>
             </thead>
+          
             <tbody>
                 {% for form in formset %}
                     {% if forloop.counter == 1 %}
@@ -37,7 +39,7 @@
                         <tr>
                     {% endif %}
                         {% if forloop.counter >= 8 and forloop.counter <= 14 %}
-                            <td>{{ form.as_p }}</td>
+                            <td class="separation-line">{{ form.as_p }}</td>
                         {% endif %}
     
                     {% if forloop.counter == 15 %}
@@ -53,14 +55,16 @@
                         <tr>
                     {% endif %}
                         {% if forloop.counter > 21 and forloop.counter <= 28 %}
-                            <td>{{ form.as_p }}</td>
+                            <td class="no-line">{{ form.as_p }}</td>
                         {% endif %}
     
                 {% endfor %}
                         </tr>   
-            </tbody>  
+            </tbody>
         </table>
     </div>
-        <button type="submit" class="btn btn-sm btn-outline-secondary">Save</button>
+        <div class="col-12 d-flex justify-content-center py-3">
+            <button type="submit" class="button">Save</button>
+        </div>
 </form>
 {% endblock %}

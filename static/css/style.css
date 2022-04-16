@@ -197,13 +197,13 @@ button:hover {
   border: 1px solid var(--rose-gold);
 }
 
-/* Style link in login/sign in form */
+/* Link in login/sign in form */
 a {
   color: var(--dark-gray);
   font-weight: bold;
 }
 
-a:hover {
+a:hover, .arrows:hover {
   color: var(--rose-gold)
 }
 
@@ -212,7 +212,7 @@ a:hover {
   font-size: 0.85rem;
 }
 
-/* Style date picker on planner page*/
+/* Date picker on planner page*/
 .choose-date label {
   display: none;
 }
@@ -242,7 +242,7 @@ a:hover {
   margin-left: 0.5rem;
 }
 
-/* Style exercises filter */
+/* Exercises filter */
 .filter-exercises label {
   font-size: 1.1rem;
 }
@@ -269,4 +269,63 @@ a:hover {
 .exercise-image {
   max-width: 100%;
   border: 1px solid var(--rose-gold);
+}
+
+/* Workout plan table */
+table, table input {
+  background-color: transparent;
+  text-align: center;
+}
+
+table input {
+  border-bottom: 2px solid var(--rose-gold);
+  padding-bottom: 0.5rem !important;
+  width: 100%;
+}
+
+table input:focus {
+  outline: none;
+  border-bottom: 2px dotted var(--dark-gray);
+  background-color: rgba(235, 207, 204, 0.3);
+  border-radius: 10px;
+}
+
+table p {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+/* Remove the bottom line from the table */
+.no-line {
+  border-style: none !important;
+}
+/* Add padding to middle line separating AM & PM */
+.separation-line {
+  padding-bottom: 2.5rem !important;
+}
+
+th, td {
+  text-align: center;
+}
+
+/* Edit, add & delete plan option buttons */
+.plan-buttons {
+  display: inline;
+  background-color: var(--rose-gold);
+  border-radius: 50%;
+}
+
+.plan-buttons a:hover,
+.arrows:hover {
+  transform: scale(1.3);
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+
+/* workout planner pages navigation arrows */
+.arrows {
+  display: inline-block;
+  line-height: 0;
 }
