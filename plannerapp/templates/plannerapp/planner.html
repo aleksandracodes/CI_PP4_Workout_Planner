@@ -7,7 +7,7 @@
             <h2 class="mb-4">Hi {{ request.user }}, welcome to your weekly workout planner</h2>
             <h5 class="mb-4">What would you like to do?</h5>
             <a href="{% url 'view_plans' %}"><button type="button" class="button">View my current workout plan</button></a>
-            <a href="{% url 'choose_date' %}"><button type="button" class="button ms-4">Add a new plan</button></a>
+            <a href="{% url 'choose_date' %}"><button type="button" class="button ms-4 space-button">Add a new plan</button></a>
             
         {% else %}
         
@@ -15,7 +15,8 @@
             <p>Here will be an example of the planner and instructions how to fill it in.</p>
             <br/>
             <p>To create your plan:</p>
-            <a href="{% url 'login' %}"><button type="button" class="button">Log in</button></a> or 
+            <a href="{% url 'login' %}"><button type="button" class="button">Log in</button></a> 
+            <span class="mx-2">or</span> 
             <a href="{% url 'register' %}"><button type="button" class="button">Sign up</button></a>
             <br/>
 
