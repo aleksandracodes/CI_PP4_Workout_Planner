@@ -362,3 +362,36 @@ th, td {
     margin-left: 0 !important;
   }
 }
+
+@media all and (max-width: 992px) {
+  .filter-exercises input {
+    margin-top: 1rem;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .filter-exercises label:nth-child(3) {
+    margin-left: 1rem !important;
+  }
+}
+
+/* Style filter buttons for  */
+@media all and (max-width: 502px) {
+  .filter-exercises label,
+  .filter-exercises label:nth-child(3) {
+    margin-left: 0 !important;
+    padding-top: 0.5rem;
+    display: block;
+    font-size: 0.9rem;
+  }
+
+  .lead {
+    margin-bottom: 0 !important;
+  }
+
+  .filter-exercises input,
+  .filter-exercises select {
+    text-align: center;
+    margin-top: 0 !important;
+  }
+}
