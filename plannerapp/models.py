@@ -3,6 +3,7 @@
 # 3rd party:
 from django.db import models
 from django.contrib.auth.models import User
+from datetime import datetime
 
 
 class WorkoutTime(models.Model):
@@ -24,7 +25,7 @@ class WorkoutPlan(models.Model):
         ordering = ['first_day']
         
     def __str__(self):
-        return 'workoutplan for {}'.format(self.first_day)
+        return datetime.strptime(format(self.first_day), '%Y-%M-%d').strftime('%m/%d/%Y')
 
 
 class Workout(models.Model):

@@ -329,3 +329,12 @@ th, td {
   display: inline-block;
   line-height: 0;
 }
+
+/* change display of the table in view_plans page */
+.space-out {
+  padding-bottom: 1rem !important;
+}
+
+.right-border {
+  border-right: 1px solid var(--light-gray) !important;
+}

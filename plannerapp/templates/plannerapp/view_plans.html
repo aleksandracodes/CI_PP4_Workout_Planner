@@ -51,33 +51,33 @@
                     {% for plan in plans %}
                         {% if forloop.counter == 1 %}
                             <tr>
-                                <th scope="row" rowspan="2">AM</th>
+                                <th scope="row" rowspan="2" class="right-border">AM</th>
                         {% endif %}
                             {% if forloop.counter >= 1 and forloop.counter <= 7 %}
-                                <td class="border-0">{{ plan }}</td>
+                                <td class="border-0 right-border">{{ plan }}</td>
                             {% endif %}
                         {% if forloop.counter == 8 %}
                             </tr>
                             <tr>
                         {% endif %}
                             {% if forloop.counter >= 8 and forloop.counter <= 14 %}
-                                <td class="separation-line">{{ plan }}</td>
+                                <td class="space-out right-border">{{ plan }}</td>
                             {% endif %}
 
                         {% if forloop.counter == 15 %}
                             </tr>
                             <tr>
-                            <th scope="row" class="no-line" rowspan="2">PM</th>
+                            <th scope="row" class="no-line right-border" rowspan="2">PM</th>
                         {% endif %}
                             {% if forloop.counter >= 15 and forloop.counter <= 21 %}
-                                <td class="border-0">{{ plan }}</td>
+                                <td class="border-0 right-border">{{ plan }}</td>
                             {% endif %}
                         {% if forloop.counter == 21 %}
                             </tr>
                             <tr>
                         {% endif %}
                             {% if forloop.counter > 21 and forloop.counter <= 28 %}
-                                <td class="no-line">{{ plan }}</td>
+                                <td class="no-line right-border">{{ plan }}</td>
                             {% endif %}
 
                     {% endfor %}
