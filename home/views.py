@@ -1,4 +1,5 @@
 # Imports
+from plannerapp.models import WorkoutPlan, Workout
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # 3rd party:
 from django.shortcuts import render, redirect
@@ -14,7 +15,19 @@ def userProfile(request, pk):
     A view to display user profile
     """
     user = User.objects.get(username=pk)
-    return render(request, 'home/profile.html', {'user': user})
+    
+    if request.user == user:
+    # ALL plans for all users
+        plans_number = WorkoutPlan.objects.all().count
+        first_plan = WorkoutPlan.objects.first()
+        last_plan = WorkoutPlan.objects.last()
+
+        context = {'user': user, 'plans_number':plans_number, 'first_plan':first_plan, 'last_plan':last_plan}
+        return render(request, 'home/profile.html', context)
+    
+    else:
+        messages.error(request, "You don't have access to other user's details")
+        return redirect('home')
 
 
 def loginPage(request):
