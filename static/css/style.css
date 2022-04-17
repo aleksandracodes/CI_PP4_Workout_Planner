@@ -335,6 +335,6 @@ th, td {
   padding-bottom: 1rem !important;
 }
 
-.right-border {
-  border-right: 1px solid var(--light-gray) !important;
+.left-border {
+  border-left: 1px solid var(--light-gray) !important;
 }
