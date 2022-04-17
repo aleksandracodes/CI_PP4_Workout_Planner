@@ -27,7 +27,7 @@
     line-height: 1.7;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    background: url("/static/images/background.jpg") no-repeat center fixed;
+    background: url("https://res.cloudinary.com/dgcydxlev/image/upload/v1650209937/background_utvjy5.jpg") no-repeat center fixed;
     background-size: cover;
     height: 100vh;
 }
