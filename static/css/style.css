@@ -395,3 +395,16 @@ th, td {
     margin-top: 0 !important;
   }
 }
+
+/* Collapsible exercise filters for smaller size screens */
+@media (max-width: 502px) {
+  .show-filters-big {
+      display: none;
+  }
+}
+
+@media (min-width: 502px) {
+  .hide-div {
+      display: none;
+  }
+}

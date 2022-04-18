@@ -2,23 +2,36 @@
 
 {% block content %}
 
-    <section class="py-md-3 text-center container">
+    <section class="py-3 text-center container">
         <div class="row py-lg-3">
             <div class="col-lg-6 col-md-8 mx-auto">
                 <h1 class="fw-light">Exercises</h1>
                 <p class="lead text-muted">Get inspired...</p>
                 <br/>                
             </div>
-            <div class="filter-exercises">
-                <form method="GET">
-                        {{ filter.form }}
-                    
-                    <div class="py-4">
-                        <button type="submit" class="button">Search</button>
-                        <a href="{% url 'exercises' %}"> <button class="button ms-3">Clear</button></a>
-                    </div>
-                </form>
-            </div> 
+
+            <a href="#"><div class="expand hide-div"><button class="button mb-3">Find an exercise</button></div></a>
+                <div class="filter-exercises show-filters-small">
+                    <form method="GET">
+                            {{ filter.form }}
+                        
+                        <div class="group-search-buttons py-4">
+                            <button type="submit" class="button">Search</button>
+                            <a href="{% url 'exercises' %}"><button class="button ms-3">Clear</button></a>
+                        </div>
+                    </form>
+                </div>
+            
+                <div class="filter-exercises show-filters-big">
+                    <form method="GET">
+                            {{ filter.form }}
+                        
+                        <div class="group-search-buttons py-4">
+                            <button type="submit" class="button">Search</button>
+                            <a href="{% url 'exercises' %}"> <button class="button ms-3">Clear</button></a>
+                        </div>
+                    </form>
+                </div>
         </div>
     </section>
 
