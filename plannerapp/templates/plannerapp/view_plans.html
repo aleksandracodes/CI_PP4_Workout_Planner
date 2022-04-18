@@ -67,7 +67,7 @@
                         {% if forloop.counter == 15 %}
                             </tr>
                             <tr>
-                            <th scope="row" class="no-line" rowspan="2">PM</th>
+                            <th scope="row" rowspan="2">PM</th>
                         {% endif %}
                             {% if forloop.counter >= 15 and forloop.counter <= 21 %}
                                 <td class="border-0 left-border">{{ plan }}</td>
@@ -77,7 +77,7 @@
                             <tr>
                         {% endif %}
                             {% if forloop.counter > 21 and forloop.counter <= 28 %}
-                                <td class="no-line left-border">{{ plan }}</td>
+                                <td class="left-border">{{ plan }}</td>
                             {% endif %}
 
                     {% endfor %}
