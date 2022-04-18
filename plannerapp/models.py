@@ -25,7 +25,7 @@ class WorkoutPlan(models.Model):
         ordering = ['first_day']
         
     def __str__(self):
-        return datetime.strptime(format(self.first_day), '%Y-%M-%d').strftime('%m/%d/%Y')
+        return datetime.strptime(format(self.first_day), '%Y-%M-%d').strftime('%d/%M/%Y')
 
 
 class Workout(models.Model):
