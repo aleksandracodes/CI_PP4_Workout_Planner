@@ -7,6 +7,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
+from django.core.mail import send_mail
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -95,3 +96,26 @@ def home(request):
     A view to display home page
     """
     return render(request, 'home/index.html')
+
+
+def contact(request):
+    if request.method == "POST":
+        message = request.POST['message']
+        message_name = request.POST['message-name']
+        message_email = request.POST['message-email']
+
+        
+        send_mail(
+            'Message from ' + message_name + ' (' + message_email + ')', # email subject
+            message, # message
+            message_email, # from email
+            ['aleksandracoding@gmail.com'], # to email
+        )
+        
+        context = {
+            'message_name':message_name,
+        }
+        return render(request, 'home/contact.html', context)
+    
+    else:
+        return render(request, 'home/contact.html', {})
