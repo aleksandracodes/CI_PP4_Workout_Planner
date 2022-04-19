@@ -15,7 +15,7 @@ class ExercisesView(ListView):
     A class view to show all exercises list
     """
     model = Exercise
-    template_name = "exercises/exercises-list.html"
+    template_name = "exercises/exercises_list.html"
 
 
     def get_context_data(self, **kwargs):
