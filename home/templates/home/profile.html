@@ -6,12 +6,17 @@
             <div class="col-12 col-md-8 col-lg-6 border py-3">
                 <h3 class="pb-4">Your profile details:</h3>
                 <p>Username: {{ user.username }}</p>
-                <p>You currently have {{ plans_number }} wourkout plans created.</p>
-                <p>Your first workout is planned for: {{ first_plan }}</p>
-                <p>Your last workout is planned for: {{ last_plan }}</p>
-            
+                
+                {% if plans_number == 1 %}
+                    <p>You currently have {{ plans_number }} wourkout planned for {{ first_plan }}</p>
+                {% else %}
+                    <p>You currently have {{ plans_number }} wourkout plans created.</p>
+                    <p>Your first workout is planned for: {{ first_plan }}</p>
+                    <p>Your last workout is planned for: {{ last_plan }}</p>
+                {% endif %}
+
             <div class="text-center">
-                <a href="#deleteModal" data-bs-toggle="modal" data-bs-target="#deleteModal"><button type="submit" class="button mt-3">Delete <i class="fa-regular fa-trash-can"></i></button></a>
+                <a href="#deleteModal" data-bs-toggle="modal" data-bs-target="#deleteModal"><button type="submit" class="button mt-3">Delete profile <i class="fa-regular fa-trash-can"></i></button></a>
             </div>
         </div>
     </div>

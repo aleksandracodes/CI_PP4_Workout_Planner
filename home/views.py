@@ -84,12 +84,12 @@ def userProfile(request, pk):
     A view to display user profile
     """
     user = User.objects.get(username=pk)
+    print(user)
     
     if request.user == user:
-    # ALL plans for all users
-        plans_number = WorkoutPlan.objects.all().count
-        first_plan = WorkoutPlan.objects.first()
-        last_plan = WorkoutPlan.objects.last()
+        plans_number = WorkoutPlan.objects.filter(user=user).count
+        first_plan = WorkoutPlan.objects.filter(user=user).first()
+        last_plan = WorkoutPlan.objects.filter(user=user).last()
 
         context = {'user': user, 'plans_number':plans_number, 'first_plan':first_plan, 'last_plan':last_plan}
         return render(request, 'home/profile.html', context)
