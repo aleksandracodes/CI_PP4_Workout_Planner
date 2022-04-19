@@ -8,27 +8,15 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.core.mail import send_mail
+from django.views.generic import View
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-def userProfile(request, pk):
+def home(request):
     """
-    A view to display user profile
+    A view to display home page
     """
-    user = User.objects.get(username=pk)
-    
-    if request.user == user:
-    # ALL plans for all users
-        plans_number = WorkoutPlan.objects.all().count
-        first_plan = WorkoutPlan.objects.first()
-        last_plan = WorkoutPlan.objects.last()
-
-        context = {'user': user, 'plans_number':plans_number, 'first_plan':first_plan, 'last_plan':last_plan}
-        return render(request, 'home/profile.html', context)
-    
-    else:
-        messages.error(request, "You don't have access to other user's details")
-        return redirect('home')
+    return render(request, 'home/index.html')
 
 
 def loginPage(request):
@@ -91,11 +79,36 @@ def registerPage(request):
     return render(request, 'home/login_register.html', {'form': form})
 
 
-def home(request):
+def userProfile(request, pk):
     """
-    A view to display home page
+    A view to display user profile
     """
-    return render(request, 'home/index.html')
+    user = User.objects.get(username=pk)
+    
+    if request.user == user:
+    # ALL plans for all users
+        plans_number = WorkoutPlan.objects.all().count
+        first_plan = WorkoutPlan.objects.first()
+        last_plan = WorkoutPlan.objects.last()
+
+        context = {'user': user, 'plans_number':plans_number, 'first_plan':first_plan, 'last_plan':last_plan}
+        return render(request, 'home/profile.html', context)
+    
+    else:
+        messages.error(request, "You don't have access to other user's details")
+        return redirect('home')
+
+
+def deleteUser(request, pk):
+    """
+    A view for deleting existing user
+    """
+    user = User.objects.get(username=pk)
+
+    if request.method == "POST":
+        user.delete()
+        messages.info(request, "Sorry to see you go. Your user has been deleted.")
+        return redirect('home')
 
 
 def contact(request):

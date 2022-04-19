@@ -9,7 +9,32 @@
                 <p>You currently have {{ plans_number }} wourkout plans created.</p>
                 <p>Your first workout is planned for: {{ first_plan }}</p>
                 <p>Your last workout is planned for: {{ last_plan }}</p>
+            
+            <div class="text-center">
+                <a href="#deleteModal" data-bs-toggle="modal" data-bs-target="#deleteModal"><button type="submit" class="button mt-3">Delete <i class="fa-regular fa-trash-can"></i></button></a>
             </div>
         </div>
     </div>
+
+
+    <!-- Modal for deleting the user -->
+    <div class="modal fade py-5" id="deleteModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form method="post" action="{% url 'delete_user' user %}">
+                    {% csrf_token %}
+                    <div class="modal-body py-4 d-flex justify-content-center">
+                        <h5>Are you sure you want to delete your user?<br>This action is irreversible!</h5>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
 {% endblock content %}
