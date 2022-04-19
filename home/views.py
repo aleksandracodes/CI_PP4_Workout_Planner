@@ -99,12 +99,16 @@ def home(request):
 
 
 def contact(request):
+    
     if request.method == "POST":
         message = request.POST['message']
-        message_name = request.POST['message-name']
         message_email = request.POST['message-email']
-
         
+        if request.user.is_authenticated:
+            message_name = request.user.username
+        else:
+            message_name = request.POST['message-name']
+
         send_mail(
             'Message from ' + message_name + ' (' + message_email + ')', # email subject
             message, # message

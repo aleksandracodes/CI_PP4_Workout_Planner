@@ -18,9 +18,15 @@
                             <form method="POST" action="">
                                 {% csrf_token %}
                                 <div class="row">
-                                    <div class="col-lg-6 pb-3">
-                                        <input type="text" name="message-name" class="form-control mb-30" placeholder="Your name" required>
-                                    </div>
+                                    {% if request.user.is_authenticated %}
+                                        <div class="col-lg-6 pb-3">
+                                            <input type="text" name="message-name" class="form-control mb-30" placeholder={{ user.username }} disabled></p>
+                                        </div>
+                                    {% else %}
+                                        <div class="col-lg-6 pb-3">
+                                            <input type="text" name="message-name" class="form-control mb-30" placeholder="Your name" required>
+                                        </div>
+                                    {% endif %}
                                     <div class="col-lg-6 pb-3">
                                         <input type="email" name="message-email" class="form-control mb-30" placeholder="Your email" required>
                                     </div>
