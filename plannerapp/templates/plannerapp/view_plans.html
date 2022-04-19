@@ -117,10 +117,12 @@
     {% endfor %}
 
 {% else %}
-<div class="col-12 d-flex justify-content-center py-3">
-    <p>You have no saved plans.</p>
-    <a href="{% url 'choose-date' %}"><button class="button">Create a plan</button></a>
-</div>
+
+    <div class="py-3 container text-center">
+            <h5 class="mb-4">You have no saved plans</h5>
+            <a href="{% url 'choose_date' %}"><button class="button">Create a plan</button></a>
+
+    </div>
 {% endif %}
 
 {% endblock %}

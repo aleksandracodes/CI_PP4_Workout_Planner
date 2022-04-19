@@ -8,7 +8,6 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.core.mail import send_mail
-from django.views.generic import View
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -26,11 +25,11 @@ def loginPage(request):
     page ='login'
     if request.user.is_authenticated:
         return redirect('home')
-    
+
     if request.method =='POST':
         username = request.POST.get('username').capitalize()
         password = request.POST.get('password')
-        
+            
         try:
             user = User.objects.get(username=username)
         except:
@@ -63,7 +62,7 @@ def registerPage(request):
     A view to register new user
     """
     form = UserCreationForm()
-    
+
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
@@ -73,6 +72,7 @@ def registerPage(request):
             login(request, user)
             messages.success(request, "Registration has been successful.")
             return redirect('planner_page')
+        
         else:
             messages.error(request, 'An error occurred during registration.')   
     
