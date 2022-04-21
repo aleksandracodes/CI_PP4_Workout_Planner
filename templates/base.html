@@ -46,7 +46,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="{% url 'profile' user.username%}">Profile</a></li>
-                  <li><a class="dropdown-item" href="{% url 'logout' %}">Log out</a></li>
+                  <li><a class="dropdown-item" href="{% url 'account_logout' %}">Log out</a></li>
 
                 </ul>
               </li>
@@ -58,8 +58,8 @@
                   Log in
                 </a>
                 <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="{% url 'register' %}">Register</a></li>
-                  <li><a class="dropdown-item" href="{% url 'login' %}">Log in</a></li>
+                  <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
+                  <li><a class="dropdown-item" href="{% url 'account_login' %}">Log in</a></li>
                 </ul>
               </li>
 

@@ -29,7 +29,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['ci-pp4-workout-planner.herokuapp.com', '127.0.0.1']
 
@@ -42,15 +42,21 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'django.contrib.staticfiles',
     'cloudinary_storage',
     'cloudinary',
     'django_summernote',
     'django_filters',
+    'django_forms_bootstrap',
     'plannerapp',
     'home',
     'exercises',
 ]
+
 
 MESSAGE_TAGS = {
         messages.DEBUG: 'alert-info',
@@ -124,6 +130,12 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+SITE_ID = 1
+
+ACCOUNT_USERNAME_MIN_LENGTH = 4
+LOGIN_URL = '/accounts/login'
+LOGIN_REDIRECT_URL = '/'
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -153,11 +165,11 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # Contact page email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'aleksandracoding@gmail.com'
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = '587'
 EMAIL_USE_TLS = True
-
+DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

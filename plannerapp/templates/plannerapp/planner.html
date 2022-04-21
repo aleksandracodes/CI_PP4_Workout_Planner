@@ -1,9 +1,9 @@
-{% extends 'home/base.html' %}
+{% extends "base.html" %}
 
 {% block content %}
     <div class="py-3 text-center">
             
-        {% if request.user.is_authenticated %}
+        {% if user.is_authenticated %}
             <h2 class="mb-4">Hi {{ request.user }}, welcome to your weekly workout planner</h2>
             <h5 class="mb-4">What would you like to do?</h5>
             <a href="{% url 'view_plans' %}"><button type="button" class="button">View my current workout plan</button></a>
@@ -12,9 +12,9 @@
         {% else %}
         
             <h3 class="mb-4">To create your plan:</h3>
-            <a href="{% url 'login' %}"><button type="button" class="button">Log in</button></a> 
+            <a href="{% url 'account_login' %}"><button type="button" class="button">Log in</button></a> 
             <span class="mx-2">or</span> 
-            <a href="{% url 'register' %}"><button type="button" class="button">Sign up</button></a>
+            <a href="{% url 'account_signup' %}"><button type="button" class="button">Sign up</button></a>
             <hr>
             <h3>How does it work?</h3>
             <p>For each day of the week write what type of training you'd like to do in the morning or evening.<br>
