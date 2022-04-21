@@ -134,6 +134,8 @@ SITE_ID = 1
 
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 ACCOUNT_PRESERVE_USERNAME_CASING = True
+ACCOUNT_EMAIL_REQUIRED = False
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 LOGIN_URL = '/accounts/login'
 LOGIN_REDIRECT_URL = '/planner'
 
@@ -170,7 +172,6 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = '587'
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
