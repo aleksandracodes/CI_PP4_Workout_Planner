@@ -1,15 +1,12 @@
 # Imports
-from plannerapp.models import WorkoutPlan, Workout
+from plannerapp.models import WorkoutPlan
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # 3rd party:
 from django.contrib import messages
-from django.contrib.auth import forms
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.forms import UserCreationForm  
-
 from django.core.mail import send_mail
+import os
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -52,21 +49,25 @@ def deleteUser(request, pk):
 
 
 def contact(request):
-    
+    """
+    A view to display user contact form
+    """
     if request.method == "POST":
         message = request.POST['message']
-        message_email = request.POST['message-email']
         
         if request.user.is_authenticated:
             message_name = request.user.username
+            message_email = request.user.email
+
         else:
             message_name = request.POST['message-name']
+            message_email = request.POST['message-email']
 
         send_mail(
             'Message from ' + message_name + ' (' + message_email + ')', # email subject
             message, # message
             message_email, # from email
-            ['aleksandracoding@gmail.com'], # to email
+            [os.environ.get('EMAIL_HOST_USER')], # to email
         )
         
         context = {
@@ -76,3 +77,4 @@ def contact(request):
     
     else:
         return render(request, 'home/contact.html', {})
+    

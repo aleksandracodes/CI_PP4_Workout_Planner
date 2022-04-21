@@ -20,20 +20,28 @@
                                 <div class="row">
                                     {% if request.user.is_authenticated %}
                                         <div class="col-lg-6 pb-3">
-                                            <input type="text" name="message-name" class="form-control mb-30" placeholder={{ user.username }} disabled></p>
+                                            <input type="text" name="message-name" class="form-control" placeholder= "{{ user.username }}" disabled/>
                                         </div>
+                                        {% if request.user.email %}
+                                        <div class="col-lg-6 pb-3">
+                                            <input type="email" name="message-email" class="form-control" placeholder= "{{ user.email }}" disabled />
+                                        </div>
+                                        {% else %}
+                                        <div class="col-lg-6 pb-3">
+                                            <input type="email" name="message-email" class="form-control" placeholder="Your email" required/>
+                                        </div>
+                                        {% endif %}
                                     {% else %}
                                         <div class="col-lg-6 pb-3">
-                                            <input type="text" name="message-name" class="form-control mb-30" placeholder="Your name" required>
+                                            <input type="text" name="message-name" class="form-control" placeholder="Your name" required/>
                                         </div>
-                                    {% endif %}
-                                    <div class="col-lg-6 pb-3">
-                                        <input type="email" name="message-email" class="form-control mb-30" placeholder="Your email" required>
-                                    </div>
+                                        <div class="col-lg-6 pb-3">
+                                            <input type="email" name="message-email" class="form-control" placeholder="Your email" required/>
+                                        </div>
+                                    {% endif %} 
                                     <div class="col-12">
                                         <textarea name="message" class="form-control" rows="7" placeholder="Your message" required></textarea>
                                     </div>
-
                                     <div class="col-12 text-center pt-3">
                                         <button type="submit" class="button">Send message <i class="fa-solid fa-envelope"></i></button>
                                     </div>
