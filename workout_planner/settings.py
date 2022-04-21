@@ -133,8 +133,9 @@ AUTH_PASSWORD_VALIDATORS = [
 SITE_ID = 1
 
 ACCOUNT_USERNAME_MIN_LENGTH = 4
+ACCOUNT_PRESERVE_USERNAME_CASING = True
 LOGIN_URL = '/accounts/login'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/planner'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/

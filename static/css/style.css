@@ -211,6 +211,10 @@ button:hover {
   border: 1px solid var(--rose-gold);
 }
 
+.control-label {
+  margin-top: 1.5rem;
+}
+
 /* Link in login/sign in form */
 a {
   color: var(--dark-gray);
