@@ -312,6 +312,7 @@ table p {
   margin-bottom: 0;
 }
 
+
 /* Remove the bottom line from the table */
 .no-line {
   border-style: none !important;
@@ -341,13 +342,13 @@ th, td {
   box-shadow: none;
 }
 
-/* workout planner pages navigation arrows */
+/* Workout planner pages navigation arrows */
 .arrows {
   display: inline-block;
   line-height: 0;
 }
 
-/* change display of the table in view_plans page */
+/* Change display of the table in view_plans page */
 .space-out {
   padding-bottom: 1rem !important;
 }
@@ -362,25 +363,31 @@ hr {
 }
 
 
-
 /* ----- Media Queries ----- */
-
-@media all and (max-width: 480px) {
-  .space-button {
-    margin-top: 1rem;
-    margin-left: 0 !important;
-  }
-}
 
 @media all and (max-width: 992px) {
   .filter-exercises input {
     margin-top: 1rem;
-  }
+  }  
 }
 
 @media all and (max-width: 768px) {
   .filter-exercises label:nth-child(3) {
     margin-left: 1rem !important;
+  }
+  .current-workout-date {
+    font-size: 1.1rem;
+  }
+
+  /* Adjust table display */
+  .table td {
+    white-space: nowrap;
+  }
+
+  .table th:first-child {
+    position: sticky;
+    left: 0;
+    background-color: white;
   }
 }
 
@@ -415,5 +422,12 @@ hr {
 @media (min-width: 502px) {
   .hide-div {
       display: none;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .space-button {
+    margin-top: 1rem;
+    margin-left: 0 !important;
   }
 }

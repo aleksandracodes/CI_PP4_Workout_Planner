@@ -15,7 +15,7 @@
                 class="btn btn-link btn-floating btn-lg text-dark arrows"><i class="fa-solid fa-circle-arrow-left"></i></a></li>
             {% endif %}
 
-            <h4 class="my-1">workout plan from: {{ workoutplan.first_day | date:"jS M" }} - 
+            <h4 class="my-2 mx-2 current-workout-date">workout plan from: {{ workoutplan.first_day | date:"jS M" }} - 
                 {{ workoutplan.plan.all.6.day  | date:"jS M Y" }}</h4>
 
             {% if page_obj.has_next %}
@@ -36,7 +36,7 @@
             <table class="table align-middle">
             <thead>
                 <tr>
-                    <td></td>
+                    <th></th>
                     <th>{{ workoutplan.first_day | date:"l" }}</th>
                     <th>{{ plans.1.day | date:"l" }}</th>
                     <th>{{ plans.2.day | date:"l" }}</th>
