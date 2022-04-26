@@ -1,50 +1,56 @@
 {% extends "base.html" %}
-
 {% block content %}
 
-    <section class="py-3 text-center container">
-        <div class="row py-lg-3">
-            <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light">Exercises</h1>
-                <p class="lead text-muted">Get inspired...</p>
-                <br/>                
-            </div>
+{% load exercises_tags %}
 
-            <a href="#"><div class="expand hide-div"><button class="button mb-3">Find an exercise</button></div></a>
-                <div class="filter-exercises show-filters-small">
-                    <form method="GET">
-                            {{ filter.form }}
-                        
-                        <div class="group-search-buttons py-4">
-                            <button type="submit" class="button">Search</button>
-                            <a href="{% url 'exercises' %}"><button class="button ms-3">Clear</button></a>
-                        </div>
-                    </form>
-                </div>
-            
-                <div class="filter-exercises show-filters-big">
-                    <form method="GET">
-                            {{ filter.form }}
-                        
-                        <div class="group-search-buttons py-4">
-                            <button type="submit" class="button">Search</button>
-                            <a href="{% url 'exercises' %}"> <button class="button ms-3">Clear</button></a>
-                        </div>
-                    </form>
-                </div>
+ <section class="py-3 text-center container">
+    <div class="row py-lg-3">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Exercises</h1>
+            <p class="lead text-muted">Get inspired...</p>
+            <br/>                
         </div>
-    </section>
+
+
+        <!-- Collapsible filters option on smaller screens-->
+        <a href="#"><div class="expand hide-div"><button class="button mb-3">Find an exercise</button></div></a>
+        <div class="filter-exercises show-filters-small">
+            <form method="GET">
+                {{ filtered_exercises.form }}
+                
+                <div class="group-search-buttons py-4">
+                    <button type="submit" class="button">Search</button>
+                    <a href="{% url 'exercises' %}"><button class="button ms-3">Clear</button></a>
+                </div>
+            </form>
+        </div>
+
+        <!-- Filters which will be shown on the a bigger screen-->
+        <div class="filter-exercises show-filters-big">
+            <form method="GET">
+                {{ filtered_exercises.form }}
+                
+                <div class="group-search-buttons py-4">
+                    <button type="submit" class="button">Search</button>
+                    <a href="{% url 'exercises' %}"> <button class="button ms-3">Clear</button></a>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
 
     <div class="card py-5 bg-light">
         <div class="container">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
             
             <!-- Exercise entries -->
             <div class="col">
-                {% for exercise in filter.qs %}    
-                 
+                {% for exercise in exercise_page_obj %}
+
                     <div class="card mb-3 h-100">
-                            <img src=" {{ exercise.image.url }} " class="card-img-top" alt="Image of {{ exercise.name }} exercise" style="max-width: 100%;">
+                            <img src=" {{ exercise.image.url }} " class="card-img-top" alt="Image of {{ exercise.name }} exercise.">
                             <div class="card-body">
                                 <h5 class="card-title">{{ exercise }}</h5>
                                 <p class="card-text">Body part: {{ exercise.body_part}} <br/>
@@ -64,6 +70,25 @@
                 {% endfor %}
         </div>
     </div>
-</div>
+        <!-- Exercises pagination -->   
+        <div class="pagination justify-content-center pt-3">
+            <span class="step-links">
+                {% if exercise_page_obj.has_previous %}
+                    <a href="{% my_url 1 'page' request.GET.urlencode %}">&laquo; First</a>
+                    <a href="{% my_url exercise_page_obj.previous_page_number 'page' request.GET.urlencode %}">Previous </a>
+                {% endif %}
 
+                <span class="current mx-1">
+                    Page {{ exercise_page_obj.number }} of {{ exercise_page_obj.paginator.num_pages }}
+                </span>
+
+                {% if exercise_page_obj.has_next %}
+                    <a href="{% my_url exercise_page_obj.next_page_number 'page' request.GET.urlencode %}">Next</a>
+                    <a href="{% my_url exercise_page_obj.paginator.num_pages 'page' request.GET.urlencode %}">Last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+
+</div>
 {% endblock %}
+

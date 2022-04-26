@@ -2,7 +2,8 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # 3rd party:
 from django.shortcuts import render
-from django.views.generic import ListView, View
+from django.views.generic import View
+from django.core.paginator import Paginator
 
 # Internal
 from .models import Exercise
@@ -10,21 +11,29 @@ from .filters import ExerciseFilter
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-class ExercisesView(ListView):
+def show_all_exercises_page(request):
     """
-    A class view to show all exercises list
+    A view to show all exercises with pagination
+    and continue pagination with filtered exercises
     """
-    model = Exercise
-    template_name = "exercises/exercises_list.html"
+    context = {}
+    
+    filtered_exercises = ExerciseFilter(
+        request.GET,
+        queryset = Exercise.objects.all()
+    )
 
+    context['filtered_exercises'] = filtered_exercises
 
-    def get_context_data(self, **kwargs):
-        """
-        A view to filter and search through exercises
-        """
-        context = super().get_context_data(**kwargs)
-        context['filter'] = ExerciseFilter(self.request.GET, queryset=self.get_queryset())
-        return context
+    paginated_filtered_exercises = Paginator(filtered_exercises.qs, 12)
+    
+    page_number = request.GET.get('page')
+    exercise_page_obj = paginated_filtered_exercises.get_page(page_number)
+    
+    context['exercise_page_obj'] = exercise_page_obj
+    context['all_exercises'] = Exercise.objects.all()
+    
+    return render(request, 'exercises/exercises_list.html', context)
 
 
 class SingleExercise(View):
