@@ -70,24 +70,42 @@
                 {% endfor %}
         </div>
     </div>
-        <!-- Exercises pagination -->   
-        <div class="pagination justify-content-center pt-3">
-            <span class="step-links">
-                {% if exercise_page_obj.has_previous %}
-                    <a href="{% my_url 1 'page' request.GET.urlencode %}">&laquo; First</a>
-                    <a href="{% my_url exercise_page_obj.previous_page_number 'page' request.GET.urlencode %}">Previous </a>
-                {% endif %}
 
-                <span class="current mx-1">
-                    Page {{ exercise_page_obj.number }} of {{ exercise_page_obj.paginator.num_pages }}
+    <!-- Exercises pagination -->   
+    <nav aria-label="Exercises navigation">
+        <ul class="pagination justify-content-center pt-3">
+          {% if exercise_page_obj.has_previous %}
+          <li class="page-item">
+            <a class="page-link" href="{% my_url exercise_page_obj.previous_page_number 'page' request.GET.urlencode %}">&laquo;</a>
+          </li>
+          {% else %}
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="True">&laquo;</a>
+            </li>
+          {% endif %}
+          {% for i in exercise_page_obj.paginator.page_range %}
+            {% if exercise_page_obj.number == i %}
+              <li class="page-item active" aria-current="page">
+                <span class="page-link">
+                  {{ i }}
+                  <span class="sr-only">(current)</span>
                 </span>
-
-                {% if exercise_page_obj.has_next %}
-                    <a href="{% my_url exercise_page_obj.next_page_number 'page' request.GET.urlencode %}">Next</a>
-                    <a href="{% my_url exercise_page_obj.paginator.num_pages 'page' request.GET.urlencode %}">Last &raquo;</a>
-                {% endif %}
-            </span>
-        </div>
+              </li>
+            {% else %}
+              <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+            {% endif %}
+          {% endfor %}
+          {% if exercise_page_obj.has_next %}
+            <li class="page-item">
+              <a class="page-link" href="{% my_url exercise_page_obj.next_page_number 'page' request.GET.urlencode %}">&raquo;</a>
+            </li>
+          {% else %}
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1" aria-disabled="True">&raquo;</a>
+            </li>
+          {% endif %}
+        </ul>
+      </nav>
 
 </div>
 {% endblock %}
