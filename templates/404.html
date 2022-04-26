@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <div class="text-center">
+            <h4 class="mb-2">404 error page</h4>
+            <h5>Ooops, this page has not been found</h5>
+            <div>
+                <img src="https://res.cloudinary.com/dgcydxlev/image/upload/v1650968675/404-page_msqfec.png" alt="404 page image - injured woman" style="max-width:80%;">
+            </div>
+            <a href="{% url 'home' %}"><button type="button" class="button">Go to the main page</button></a>
+    </div>
+{% endblock %}

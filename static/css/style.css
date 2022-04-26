@@ -375,6 +375,7 @@ hr {
   .filter-exercises label:nth-child(3) {
     margin-left: 1rem !important;
   }
+
   .current-workout-date {
     font-size: 1.1rem;
   }
