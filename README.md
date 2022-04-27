@@ -125,11 +125,11 @@ The Workout Planner is an application for creating weekly training rota which al
 
 The colour scheme was chosen to provide simple, neutral and fresh look. It was an intention to keep the website for all range of users and avoid colour stereotype typically found in the gyms and sports centres such as bright green or blue.
 
-These colours were used throughout all the pages in such a way to ensure adequate contrast and good user experience.
+These colours were used throughout all the pages in such a way as to ensure adequate contrast and good user experience.
 
 The pallet created using [Coolors.co](https://coolors.co/)
-<details><summary>See detail</summary>
-<img src="docs/Color-pallet-PP4.PNG">
+<details><summary>See colour pallet</summary>
+<img src="docs/Color-pallet-PP4.png">
 </details>
 
 ### Fonts
@@ -137,6 +137,28 @@ The pallet created using [Coolors.co](https://coolors.co/)
 Google Fonts were implemented on the website. Roboto with sans-serif as fallback was used thoughout the site to present the content in a clear and legible way.
 
 ### Structure
+
+Simplicity, clarity and ease of navigation between pages were the key aspects for design of this website's structure.
+
+At the top of the page there is a recognisable type of navigation bar with website name on the left side and the navigation links to the right which collapses to hamburger icon on smaller screen sizes. At the bottom of the page there is a footer with links to a contact page and developer's social media (opening in a separate tab/window).
+
+- The website consists of the following sections:
+  - Home page with an overview of the content and aim of the website.
+  - Planner page where a not logged-in user can see an example of the workout plan and choose to log in or register. Registered user can either view their workout plans or create a new one.
+  - Choose date screen where user can select the start date of their workout plan.
+  - Add plan page allowing user to create a plan.
+  - View plans page where user can see all their plans.
+  - Edit plan page where user can edit an existing plan.
+  - Delete plan allowing user to delete selected plan.
+  - Exercises list page with catalogue of exercises and a filter option to find a specific exercise.
+  - Exercise detail page where user can see a description of a chosen exercise.
+  - Login page for returning user to log in.
+  - Register page allowing a new user to sign up.
+  - Profile page where user can view details of their account and created plans and also delete their account.
+  - Logout page allowing user to log out of the website.
+  - Contact page with contact form which allows users to send an email to the developer and provide their feedback.
+  - 404 error page.
+
 
 ### Wireframes
 
