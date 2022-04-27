@@ -11,7 +11,7 @@ class BodyPart(models.Model):
     A class for the body part model
     """
     part = models.CharField(max_length=50, unique=True)
-    
+
     def __str__(self):
         """
         Returns the body part name string
@@ -24,7 +24,7 @@ class Type(models.Model):
     A class for the exercise type model
     """
     type = models.CharField(max_length=50, unique=True)
-    
+
     def __str__(self):
         """
         Returns the exercise type string
@@ -37,7 +37,7 @@ class Equipment(models.Model):
     A class for the equipment model
     """
     equipment = models.CharField(max_length=50, unique=True)
-    
+
     def __str__(self):
         """
         Returns the equipment type name string
@@ -50,7 +50,7 @@ class Level(models.Model):
     A class for the level model
     """
     level = models.CharField(max_length=50, unique=True)
-    
+
     def __str__(self):
         """
         Returns the level name string

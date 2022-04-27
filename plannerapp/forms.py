@@ -3,7 +3,7 @@
 # 3rd party:
 from django import forms
 
-#Internal:
+# Internal:
 from .models import WorkoutTime, WorkoutPlan, Workout
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

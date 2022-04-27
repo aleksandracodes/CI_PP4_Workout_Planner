@@ -4,6 +4,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 class WorkoutTime(models.Model):
@@ -23,9 +24,10 @@ class WorkoutPlan(models.Model):
 
     class Meta:
         ordering = ['first_day']
-        
+
     def __str__(self):
-        return datetime.strptime(format(self.first_day), '%Y-%M-%d').strftime('%d/%M/%Y')
+        return datetime.strptime(format(self.first_day),
+                                 '%Y-%M-%d').strftime('%d/%M/%Y')
 
 
 class Workout(models.Model):
@@ -47,6 +49,5 @@ class Workout(models.Model):
     )
     day = models.DateField()
 
-    
     def __str__(self):
         return self.workout_name

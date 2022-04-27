@@ -5,6 +5,7 @@ from django.contrib import admin
 
 # Internal:
 from .models import WorkoutTime, WorkoutPlan, Workout
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 @admin.register(WorkoutTime)
@@ -15,19 +16,19 @@ class WorkoutTimeAdmin(admin.ModelAdmin):
 @admin.register(WorkoutPlan)
 class WorkoutPlanAdmin(admin.ModelAdmin):
     list_display = (
-        'user', 
+        'user',
         'first_day',
         'id',
         )
     list_filter = ('user', 'first_day',)
-    
+
 
 @admin.register(Workout)
 class WorkoutAdmin(admin.ModelAdmin):
     list_display = (
-        'workout_name', 
-        'workout_time', 
-        'workout_plan', 
+        'workout_name',
+        'workout_time',
+        'workout_plan',
         'day',
     )
     list_filter = (
