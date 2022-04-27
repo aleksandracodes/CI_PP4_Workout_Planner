@@ -13,14 +13,14 @@
 
 
         <!-- Collapsible filters option on smaller screens-->
-        <a href="#"><div class="expand hide-div"><button class="button mb-3">Find an exercise</button></div></a>
+        <a href="#"><div class="expand hide-div"><button type="button" class="button mb-3">Find an exercise</button></div></a>
         <div class="filter-exercises show-filters-small">
             <form method="GET">
                 {{ filtered_exercises.form }}
                 
                 <div class="group-search-buttons py-4">
                     <button type="submit" class="button">Search</button>
-                    <a href="{% url 'exercises' %}"><button class="button ms-3">Clear</button></a>
+                    <a href="{% url 'exercises' %}"><button type="button" class="button ms-3">Clear</button></a>
                 </div>
             </form>
         </div>
