@@ -6,8 +6,13 @@
             <div class="col-12 col-md-8 col-lg-6 border py-3">
                 <h3 class="pb-4">Your profile details:</h3>
                 <p>Username: {{ user.username }}</p>
-                
-                {% if plans_number == 1 %}
+                {% if request.user.email %}
+                    <p>Email: {{ user.email }} </p>
+                {% endif %}
+
+                {% if plans_number == 0 %}
+                    <p>You have not created any plans yet.</p>
+                {% elif plans_number == 1 %}
                     <p>You currently have {{ plans_number }} wourkout planned for {{ first_plan }}</p>
                 {% else %}
                     <p>You currently have {{ plans_number }} wourkout plans created.</p>
@@ -20,7 +25,6 @@
             </div>
         </div>
     </div>
-
 
     <!-- Modal for deleting the user -->
     <div class="modal fade py-5" id="deleteModal" tabindex="-1" aria-hidden="true">
@@ -39,7 +43,5 @@
             </div>
         </div>
     </div>
-
-
 
 {% endblock content %}
