@@ -7,6 +7,7 @@ from django.views.generic import ListView, View
 from django.contrib import messages
 from django.forms import formset_factory
 from datetime import timedelta
+from django.db import IntegrityError
 
 # Internal:
 from .models import WorkoutPlan, WorkoutTime, Workout
@@ -40,16 +41,24 @@ class ChooseDate(View):
             user = request.user
             first_day = workout_plan_form.cleaned_data.get('first_day')
             workout_plan = WorkoutPlan(user=user, first_day=first_day,)
-            workout_plan.save()
 
-            # get workout plan ID
-            request.session['workout_plan.id'] = workout_plan.pk
-            return redirect('add_plan')
+            try:
+                workout_plan.save()
+                # get workout plan ID
+                request.session['workout_plan.id'] = workout_plan.pk
+                return redirect('add_plan')
+
+            except IntegrityError as e:
+                messages.error(request,
+                               'You already have a plan starting on this day.')
+                return render(request, 'plannerapp/choose_date.html',
+                              {'workout_plan_form': WorkoutPlanForm()})
 
         else:
             workout_plan_form = WorkoutPlanForm()
             context = {'workout_plan_form': workout_plan_form}
-        return render(request, 'plannerapp/planner.html', context)
+
+        return render(request, 'plannerapp/view_plans.html', context)
 
 
 class AddPlan(View):
@@ -124,7 +133,7 @@ class AddPlan(View):
                 workout.save()
                 field += 1
             messages.success(request, 'Your plan has been created.')
-            return redirect('planner_page')
+            return redirect('view_plans')
 
 
 class ViewPlans(generic.ListView):

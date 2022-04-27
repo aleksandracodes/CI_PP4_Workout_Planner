@@ -4,6 +4,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime
+from django.db.models import UniqueConstraint
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -24,6 +25,10 @@ class WorkoutPlan(models.Model):
 
     class Meta:
         ordering = ['first_day']
+        constraints = [
+            UniqueConstraint(fields=['user', 'first_day'],
+                             name='unique_start_date')
+        ]
 
     def __str__(self):
         return datetime.strptime(format(self.first_day),
