@@ -102,7 +102,7 @@ The Workout Planner is an application for creating weekly training rota which al
 6.	I want to delete my plan if no longer needed
 7.	I want to see feedback messages so that I know that my plan was created, edited or deleted
 8.	I want to be able to view previous plans to help me prepare the following week’s workout
-9.	I want to find inspiration for my workouts
+9.	I want to find inspiration for my workouts and be able to use search option to find a particular exercise
 10.	As a returning user, I want to log in to the app to see my current plans
 
 ### Site Owner
@@ -112,16 +112,29 @@ The Workout Planner is an application for creating weekly training rota which al
 14.	I want data entry to be validated on sign-up page
 15.	I want the user to come to a 404 error page instead of having to use the browser back button if they enter a URL that does not exist
 16.	I want user to be able to contact me and provide their feedback
-17.	I want my site to be fully responsive
+17.	I want user to receive feedback if their message in contact form has been sent.
+18.	I want my site to be fully responsive
+
 
 ##### Back to [top](#table-of-contents)
 
 
 ## Design
 
-### Colour
+### Colours
+
+The colour scheme was chosen to provide simple, neutral and fresh look. It was an intention to keep the website for all range of users and avoid colour stereotype typically found in the gyms and sports centres such as bright green or blue.
+
+These colours were used throughout all the pages in such a way to ensure adequate contrast and good user experience.
+
+The pallet created using [Coolors.co](https://coolors.co/)
+<details><summary>See detail</summary>
+<img src="docs/Color-pallet-PP4.PNG">
+</details>
 
 ### Fonts
+
+Google Fonts were implemented on the website. Roboto with sans-serif as fallback was used thoughout the site to present the content in a clear and legible way.
 
 ### Structure
 
