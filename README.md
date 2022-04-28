@@ -162,6 +162,15 @@ At the top of the page there is a recognisable type of navigation bar with websi
 
 ### Wireframes
 
+<details><summary>Big screens - laptop & desktop</summary>
+<img src="docs/wireframes/wireframes-desktop.png">
+</details>
+<details><summary>Medium screens - tablet</summary>
+<img src="docs/wireframes/wireframes-tablet.png">
+</details>
+<details><summary>Small screens - mobile</summary>
+<img src="docs/wireframes/wireframes-mobile.png">
+</details>
 
 ## Technologies Used
 
