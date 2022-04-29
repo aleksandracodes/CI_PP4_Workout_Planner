@@ -194,6 +194,7 @@ button,
   padding: 5px 25px;
   font-weight: bold;
   text-decoration: none;
+  display: inline-block;
 }
 
 button:hover, 
