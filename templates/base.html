@@ -1,36 +1,43 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Workout Planner is an app which allows you to prepare you own workout routine.">
-    <meta name="keywords" content="workout planner, workout, planner, workout tracker, exercise planner, exercises, exercise library">
-    <meta name="author" content="Aleksandra Haniok">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
-    <link rel="icon" type="image/xicon" href="{% static 'favicon/favicon.ico' %}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Workout Planner is an app which allows you to prepare you own workout routine.">
+  <meta name="keywords"
+    content="workout planner, workout, planner, workout tracker, exercise planner, exercises, exercise library">
+  <meta name="author" content="Aleksandra Haniok">
 
-    <title>Workout Planner</title>
-  </head>
-  <body>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <link rel="icon" type="image/xicon" href="{% static 'favicon/favicon.ico' %}">
+
+  <title>Workout Planner</title>
+</head>
+
+<body>
 
   <div id="page-container">
     <!-- Navigation bar-->
-    <nav class="navbar sticky-top navbar-expand-md navbar-light bg-light py-3 border-bottom"> 
+    <nav class="navbar sticky-top navbar-expand-md navbar-light bg-light py-3 border-bottom">
       <div class="container">
-          <div class="navbar-brand">
-              <img src="https://raw.githubusercontent.com/aleksandracodes/activelifestyle/main/img/dumbell.png" alt="Page dumbbell logo" width="35" height="35" class="d-inline-block align-bottom">
-              Workout Planner
-            </div>
-            <button class="navbar-toggler d-flex d-md-none flex-column justify-content-around collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="toggler-icon top-bar"></span>
-              <span class="toggler-icon middle-bar"></span>
-              <span class="toggler-icon bottom-bar"></span>
-            </button>
+        <div class="navbar-brand">
+          <img src="https://raw.githubusercontent.com/aleksandracodes/activelifestyle/main/img/dumbell.png"
+            alt="Page dumbbell logo" width="35" height="35" class="d-inline-block align-bottom">
+          Workout Planner
+        </div>
+        <button class="navbar-toggler d-flex d-md-none flex-column justify-content-around collapsed" type="button"
+          data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="toggler-icon top-bar"></span>
+          <span class="toggler-icon middle-bar"></span>
+          <span class="toggler-icon bottom-bar"></span>
+        </button>
         <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto text-center">
             <li class="nav-item">
@@ -45,79 +52,74 @@
 
             {% if request.user.is_authenticated %}
 
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  {{user.username }}
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="{% url 'profile' user.username%}">Profile</a></li>
-                  <li><a class="dropdown-item" href="{% url 'account_logout' %}">Log out</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                {{user.username }}
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{% url 'profile' user.username%}">Profile</a></li>
+                <li><a class="dropdown-item" href="{% url 'account_logout' %}">Log out</a></li>
 
-                </ul>
-              </li>
+              </ul>
+            </li>
 
             {% else %}
 
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Log in
-                </a>
-                <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
-                  <li><a class="dropdown-item" href="{% url 'account_login' %}">Log in</a></li>
-                </ul>
-              </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Log in
+              </a>
+              <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
+                <li><a class="dropdown-item" href="{% url 'account_login' %}">Log in</a></li>
+              </ul>
+            </li>
 
             {% endif %}
           </ul>
-          
+
         </div>
       </div>
     </nav>
 
     {% if messages %}
-      <div class="container">
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-                {% for message in messages %}
-                <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
-                    {{ message | safe }}
-                </div>
-                {% endfor %}
-            </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          {% for message in messages %}
+          <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+            {{ message | safe }}
+          </div>
+          {% endfor %}
         </div>
+      </div>
     </div>
     {% endif %}
 
     <div id="content-wrap">
-
       {% block content %}
-
       {% endblock %}
-
     </div>
 
     <footer class="text-center text-white">
       <div class="container">
         <!-- Social media icons -->
         <div class="my-2">
-          <a class="btn btn-link btn-floating btn-lg text-dark m-1"
-             href="{% url 'contact' %}" role="button"
-             aria-label="Contact Us"><i class="far fa-envelope"></i></a>
-          
-          <a class="btn btn-link btn-floating btn-lg text-dark m-1"
-             href="https://www.linkedin.com/in/aleksandrahaniok/"
-             role="button" target="_blank"
-             aria-label="Visit us on LinkedIn (opens in new tab)"><i class="fab fa-linkedin"></i></a>
+          <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="{% url 'contact' %}" role="button"
+            aria-label="Contact Us"><i class="far fa-envelope"></i></a>
+
+          <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.linkedin.com/in/aleksandrahaniok/"
+            role="button" target="_blank" aria-label="Visit us on LinkedIn (opens in new tab)"><i
+              class="fab fa-linkedin"></i></a>
 
           <a class="btn btn-link btn-floating btn-lg text-dark m-1"
-             href="https://github.com/aleksandracodes/CI_PP4_Workout_Planner"
-             role="button" target="_blank" 
-             aria-label="Check the website GitHub page"><i class="fab fa-github"></i></a>
+            href="https://github.com/aleksandracodes/CI_PP4_Workout_Planner" role="button" target="_blank"
+            aria-label="Check the website GitHub page"><i class="fab fa-github"></i></a>
         </div>
-        
       </div>
-    
+
       <!-- Copyright -->
       <div class="text-center text-dark p-2 copyright">
         © 2022 Copyright: Aleksandra H.
@@ -125,19 +127,20 @@
       <!-- Copyright -->
     </footer>
   </div>
-</div>
 
-    <!-- Font Awesome script -->
-    <script src="https://kit.fontawesome.com/b75c116a85.js" crossorigin="anonymous"></script>
-    
-    <!-- Bootstrap v.5.1.3 JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <!-- Font Awesome script -->
+  <script src="https://kit.fontawesome.com/b75c116a85.js" crossorigin="anonymous"></script>
 
-    <!-- jQuery-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    
-    <!-- Script-->
-    <script src="{% static 'script/script.js' %}"></script>
+  <!-- Bootstrap v.5.1.3 JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+  </script>
 
-  </body>
+  <!-- jQuery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!-- Script-->
+  <script src="{% static 'script/script.js' %}"></script>
+
+</body>
 </html>
