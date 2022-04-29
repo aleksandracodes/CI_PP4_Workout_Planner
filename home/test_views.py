@@ -3,6 +3,7 @@
 # 3rd party:
 from django.test import TestCase
 from django.contrib.auth.models import User
+from django.core import mail
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 class TestViews(TestCase):
@@ -40,3 +41,40 @@ class TestProfileView(TestCase):
         response = self.client.get('/profile/test_user/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'home/profile.html')
+
+    def test_delete_user(self):
+        """
+        Delete test user
+        """
+        User.objects.all().delete()
+
+
+class TestContactForm(TestCase):
+    """
+    A class for testing contact form
+    """
+    def test_get_contact_page(self):
+        """
+        This tests display of the contact page
+        """
+        response = self.client.get('/contact/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'home/contact.html')
+        
+    def test_sending_contact_form(self):
+        """
+        This test checks funcionality of the contact form
+        """
+        message = "test_user"
+        subject = 'TestMessage'
+        from_email = 'fromuser@mydjangoapp.com'
+        recipient_list = ['toemail@youremail.com']
+        
+        mail.send_mail(
+            message = message,
+            subject = subject,
+            from_email = from_email,
+            recipient_list = recipient_list,
+        )
+
+        self.assertEqual(len(mail.outbox), 1)
