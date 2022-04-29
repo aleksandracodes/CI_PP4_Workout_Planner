@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from django.core import mail
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+
 class TestViews(TestCase):
     """
     A class for testing home view
