@@ -186,17 +186,21 @@ footer {
 }
 
 /* Buttons */
-button {
+button, 
+.link-button {
   color: var(--dark-gray);
   border: 1px solid var(--rose-gold);
   background: var(--rose-gold);
   padding: 5px 25px;
   font-weight: bold;
+  text-decoration: none;
 }
 
-button:hover {
+button:hover, 
+.link-button:hover {
   border: 1px solid var(--rose-gold);
   background: var(--light-gray);
+  color: var(--dark-gray);
 }
 
 /* Login / sign up form */

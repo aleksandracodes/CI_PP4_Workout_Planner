@@ -12,14 +12,14 @@
         </div>
 
         <!-- Collapsible filters option on smaller screens-->
-        <a href="#"><div class="expand hide-div"><button class="button mb-3">Find an exercise</button></div></a>
+        <div class="expand hide-div mb-3"><a href="#" class="link-button">Find an exercise</a></div>
         <div class="filter-exercises show-filters-small">
             <form method="GET">
                 {{ filtered_exercises.form }}
                 
                 <div class="group-search-buttons py-4">
                     <button type="submit" class="button">Search</button>
-                    <a href="{% url 'exercises' %}"><button type="button" class="button ms-3">Clear</button></a>
+                    <a href="{% url 'exercises' %}" class="link-button ms-3">Clear</a>
                 </div>
             </form>
         </div>
@@ -31,7 +31,7 @@
                 
                 <div class="group-search-buttons py-4">
                     <button type="submit" class="button">Search</button>
-                    <a href="{% url 'exercises' %}"> <button type="button" class="button ms-3">Clear</button></a>
+                    <a href="{% url 'exercises' %}" class="link-button btn ms-3">Clear</a>
                 </div>
             </form>
         </div>
@@ -57,7 +57,7 @@
                             </div>
                             <div class="text-center py-2">
                                 <div class="btn-group">
-                                    <a href="{% url 'show_exercise' exercise.id %}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
+                                    <a href="{% url 'show_exercise' exercise.id %}" class="btn btn-sm btn-outline-secondary">View</a>
                                 </div>
                             </div>
                     </div>
@@ -66,6 +66,7 @@
                 {% endfor %}
         </div>
     </div>
+  </div>
 
     <!-- Exercises pagination -->   
     <nav aria-label="Exercises navigation">
@@ -79,9 +80,9 @@
         </li>
         {% endif %}
 
-        <span class="page-link pages-display">
+        <li class="page-link pages-display">
           Page {{ exercise_page_obj.number }} of {{ exercise_page_obj.paginator.num_pages }}
-        </span>
+        </li>
         {% if exercise_page_obj.has_next %}
           <li class="page-item">
             <a class="page-link" href="{% my_url exercise_page_obj.next_page_number 'page' request.GET.urlencode %}">&raquo;</a>
