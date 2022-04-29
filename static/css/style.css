@@ -238,6 +238,10 @@ a:hover, .arrows:hover {
   display: none;
 }
 
+.choose-date p {
+  display: inline-block !important;
+}
+
 .choose-date input[type="date"], 
 .choose-date button {
   font-size: 1.2rem;
@@ -261,11 +265,16 @@ a:hover, .arrows:hover {
 
 .choose-date button {
   margin-left: 0.5rem;
+  
 }
 
 /* Exercises filter */
 .filter-exercises label {
   font-size: 1.1rem;
+}
+
+.filter-exercises p {
+  display: inline-block;
 }
 
 .filter-exercises select, .filter-exercises input {

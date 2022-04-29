@@ -6,7 +6,7 @@
     <h4>Edit workout plan from {{ day1 | date:"jS M" }} - 
         {{ day7  | date:"jS M Y" }}</h4>
 </div>
-<form method="POST" action="">
+<form method="POST">
     {% csrf_token %}
     {{ formset.management_form}}
 

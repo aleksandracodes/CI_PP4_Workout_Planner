@@ -15,7 +15,7 @@
         <a href="#"><div class="expand hide-div mb-3 link-button">Find an exercise</div></a>
         <div class="filter-exercises show-filters-small">
             <form method="GET">
-                {{ filtered_exercises.form }}
+                {{ filtered_exercises.form.as_p }}
                 
                 <div class="group-search-buttons py-4">
                     <button type="submit" class="button">Search</button>
@@ -27,7 +27,7 @@
         <!-- Filters which will be shown on the a bigger screen-->
         <div class="filter-exercises show-filters-big">
             <form method="GET">
-                {{ filtered_exercises.form }}
+                {{ filtered_exercises.form.as_p }}
                 
                 <div class="group-search-buttons py-4">
                     <button type="submit" class="button">Search</button>
