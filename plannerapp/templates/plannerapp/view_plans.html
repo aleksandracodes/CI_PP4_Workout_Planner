@@ -15,12 +15,16 @@
                 class="btn btn-link btn-floating btn-lg text-dark arrows"><i class="fa-solid fa-circle-arrow-left"></i></a></li>
             {% endif %}
 
-            <h4 class="my-2 mx-2 current-workout-date">workout plan from: {{ workoutplan.first_day | date:"jS M" }} - 
-                {{ workoutplan.plan.all.6.day  | date:"jS M Y" }}</h4>
+            <li>
+                <h4 class="my-2 mx-2 current-workout-date">workout plan from: {{ workoutplan.first_day | date:"jS M" }} - 
+                    {{ workoutplan.plan.all.6.day  | date:"jS M Y" }}</h4>
+            </li>
 
             {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}"
-                class="btn btn-link btn-floating btn-lg text-dark arrows"><i class="fa-solid fa-circle-arrow-right"></i></a></li>
+            <li>
+                <a href="?page={{ page_obj.next_page_number }}"
+                    class="btn btn-link btn-floating btn-lg text-dark arrows"><i class="fa-solid fa-circle-arrow-right"></i></a>
+            </li>
             {% endif %}
         </ul>
     </nav>
