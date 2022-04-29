@@ -174,10 +174,32 @@ At the top of the page there is a recognisable type of navigation bar with websi
 
 ## Technologies Used
 
-### Languages
+### Languages & Frameworks
 
-### Frameworks, Libraries & Tools
+- HTML
+- CSS
+- Javascript
+- Python 3.10.2
+- Django 3.2
 
+
+### Libraries & Tools
+
+- [Balsamiq](https://balsamiq.com/) to create the projects wireframes
+- [Bootstrap v5.1.3](https://getbootstrap.com/). This project uses the Bootstrap library for UI components (Buttons, Card, Footer, Modal, Pagination, Navbar)
+- [Cloudinary](https://cloudinary.com/) to store static files
+- [Favicon.io](https://favicon.io) for making the site favicon
+- [Chrome dev tools](https://developers.google.com/web/tools/chrome-devtools/) was used for debugging of the code and checking site for responsiveness
+- [Font Awesome](https://fontawesome.com/) - Icons from Font Awesome were used throughout the site
+- [Git](https://git-scm.com/) was used for version control within VSCode to push the code to GitHub
+- [GitHub](https://github.com/) was used as a remote repository to store project code
+- [Google Fonts](https://fonts.google.com/)
+- [Heroku Platform](https://id.heroku.com/login) was used to deploy the project into live environment
+- [jQuery](https://jquery.com) was used for drop-down exercises filters on smaller screens
+- [Postgres](https://www.postgresql.org/) – deployed project on Heroku uses a Postres database
+- [Remove.bg](https://www.remove.bg/) was used to remove background on home page images & 404 page image
+- [Summernote](https://summernote.org/) - editor used for exercise description field in Admin page
+- [Visual Studio Code (VSCode)](https://code.visualstudio.com/) - code editor used to write this project
 
 ##### Back to [top](#table-of-contents)
 
