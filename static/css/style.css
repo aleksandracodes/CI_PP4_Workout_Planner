@@ -324,6 +324,11 @@ table p {
   margin-bottom: 0;
 }
 
+table label {
+  display: none;
+}
+
+
 /* Remove the bottom line from the table */
 .no-line {
   border-style: none !important;

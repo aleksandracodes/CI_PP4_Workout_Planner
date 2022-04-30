@@ -35,5 +35,5 @@ class WorkoutForm(forms.ModelForm):
         model = Workout
         fields = ('workout_name',)
         labels = {
-                    "workout_name": ""
+                    "workout_name": "workout name"
                 }

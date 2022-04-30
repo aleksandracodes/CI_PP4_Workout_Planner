@@ -416,6 +416,10 @@ The WAVE WebAIM web accessibility evaluation tool was used to test the websites 
 <img src="docs/validation/wave-contact.jpg">
 </details>
 
+<details><summary>Profile page</summary>
+<img src="docs/validation/wave-profile.jpg">
+</details>
+
 <details><summary>Exercises list</summary>
 <img src="docs/validation/wave-exercises-list.jpg">
 </details>
@@ -431,7 +435,18 @@ The WAVE WebAIM web accessibility evaluation tool was used to test the websites 
 <img src="docs/validation/wave-planner.jpg">
 </details>
 
+<details><summary>Choose date page</summary>
+<img src="docs/validation/wave-choose-date.jpg">
+</details>
 
+<details><summary>Add plan</summary>
+- There were 28 error identified related to missing form labels which were fixed and as a result there are no more errors identified. Same issues for edit plan page.
+<img src="docs/validation/wave-add-plan.jpg">
+</details>
+
+<details><summary>Edit plan</summary>
+<img src="docs/validation/wave-edit-plan.jpg">
+</details>
 
 ##### Back to [top](#table-of-contents)
 
