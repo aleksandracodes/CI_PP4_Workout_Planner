@@ -282,6 +282,79 @@ JSHint JS Validation Service was used to validate the Javascript files. No error
 </details>
 
 ### PEP8 Validation
+PEP8 Validation Service was used to check the code for PEP8 requirements. All the code passes with no errors and no warnings to show.
+
+<details><summary>Exercises</summary>
+
+<details><summary>Admin.py</summary>
+<img src="docs/validation/pep8-validation-exercises-admin.JPG">
+</details>
+
+<details><summary>Filters.py</summary>
+<img src="docs/validation/pep8-validation-exercises-filters.JPG">
+</details>
+
+<details><summary>Models.py</summary>
+<img src="docs/validation/pep8-validation-exercises-models.JPG">
+</details>
+
+<details><summary>Urls.py</summary>
+<img src="docs/validation/pep8-validation-exercises-urls.JPG">
+</details>
+
+<details><summary>Views.py</summary>
+<img src="docs/validation/pep8-validation-exercises-views.JPG">
+</details>
+
+<details><summary>Exercises_tags.py</summary>
+<img src="docs/validation/pep8-validation-exercises-tags.JPG">
+</details>
+
+</details>
+
+<details><summary>Home</summary>
+
+<details><summary>Models.py</summary>
+<img src="docs/validation/pep8-validation-exercises-models.JPG">
+</details>
+
+<details><summary>Test_views.py</summary>
+<img src="docs/validation/pep8-validation-home-test-views.JPG">
+</details>
+
+<details><summary>Urls.py</summary>
+<img src="docs/validation/pep8-validation-home-urls.JPG">
+</details>
+
+<details><summary>Views.py</summary>
+<img src="docs/validation/pep8-validation-home-views.JPG">
+</details>
+
+</details>
+
+<details><summary>Plannerapp</summary>
+
+<details><summary>Admin.py</summary>
+<img src="docs/validation/pep8-validation-plannerapp-admin.JPG">
+</details>
+
+<details><summary>Forms.py</summary>
+<img src="docs/validation/pep8-validation-plannerapp-forms.JPG">
+</details>
+
+<details><summary>Models.py</summary>
+<img src="docs/validation/pep8-validation-plannerapp-models.JPG">
+</details>
+
+<details><summary>Urls.py</summary>
+<img src="docs/validation/pep8-validation-plannerapp-urls.JPG">
+</details>
+
+<details><summary>Views.py</summary>
+<img src="docs/validation/pep8-validation-plannerapp-views.JPG">
+</details>
+
+</details>
 
 
 ##### Back to [top](#table-of-contents)
