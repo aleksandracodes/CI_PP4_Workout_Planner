@@ -357,6 +357,54 @@ PEP8 Validation Service was used to check the code for PEP8 requirements. All th
 </details>
 
 
+### Chrome Dev Tools Lighthouse
+
+Lighthouse was used to test the performance, accessibility, best practice and SEO of the site.
+Overall the results are very good for the 4 values.
+
+#### Desktop
+<details><summary>View results</summary>
+
+Page  | Performance (%) | Accessibility (%) | Best Practices (%) | SEO (%)
+------------  | ------------ | ------------- | ------------- | -------------
+home/templates/home/index.html | 99 | 100 | 92 | 100 |
+home/templates/home/contact.html | 100 | 100 | 92 | 100 |
+home/templates/home/profile.html | 100 | 100 | 92 | 100 |
+exercises/templates/exercises/exercises_list.html | 99 | 96 | 92 | 100 |
+exercises/templates/exercises/exercise.html | 100 | 100 | 92 | 100 |
+plannerapp/templates/plannerapp/add_plan.html | 100 | 93 | 92 | 100 |
+plannerapp/templates/plannerapp/choose_date.html | 100 | 93 | 92 | 100 |
+plannerapp/templates/plannerapp/edit_plan.html | 100 | 93 | 92 | 100 |
+plannerapp/templates/plannerapp/planner.html | 100 | 98 | 92 | 100 |
+plannerapp/templates/plannerapp/view_plans.html | 100 | 98 | 92 | 100 |
+templates/account/login.html | 100 | 100 | 92 | 90 |
+templates/account/signup.html | 100 | 100 | 92 | 100 |
+templates/account/logout.html | 100 | 100 | 92 | 100 |
+
+</details>
+
+#### Mobile
+<details><summary>View results</summary>
+
+Page  | Performance (%) | Accessibility (%) | Best Practices (%) | SEO (%)
+------------  | ------------ | ------------- | ------------- | -------------
+home/templates/home/index.html | 99 | 100 | 92 | 100 |
+home/templates/home/contact.html | 99 | 100 | 92 | 100 |
+home/templates/home/profile.html | 99 | 100 | 92 | 100 |
+exercises/templates/exercises/exercises_list.html | 75 | 98 | 92 | 100 |
+exercises/templates/exercises/exercise.html | 99 | 100 | 92 | 100 |
+plannerapp/templates/plannerapp/add_plan.html | 99 | 93 | 92 | 100 |
+plannerapp/templates/plannerapp/choose_date.html | 99 | 92 | 92 | 100 |
+plannerapp/templates/plannerapp/edit_plan.html | 98 | 93 | 92 | 100 |
+plannerapp/templates/plannerapp/planner.html | 99 | 98 | 92 | 100 |
+plannerapp/templates/plannerapp/view_plans.html | 97 | 98 | 92 | 100 |
+templates/account/login.html | 98 | 100 | 92 | 92 |
+templates/account/signup.html | 99 | 100 | 92 | 100 |
+templates/account/logout.html | 99 | 100 | 92 | 100 |
+
+</details>
+
+
 ##### Back to [top](#table-of-contents)
 
 
