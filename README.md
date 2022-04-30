@@ -433,7 +433,9 @@ The WAVE WebAIM web accessibility evaluation tool was used to test the websites 
 </details>
 
 <details><summary>Add plan</summary>
+
 - There were 28 error identified related to missing form labels which were fixed and as a result there are no more errors identified. Same issues for edit plan page.
+  
 <img src="docs/validation/wave-add-plan.jpg">
 </details>
 
@@ -449,7 +451,9 @@ The WAVE WebAIM web accessibility evaluation tool was used to test the websites 
 </details>
 
 <details><summary>View plans</summary>
+
 - A few errors related to empty links of navigation icons were corrected by adding aria-hidden='true' and setting bootstrap class to sr-only.
+  
 <img src="docs/validation/wave-view-plans.jpg">
 </details>
 
