@@ -404,6 +404,34 @@ templates/account/logout.html | 99 | 100 | 92 | 100 |
 
 </details>
 
+### Wave
+The WAVE WebAIM web accessibility evaluation tool was used to test the websites accessibility.
+
+<details><summary>Home page</summary>
+<img src="docs/validation/wave-index.jpg">
+</details>
+
+<details><summary>Contact page</summary>
+- Initially there were 3 errors shown for no labels to input fields. This was fixed by adding labels and setting bootstrap class to sr-only.
+<img src="docs/validation/wave-contact.jpg">
+</details>
+
+<details><summary>Exercises list</summary>
+<img src="docs/validation/wave-exercises-list.jpg">
+</details>
+
+<details><summary>Exercise detail page</summary>
+<img src="docs/validation/wave-exercise.jpg">
+</details>
+
+<details><summary>Planner page</summary>
+
+- Initially there was one error related to the empty table header (1st th element), which was fixed by addiding value to the th element and setting 'visibility: none';
+
+<img src="docs/validation/wave-planner.jpg">
+</details>
+
+
 
 ##### Back to [top](#table-of-contents)
 

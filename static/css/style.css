@@ -338,6 +338,10 @@ th, td {
   text-align: center;
 }
 
+thead th:first-of-type {
+  visibility: hidden;
+}
+
 /* Edit, add & delete plan option buttons */
 .plan-buttons {
   display: inline;
