@@ -236,7 +236,7 @@ The W3C Markup Validation Service was used to validate the HTML of the website.
 </details>
 
 <details><summary>Exercises list page</summary>
-<img src="docs/validation/vvalidation-html-exercises-list.html.JPG">
+<img src="docs/validation/validation-html-exercises-list.html.JPG">
 </details>
 
 <details><summary>Exercise detail page</summary>
@@ -248,7 +248,7 @@ The W3C Markup Validation Service was used to validate the HTML of the website.
 </details>
 
 <details><summary>Signup</summary>
-<img src="docs/validation/validation-html-signup.htmlJPG">
+<img src="docs/validation/validation-html-signup.html.JPG">
 </details>
 
 <details><summary>Profile</summary>
@@ -275,6 +275,11 @@ The W3C Jigsaw CSS Validation Service was used to validate the CSS of the websit
 </details>
 
 ### JavaScript Validation
+JSHint JS Validation Service was used to validate the Javascript files. No errors were found.
+
+<details><summary>Script.js</summary>
+<img src="docs/validation/validation-script.js.JPG">
+</details>
 
 ### PEP8 Validation
 
