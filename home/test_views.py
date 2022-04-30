@@ -61,7 +61,7 @@ class TestContactForm(TestCase):
         response = self.client.get('/contact/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'home/contact.html')
-        
+
     def test_sending_contact_form(self):
         """
         This test checks funcionality of the contact form
@@ -70,12 +70,12 @@ class TestContactForm(TestCase):
         subject = 'TestMessage'
         from_email = 'fromuser@mydjangoapp.com'
         recipient_list = ['toemail@youremail.com']
-        
+
         mail.send_mail(
-            message = message,
-            subject = subject,
-            from_email = from_email,
-            recipient_list = recipient_list,
+            message=message,
+            subject=subject,
+            from_email=from_email,
+            recipient_list=recipient_list,
         )
 
         self.assertEqual(len(mail.outbox), 1)

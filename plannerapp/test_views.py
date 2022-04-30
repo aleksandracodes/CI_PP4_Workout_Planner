@@ -4,7 +4,7 @@
 from django.test import TestCase
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#Internal:
+# Internal:
 from .models import WorkoutPlan
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -20,4 +20,3 @@ class TestPlannerViews(TestCase):
         response = self.client.get('/planner/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'plannerapp/planner.html')
-
