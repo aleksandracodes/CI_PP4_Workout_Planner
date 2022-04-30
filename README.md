@@ -428,13 +428,6 @@ The WAVE WebAIM web accessibility evaluation tool was used to test the websites 
 <img src="docs/validation/wave-exercise.jpg">
 </details>
 
-<details><summary>Planner page</summary>
-
-- Initially there was one error related to the empty table header (1st th element), which was fixed by addiding value to the th element and setting 'visibility: none';
-
-<img src="docs/validation/wave-planner.jpg">
-</details>
-
 <details><summary>Choose date page</summary>
 <img src="docs/validation/wave-choose-date.jpg">
 </details>
@@ -446,6 +439,34 @@ The WAVE WebAIM web accessibility evaluation tool was used to test the websites 
 
 <details><summary>Edit plan</summary>
 <img src="docs/validation/wave-edit-plan.jpg">
+</details>
+
+<details><summary>Planner page</summary>
+
+- Initially there was one error related to the empty table header (1st th element), which was fixed by addiding value to the th element and setting 'visibility: none';
+
+<img src="docs/validation/wave-planner.jpg">
+</details>
+
+<details><summary>View plans</summary>
+- A few errors related to empty links of navigation icons were corrected by adding aria-hidden='true' and setting bootstrap class to sr-only.
+<img src="docs/validation/wave-view-plans.jpg">
+</details>
+
+<details><summary>Login</summary>
+<img src="docs/validation/wave-login.jpg">
+</details>
+
+<details><summary>Register</summary>
+<img src="docs/validation/wave-signup.jpg">
+</details>
+
+<details><summary>Logout</summary>
+<img src="docs/validation/wave-logout.jpg">
+</details>
+
+<details><summary>Error page</summary>
+<img src="docs/validation/wave-error-page.jpg">
 </details>
 
 ##### Back to [top](#table-of-contents)
