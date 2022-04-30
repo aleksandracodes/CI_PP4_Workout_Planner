@@ -443,13 +443,7 @@ hr {
   }
 }
 
-/* Collapsible exercise filters for smaller size screens */
-@media (max-width: 502px) {
-  .show-filters-big {
-      display: none;
-  }
-}
-
+/* Hide exercise filter button on smaller screens */
 @media (min-width: 502px) {
   .hide-div {
       display: none;
