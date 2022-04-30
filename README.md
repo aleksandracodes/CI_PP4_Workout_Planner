@@ -210,6 +210,75 @@ At the top of the page there is a recognisable type of navigation bar with websi
 
 ## Validation
 
+The W3C Markup Validation Service was used to validate the HTML of the website.
+<details><summary>Home</summary>
+<img src="docs/validation/validation-html-index.html.JPG">
+</details>
+
+<details><summary>Planner</summary>
+<img src="docs/validation/validation-html-planner.html.JPG">
+</details>
+
+<details><summary>Choose date</summary>
+<img src="docs/validation/validation-html-choose-date.html.JPG">
+</details>
+
+<details><summary>Add Plan</summary>
+<img src="docs/validation/validation-html-add-plan.html.JPG">
+</details>
+
+<details><summary>Edit Plan</summary>
+<img src="docs/validation/validation-html-edit-plan.html.JPG">
+</details>
+
+<details><summary>View Plans</summary>
+<img src="docs/validation/validation-html-view-plans.html.JPG">
+</details>
+
+<details><summary>Exercises list page</summary>
+<img src="docs/validation/vvalidation-html-exercises-list.html.JPG">
+</details>
+
+<details><summary>Exercise detail page</summary>
+<img src="docs/validation/validation-html-exercise.html.JPG">
+</details>
+
+<details><summary>Login</summary>
+<img src="docs/validation/validation-html-login.html.JPG">
+</details>
+
+<details><summary>Signup</summary>
+<img src="docs/validation/validation-html-signup.htmlJPG">
+</details>
+
+<details><summary>Profile</summary>
+<img src="docs/validation/validation-html-profile.html.JPG">
+</details>
+
+<details><summary>Logout</summary>
+<img src="docs/validation/validation-html-logout.html.JPG">
+</details>
+
+<details><summary>Contact form page</summary>
+<img src="docs/validation/validation-html-contact.html.JPG">
+</details>
+
+<details><summary>Error Pages (400, 403, 404, 500)</summary>
+<img src="docs/validation/validation-html-error-pages.html.JPG">
+</details>
+
+### CSS Validation
+The W3C Jigsaw CSS Validation Service was used to validate the CSS of the website. When validating all website, it passes with no errors.
+
+<details><summary>Style.css</summary>
+<img src="docs/validation/validation-css.JPG">
+</details>
+
+### JavaScript Validation
+
+### PEP8 Validation
+
+
 ##### Back to [top](#table-of-contents)
 
 
