@@ -1,4 +1,5 @@
-# Workout Planner
+# Workout Planner <img src="https://raw.githubusercontent.com/aleksandracodes/activelifestyle/main/img/dumbell.png" style="width: 40px;height:40px;">
+
 
 **Developer: Aleksandra Haniok**
 
@@ -64,7 +65,7 @@ The Workout Planner is an application for creating weekly training rota which al
 
 - Straightforward navigation
 - Easy to use
-- A responsive application that allows the user to access their plan on any devise
+- A responsive application that allows the user to access their plan on any device
 - Visually appealing design for all screen size
 - Links and functions that work as expected
 - An easy way to contact the developer
@@ -198,7 +199,7 @@ At the top of the page there is a recognisable type of navigation bar with websi
 ## Features
 
 ### Logo and Navigation Bar
-- Featured and consisttent on the all pages
+- Featured and consistent on the all pages
 - The nav bar contains links to Home page, Planner page, Exercise page and Profile page.
   - Logged-in users will see their name in the nav bar with option on click to either view their profile or log out
   - Not logged in users will have option to either register or log in
@@ -234,7 +235,7 @@ At the top of the page there is a recognisable type of navigation bar with websi
 
 <details><summary>See feature images</summary>
 
-![Footer](docs/features/feature-footer.JPG)
+![Footer](docs/features/feature-footer.jpg)
 </details>
 
 
@@ -269,7 +270,7 @@ At the top of the page there is a recognisable type of navigation bar with websi
 
 
 ### Logout screen
-- Logged in user can logout from their account 
+- Confirmation screen for Logged in user to logout from their account 
   
 <details><summary>See feature images</summary>
 
@@ -299,19 +300,133 @@ At the top of the page there is a recognisable type of navigation bar with websi
 ### Planner page
 - There are two views depending whether a user is logged in or not
   - For users who are not logged in to their account they can see two options to access the planner - log in and sign up. There is also an example of the planner to give user an idea how the ready plan looks like
-  - Logged-in users can see the confirmation message that they've been successfully logged in and they are taken back to the planner page where they can select from two options to either view their current plans or add a new one.
-
+  - Logged-in users can see the confirmation message that they've been successfully logged in and they are taken back to the planner page where they can select from two options to either view their current plans or add a new one
+- User stories covered: 10, 12
 <details><summary>See feature images</summary>
 
 ![Planner](docs/features/feature-planner-not-logged.jpg)
 ![Planner](docs/features/feature-planner-logged.jpg)
-</details
+</details>
 
 
+### Choose date
+- User can select the first day of their plan using the date picker
+- It is not possible to create two plans starting on the same day. On selection of an incorrect date the user is presented with a warning message to choose another day on the calendar
+- User stories covered: 4, 13
+  
+<details><summary>See feature images</summary>
+
+![Choose date](docs/features/feature-choose-date.jpg)
+![Choose date](docs/features/feature-choose-date-2.jpg)
+</details>
 
 
+### Add plan
+- User can add plan either from the planner page or the view plans page
+- There are 28 input fields representing the workout plan. 14 fields for AM and 14 for PM
+- It is possible to leave some fields blank
+- For easier navigation on small screen devices the first column is frozen so that user can see it at all times when scrolling right & left between days of the week
+- User is provided with a feedback message that their plan has been added
+- User stories covered: 4, 13
+
+<details><summary>See feature images</summary>
+
+![Add plan](docs/features/feature-add-plan.jpg)
+</details>
 
 
+### View plans
+- User can see all the plans their created
+- There is one plan per page displayed with the date at the top of the table
+- User can use the right & left navigation arrows to jump between plans
+- There are three options available to edit plan, add a new plan or delete the currently viewed plan. These are represented by the font awesome icons below the workout plan table
+- For easier navigation on small screen devices the first column is frozen so that user can see it at all times when scrolling right & left between days of the week
+- User stories covered: 4, 8
+
+<details><summary>See feature images</summary>
+
+![View plans](docs/features/feature-view-plan.jpg)
+![View plans](docs/features/feature-view-plan-mobile.jpg)
+</details>
+
+
+### Edit plan
+- User can edit a selected plan
+- This can be done by clicking the first icon below the displayed workout plan
+- Date of plan currently being edited is displayed above the plan
+- User can edit any field and save when happy with edition
+- For easier navigation on small screen devices the first column is frozen so that user can see it at all times when scrolling right & left between days of the week
+- User is provided with a feedback message that their plan has been edited
+- User stories covered: 5
+
+<details><summary>See feature images</summary>
+
+![Edit plan](docs/features/feature-edit-plan.jpg)
+</details>
+
+
+### Delete plan
+- User can delete a selected plan
+- This can be done by clicking the third icon below the displayed workout plan
+- The modal pops up for user to confirm the deletion of the plan
+- User is provided with a feedback message that their plan has been deleted
+- User stories covered: 6
+
+<details><summary>See feature images</summary>
+
+![Delete plan](docs/features/feature-delete-plan.jpg)
+</details>
+
+
+### Feedback messages
+- User is provided with feedback message about the action their performed, eg. added, edited or deleted a plan or logged-in, registered, logged-out, etc.
+- User stories covered: 7
+
+<details><summary>See feature images</summary>
+
+![Feedback messages](docs/features/feature-feedback-message-1.jpg)
+![Feedback messages](docs/features/feature-feedback-message-2.jpg)
+![Feedback messages](docs/features/feature-feedback-message-3.jpg)
+![Feedback messages](docs/features/feature-feedback-message-4.jpg)
+![Feedback messages](docs/features/feature-feedback-message-5.jpg)
+![Feedback messages](docs/features/feature-feedback-message-6.jpg)
+</details>
+
+
+### Exercises list page
+- A page with a catalogue of training exercises targeting different body parts, with various level of difficulty and type of training
+- User is able to search through all the exercises choosing a specific body part, level of difficulty or type of training. They can also find a specific exercise by typing a part of its name
+- User stories covered: 9
+
+<details><summary>See feature images</summary>
+
+![Exercises list](docs/features/feature-exercises-list.jpg)
+
+</details>
+
+### Exercise filter
+
+- Filter through all the exercises which allows user to find a specific exercise depending on the targetedd body part, level of difficulty or type of training. There is also an option to find an exercise by typing a part of its name
+- Filter collapses on smaller screens and expands by clicking on the 'Find an exercise' button
+- User stories covered: 9
+
+<details><summary>See feature images</summary>
+
+![Exercise filter](docs/features/feature-exercise-filter-1.jpg)
+![Exercise filter](docs/features/feature-exercise-filter-2.jpg)
+
+</details>
+
+
+### Exercise pagination
+
+- Allows for display of twelve exercises per page, if there are more, the page is paginated
+- User to go the the previous/next page or the first/last page of exercises
+
+<details><summary>See feature images</summary>
+
+![Exercise pagination](docs/features/feature-exercise-pagination.jpg.jpg)
+</details>
 
 
 ##### Back to [top](#table-of-contents)
