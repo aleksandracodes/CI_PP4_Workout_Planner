@@ -885,6 +885,42 @@ In the view plans page click on the 3rd icon from the navigation icons below the
 </details>
 
 
+8.  I want to be able to view previous plans to help me prepare the following week’s workout
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Register or log in to the account to be able to view all plans | Loads planner page | Works as expected |
+Click on 'View my current workout plans' button | Loads view plans page | Works as expected |
+Use right & left arrows to navigate between created plans | Display previous & next plan | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/user-stories-testing/user-story-08-a.jpg">
+<img src="docs/user-stories-testing/user-story-08-b.jpg">
+<img src="docs/user-stories-testing/user-story-08-c.jpg">
+</details>
+
+
+9.  I want to find inspiration for my workouts and be able to use search option to find a particular exercise
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Click on the 'Exercises' menu on the navigation bar | Loads exercises list page paginated by 12 | Works as expected |
+Use filter to search a specific exercise depending on the body part, level or type | Displays exercises matching users criteria | Works as expected |
+Type a name or part of the exercise name and click on the 'Search' button | Loads exercises containing searched phrase in their title | Works as expected |
+Click on 'Clear' button to remove filter and display list of all exercises | Loads exercises list page paginated by 12 | Works as expected |
+Click on '>>' button in the pagination feature to go to the next page displaying next 12 exercises | Loads next 12 exercises from all exercises in the database | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/user-stories-testing/user-story-09-a.jpg">
+<img src="docs/user-stories-testing/user-story-09-b.jpg">
+<img src="docs/user-stories-testing/user-story-09-c.jpg">
+<img src="docs/user-stories-testing/user-story-09-d.jpg">
+<img src="docs/user-stories-testing/user-story-09-e.jpg">
+<img src="docs/user-stories-testing/user-story-09-f.jpg">
+</details>
+
+
+
 ##### Back to [top](#table-of-contents)
 
 
