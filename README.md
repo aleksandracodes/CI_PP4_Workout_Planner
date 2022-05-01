@@ -2,12 +2,9 @@
 
 **Developer: Aleksandra Haniok**
 
-💻 [Visit live website](https://xyz.herokuapp.com/)
+💻 [Visit live website](https://ci-pp4-workout-planner.herokuapp.com/)
 
-![Mockup image](docs/screenshot-home.JPG)
-
-## About
-
+![Mockup image](docs/ami-responsivedesign-ci-pp4-workout-planner.jpg)
 
 
 ## Table of Contents
@@ -19,11 +16,9 @@
   - [User Experience](#user-experience)
     - [Target Audience](#target-audience)
     - [User Requirements and Expectations](#user-requirements-and-expectations)
-        - [Back to top](#back-to-top)
   - [User Stories](#user-stories)
     - [Users](#users)
     - [Site Owner](#site-owner)
-        - [Back to top](#back-to-top-1)
   - [Design](#design)
     - [Colour](#colour)
     - [Fonts](#fonts)
@@ -32,24 +27,12 @@
   - [Technologies Used](#technologies-used)
     - [Languages](#languages)
     - [Frameworks, Libraries & Tools](#frameworks-libraries--tools)
-        - [Back to top](#back-to-top-2)
   - [Features](#features)
-        - [Back to top](#back-to-top-3)
   - [Validation](#validation)
-        - [Back to top](#back-to-top-4)
   - [Testing user stories](#testing-user-stories)
-        - [Back to top](#back-to-top-5)
   - [Bugs](#bugs)
-        - [Back to top](#back-to-top-6)
   - [Deployment](#deployment)
-    - [Heroku](#heroku)
-    - [Forking the GitHub Repository](#forking-the-github-repository)
-    - [Making a Local Clone](#making-a-local-clone)
-        - [Back to top](#back-to-top-7)
   - [Credits](#credits)
-    - [Images](#images)
-    - [Code](#code)
-        - [Back to top](#back-to-top-8)
   - [Acknowledgements](#acknowledgements)
 
 ### About
@@ -185,6 +168,7 @@ At the top of the page there is a recognisable type of navigation bar with websi
 
 ### Libraries & Tools
 
+- [Am I Responsive](http://ami.responsivedesign.is/) was used to create the multi-device mock-up at the top of this README.md file
 - [Balsamiq](https://balsamiq.com/) to create the projects wireframes
 - [Bootstrap v5.1.3](https://getbootstrap.com/). This project uses the Bootstrap library for UI components (Buttons, Card, Footer, Modal, Pagination, Navbar)
 - [Cloudinary](https://cloudinary.com/) to store static files
@@ -200,11 +184,135 @@ At the top of the page there is a recognisable type of navigation bar with websi
 - [Remove.bg](https://www.remove.bg/) was used to remove background on home page images & 404 page image
 - [Summernote](https://summernote.org/) - editor used for exercise description field in Admin page
 - [Visual Studio Code (VSCode)](https://code.visualstudio.com/) - code editor used to write this project
+- Validation:
+  - [WC3 Validator](https://validator.w3.org/) was used to validate the html in the project
+  - [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/) to validate the css in the project
+  - [JShint](https://jshint.com/) for JavaScript quality
+  - [PEP8](http://pep8online.com/) to check code against Python conventions
+  - [Lighthouse](https://developers.google.com/web/tools/lighthouse/) for performance, accessibility, progressive web apps, SEO analysis of the project code
+  - [Wave Validator](https://wave.webaim.org/) to evaluate accessibility
 
 ##### Back to [top](#table-of-contents)
 
 
 ## Features
+
+### Logo and Navigation Bar
+- Featured and consisttent on the all pages
+- The nav bar contains links to Home page, Planner page, Exercise page and Profile page.
+  - Logged-in users will see their name in the nav bar with option on click to either view their profile or log out
+  - Not logged in users will have option to either register or log in
+- The nav bar is fully responsive and changes to a toggler (hamburger menu) on smaller size screens
+- The navbar allows user to easily jump to a specific section on the website
+- User stories covered: 2, 18
+
+<details><summary>See feature images</summary>
+
+![Logo and navbar](docs/features/feature-logo-and-navbar.JPG)
+![Logo and navbar](docs/features/feature-logo-and-navbar-hamburger.jpg)
+![Logo and navbar](docs/features/feature-logo-and-navbar-not-logged-user.JPG)
+![Logo and navbar](docs/features/feature-logo-and-navbar-logged-user.jpg)
+</details>
+
+
+### Home page
+- Home page includes nav bar, main body and a footer
+- Home page main body includes description of the website and what its users can find and expect. It has direct links to the planner page and exercises page
+- User stories covered: 1
+
+<details><summary>See feature images</summary>
+
+![Home page](docs/features/feature-home-page.JPG)
+</details>
+
+
+### Footer
+- A footer is displayed at the bottom of the each page
+- Contains link to contact form (opening in the same window), social media and GitHub page (opening in a separate window)
+- Contains copyrights info
+- User stories covered: 16
+
+<details><summary>See feature images</summary>
+
+![Footer](docs/features/feature-footer.JPG)
+</details>
+
+
+### Sign up / Register
+- New users can create an account
+- The user must provide a valid username, password and password confirmation. Email address is optional
+- User cannot register the same details twice for an account
+- Once register the users are immediately logged in and taken to the planner page
+- User stories covered: 3,14
+
+<details><summary>See feature images</summary>
+
+![Register](docs/features/feature-register.jpg)
+![Registerr](docs/features/feature-register-2.jpg)
+![Register](docs/features/feature-register-3.jpg)
+![Register](docs/features/feature-register-4.jpg)
+</details>
+
+
+### Login
+- Returning users can login to their account
+- The user must have an account in the system and they must enter the correct username and password
+- Both fields are mandatory
+- Once logged in the user will be navigated to the planner page
+- User stories covered: 10, 12
+
+<details><summary>See feature images</summary>
+
+![Login](docs/features/feature-login.jpg)
+![Login](docs/features/feature-login-2.jpg)
+</details>
+
+
+### Logout screen
+- Logged in user can logout from their account 
+  
+<details><summary>See feature images</summary>
+
+![Logout](docs/features/feature-logout.jpg)
+</details>
+
+
+### Profile
+- Logged in user can see details about their account and workouts created
+  
+<details><summary>See feature images</summary>
+
+![Profile](docs/features/feature-profile.jpg)
+</details>
+
+
+### Delete account
+- User have an option to delete their account from the system.
+- The modal pops up for user to confirm their choice and are warned that this action is irreversible
+
+<details><summary>See feature images</summary>
+
+![Delete profile](docs/features/feature-delete-profile.jpg)
+</details>
+
+
+### Planner page
+- There are two views depending whether a user is logged in or not
+  - For users who are not logged in to their account they can see two options to access the planner - log in and sign up. There is also an example of the planner to give user an idea how the ready plan looks like
+  - Logged-in users can see the confirmation message that they've been successfully logged in and they are taken back to the planner page where they can select from two options to either view their current plans or add a new one.
+
+<details><summary>See feature images</summary>
+
+![Planner](docs/features/feature-planner-not-logged.jpg)
+![Planner](docs/features/feature-planner-logged.jpg)
+</details
+
+
+
+
+
+
+
 
 ##### Back to [top](#table-of-contents)
 
