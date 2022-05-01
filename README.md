@@ -172,6 +172,7 @@ At the top of the page there is a recognisable type of navigation bar with websi
 - [Am I Responsive](http://ami.responsivedesign.is/) was used to create the multi-device mock-up at the top of this README.md file
 - [Balsamiq](https://balsamiq.com/) to create the projects wireframes
 - [Bootstrap v5.1.3](https://getbootstrap.com/). This project uses the Bootstrap library for UI components (Buttons, Card, Footer, Modal, Pagination, Navbar)
+- [Canva](https://www.canva.com/) was used to create a background image
 - [Cloudinary](https://cloudinary.com/) to store static files
 - [Favicon.io](https://favicon.io) for making the site favicon
 - [Chrome dev tools](https://developers.google.com/web/tools/chrome-devtools/) was used for debugging of the code and checking site for responsiveness
@@ -244,7 +245,7 @@ At the top of the page there is a recognisable type of navigation bar with websi
 - The user must provide a valid username, password and password confirmation. Email address is optional
 - User cannot register the same details twice for an account
 - Once register the users are immediately logged in and taken to the planner page
-- User stories covered: 3,14
+- User stories covered: 3, 14
 
 <details><summary>See feature images</summary>
 
@@ -260,7 +261,7 @@ At the top of the page there is a recognisable type of navigation bar with websi
 - The user must have an account in the system and they must enter the correct username and password
 - Both fields are mandatory
 - Once logged in the user will be navigated to the planner page
-- User stories covered: 10, 12
+- User stories covered: 10, 12, 14
 
 <details><summary>See feature images</summary>
 
@@ -269,7 +270,7 @@ At the top of the page there is a recognisable type of navigation bar with websi
 </details>
 
 
-### Logout screen
+### Logout
 - Confirmation screen for Logged in user to logout from their account 
   
 <details><summary>See feature images</summary>
@@ -301,7 +302,7 @@ At the top of the page there is a recognisable type of navigation bar with websi
 - There are two views depending whether a user is logged in or not
   - For users who are not logged in to their account they can see two options to access the planner - log in and sign up. There is also an example of the planner to give user an idea how the ready plan looks like
   - Logged-in users can see the confirmation message that they've been successfully logged in and they are taken back to the planner page where they can select from two options to either view their current plans or add a new one
-- User stories covered: 10, 12
+- User stories covered: 3, 10, 12
 <details><summary>See feature images</summary>
 
 ![Planner](docs/features/feature-planner-not-logged.jpg)
@@ -336,7 +337,7 @@ At the top of the page there is a recognisable type of navigation bar with websi
 
 
 ### View plans
-- User can see all the plans their created
+- User can see all the plans they created
 - There is one plan per page displayed with the date at the top of the table
 - User can use the right & left navigation arrows to jump between plans
 - There are three options available to edit plan, add a new plan or delete the currently viewed plan. These are represented by the font awesome icons below the workout plan table
@@ -350,11 +351,22 @@ At the top of the page there is a recognisable type of navigation bar with websi
 </details>
 
 
+### Navigation icons
+- Located unser the plan in the view plans page
+- Allow user to edit, add or delete currently displayed plan on the page
+- User stories covered: 5, 6
+
+<details><summary>See feature images</summary>
+
+![Navigation icons](docs/features/feature-navigation-icons.jpg)
+</details>
+
+
 ### Edit plan
 - User can edit a selected plan
-- This can be done by clicking the first icon below the displayed workout plan
+- This can be done by clicking the first icon from the navigation icons
 - Date of plan currently being edited is displayed above the plan
-- User can edit any field and save when happy with edition
+- User can edit any field and save once happy with edition
 - For easier navigation on small screen devices the first column is frozen so that user can see it at all times when scrolling right & left between days of the week
 - User is provided with a feedback message that their plan has been edited
 - User stories covered: 5
@@ -367,7 +379,7 @@ At the top of the page there is a recognisable type of navigation bar with websi
 
 ### Delete plan
 - User can delete a selected plan
-- This can be done by clicking the third icon below the displayed workout plan
+- This can be done by clicking the third icon from the navigation icons
 - The modal pops up for user to confirm the deletion of the plan
 - User is provided with a feedback message that their plan has been deleted
 - User stories covered: 6
@@ -396,7 +408,7 @@ At the top of the page there is a recognisable type of navigation bar with websi
 ### Exercises list page
 - A page with a catalogue of training exercises targeting different body parts, with various level of difficulty and type of training
 - User is able to search through all the exercises choosing a specific body part, level of difficulty or type of training. They can also find a specific exercise by typing a part of its name
-- User stories covered: 9
+- User stories covered: 9, 11
 
 <details><summary>See feature images</summary>
 
@@ -405,7 +417,6 @@ At the top of the page there is a recognisable type of navigation bar with websi
 </details>
 
 ### Exercise filter
-
 - Filter through all the exercises which allows user to find a specific exercise depending on the targetedd body part, level of difficulty or type of training. There is also an option to find an exercise by typing a part of its name
 - Filter collapses on smaller screens and expands by clicking on the 'Find an exercise' button
 - User stories covered: 9
@@ -419,15 +430,49 @@ At the top of the page there is a recognisable type of navigation bar with websi
 
 
 ### Exercise pagination
-
 - Allows for display of twelve exercises per page, if there are more, the page is paginated
 - User to go the the previous/next page or the first/last page of exercises
 
 <details><summary>See feature images</summary>
 
-![Exercise pagination](docs/features/feature-exercise-pagination.jpg.jpg)
+![Exercise pagination](docs/features/feature-exercise-pagination.jpg)
 </details>
 
+
+### Exercise detail page
+- Provides overview of the exercise
+- Users can view a detailed description on how to perform the exercise
+
+<details><summary>See feature images</summary>
+
+![Exercise detail page](docs/features/feature-exercise-detail-page.jpg)
+</details>
+
+
+### Contact form
+- Contact form allows user to contact the developer and send their message or provide feedback
+- All three fields (username, email and message) on the form are mandatory
+- Not logged-in users need to provide their name, email address and message content
+- Username on the form is automatically provided for the logged-in user as well as their email address, if one was given during account registration. If not, the user needs to provide their email address manually.
+- User stories covered: 16
+
+<details><summary>See feature images</summary>
+
+![Contact form](docs/features/feature-contact-form-1.jpg)
+![Contact form](docs/features/feature-contact-form-2.jpg)
+![Contact form](docs/features/feature-contact-form-3.jpg)
+</details>
+
+
+### Contact form confirmation
+- Confirmation message is provided for user that they contact message has been successfully sent
+- User stories covered: 17
+
+<details><summary>See feature images</summary>
+
+![Contact form confirmation](docs/features/feature-message-sent-confirmation.jpg)
+
+</details>
 
 ##### Back to [top](#table-of-contents)
 
