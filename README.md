@@ -815,9 +815,10 @@ Click 'Register' button at the bottom of the form | User is logged-in, taken to 
 
 <details><summary>Screenshot</summary>
 <img src="docs/user-stories-testing/user-story-03-a.jpg">
-<img src="docs/user-stories-testing/user-story-03-b..jpg">
+<img src="docs/user-stories-testing/user-story-03-b.jpg">
 <img src="docs/user-stories-testing/user-story-03-c.jpg">
 <img src="docs/user-stories-testing/user-story-03-d.jpg">
+<img src="docs/user-stories-testing/user-story-03-e.jpg">
 </details>
 
 
@@ -825,8 +826,8 @@ Click 'Register' button at the bottom of the form | User is logged-in, taken to 
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Register or log in to the account to be able to create a plan | User is taken to the planner page | Works as expected |
-Click on the 'Add a new plan' button | User is taken to choose date page with a date picker | Works as expected |
+Register or log in to the account to be able to create a plan | Loads planner page | Works as expected |
+Click on the 'Add a new plan' button | Display a choose date page with a date picker | Works as expected |
 Select first day for the plan and click 'Choose' | Loads add plan page with selected first day of the week  | Works as expected |
 Fill in the plan and click 'Add plan' button | Loads view plans page with completed plan | Works as expected |
 Click on the 2nd icon (Plus sign) from the navigation icons below the current plan and repeat two above steps | Create a new plan with a different start day | Works as expected |
@@ -839,6 +840,48 @@ Select first day from the date picker which has already been selected | Show err
 <img src="docs/user-stories-testing/user-story-04-d.jpg">
 <img src="docs/user-stories-testing/user-story-04-e.jpg">
 <img src="docs/user-stories-testing/user-story-04-f.jpg">
+</details>
+
+
+5. I want to be able to edit my current plans at any point
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+In the view plans page click on the 1st icon from the navigation icons below the current plan | Loads edit page for selected workout plan | Works as expected |
+Edit the plan and click on 'Save' button | Loads view plans page, displays confirmation message and shows amended plan | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/user-stories-testing/user-story-05-a.jpg">
+<img src="docs/user-stories-testing/user-story-05-b.jpg">
+</details>
+
+
+6. I want to delete my plan if no longer needed
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+In the view plans page click on the 3rd icon from the navigation icons below the current plan | Displays confirmation modal | Works as expected |
+Click on 'Delete' on the pop up modal | Deletes selected plan and displays confirmation message. Show current plans and if no plans are saved a relevant message for user | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/user-stories-testing/user-story-06-a.jpg">
+<img src="docs/user-stories-testing/user-story-06-b.jpg">
+<img src="docs/user-stories-testing/user-story-06-c.jpg">
+</details>
+
+7.  I want to see feedback messages so that I know that my plan was created, edited or deleted
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Click on the 'Add a new plan' button on planner page, fill in the plan and click 'Add plan' button | Loads view plans page with completed plan | Works as expected |
+ | Loads edit page for selected workout plan | Works as expected |
+In the view plans page click on the 1st icon from the navigation icons below the current plan, edit the plan and click on 'Save' button | Loads view plans page, displays confirmation message and shows amended plan | Works as expected |
+In the view plans page click on the 3rd icon from the navigation icons below the current plan, click on 'Delete' on the pop up modal | Deletes selected plan and displays confirmation message. Show current plans and if no plans are saved a relevant message for user | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/user-stories-testing/user-story-07-a.jpg">
+<img src="docs/user-stories-testing/user-story-07-b.jpg">
+<img src="docs/user-stories-testing/user-story-07-c.jpg">
 </details>
 
 
