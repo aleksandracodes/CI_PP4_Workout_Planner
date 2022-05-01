@@ -781,7 +781,7 @@ The website was tested on the following devices:
 Navigate to https://ci-pp4-workout-planner.herokuapp.com/ | Home page main body loads with application description | Works as expected |
 
 <details><summary>Screenshot</summary>
-<img src="docs/user-stories-testing/user-story-01.JPG">
+<img src="docs/user-stories-testing/user-story-01.jpg">
 </details>
 
 
@@ -796,11 +796,11 @@ Click on User name on the navigation bar and then 'Profile' from the drop-down m
 Click on User name on the navigation bar and then 'Log out' from the drop-down menu| Loads log out page | Works as expected |
 
 <details><summary>Screenshot</summary>
-<img src="docs/user-stories-testing/user-story-02-a.JPG">
-<img src="docs/user-stories-testing/user-story-02-b.JPG">
-<img src="docs/user-stories-testing/user-story-02-c.JPG">
-<img src="docs/user-stories-testing/user-story-02-e.JPG">
-<img src="docs/user-stories-testing/user-story-02-f.JPG">
+<img src="docs/user-stories-testing/user-story-02-a.jpg">
+<img src="docs/user-stories-testing/user-story-02-b.jpg">
+<img src="docs/user-stories-testing/user-story-02-c.jpg">
+<img src="docs/user-stories-testing/user-story-02-e.jpg">
+<img src="docs/user-stories-testing/user-story-02-f.jpg">
 </details>
 
 
@@ -814,10 +814,10 @@ Provide password  | Shows error if password don't meet password criteria | Works
 Click 'Register' button at the bottom of the form | User is logged-in, taken to the planner page and presented with a confirmation message | Works as expected |
 
 <details><summary>Screenshot</summary>
-<img src="docs/user-stories-testing/user-story-03-a.JPG">
-<img src="docs/user-stories-testing/user-story-03-b.JPG">
-<img src="docs/user-stories-testing/user-story-03-c.JPG">
-<img src="docs/user-stories-testing/user-story-03-d.JPG">
+<img src="docs/user-stories-testing/user-story-03-a.jpg">
+<img src="docs/user-stories-testing/user-story-03-b..jpg">
+<img src="docs/user-stories-testing/user-story-03-c.jpg">
+<img src="docs/user-stories-testing/user-story-03-d.jpg">
 </details>
 
 
@@ -833,12 +833,12 @@ Click on the 2nd icon (Plus sign) from the navigation icons below the current pl
 Select first day from the date picker which has already been selected | Show error message and clear date picker for another selection | Works as expected |
 
 <details><summary>Screenshot</summary>
-<img src="docs/user-stories-testing/user-story-04-a.JPG">
-<img src="docs/user-stories-testing/user-story-04-b.JPG">
-<img src="docs/user-stories-testing/user-story-04-c.JPG">
-<img src="docs/user-stories-testing/user-story-04-d.JPG">
-<img src="docs/user-stories-testing/user-story-04-e.JPG">
-<img src="docs/user-stories-testing/user-story-04-f.JPG">
+<img src="docs/user-stories-testing/user-story-04-a.jpg">
+<img src="docs/user-stories-testing/user-story-04-b.jpg">
+<img src="docs/user-stories-testing/user-story-04-c.jpg">
+<img src="docs/user-stories-testing/user-story-04-d.jpg">
+<img src="docs/user-stories-testing/user-story-04-e.jpg">
+<img src="docs/user-stories-testing/user-story-04-f.jpg">
 </details>
 
 
