@@ -250,7 +250,7 @@ At the top of the page there is a recognisable type of navigation bar with websi
 <details><summary>See feature images</summary>
 
 ![Register](docs/features/feature-register.jpg)
-![Registerr](docs/features/feature-register-2.jpg)
+![Register](docs/features/feature-register-2.jpg)
 ![Register](docs/features/feature-register-3.jpg)
 ![Register](docs/features/feature-register-4.jpg)
 </details>
@@ -471,10 +471,20 @@ At the top of the page there is a recognisable type of navigation bar with websi
 <details><summary>See feature images</summary>
 
 ![Contact form confirmation](docs/features/feature-message-sent-confirmation.jpg)
+</details>
 
+
+### Error pages
+- If a user encounters an error, the relevant error page is displayed (400, 403, 404 or 500)
+- User stories covered: 15
+
+<details><summary>See feature images</summary>
+
+![Error page](docs/features/feature-error-page.jpg)
 </details>
 
 ##### Back to [top](#table-of-contents)
+
 
 ## Validation
 
@@ -744,7 +754,93 @@ The WAVE WebAIM web accessibility evaluation tool was used to test the websites 
 ##### Back to [top](#table-of-contents)
 
 
-## Testing user stories
+## Testing
+
+### Performing tests on various devices
+
+The website was tested using Google Chrome Developer Tools Toggle Device Toolbar to simulate viewports of different devices.
+
+The website was tested on the following devices:
+- ASUS ZenBook (tablet screen)
+- Samsung Galaxy Tab A (tablet screen)
+- Samsung S7 (mobile screen)
+
+### Browser compatibility
+
+- Testing has been carried out on the following browsers:
+  - Googe Chrome Version 101.0.4951.41 (Official Build) (64-bit)
+  - Firefox Browser 99.0.1 (64-bit)
+  - Microsoft Edge Version 101.0.1210.32 (Official build) (64-bit)
+
+### Testing user stories
+
+1. I want to see the home page with explanation of the app
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to https://ci-pp4-workout-planner.herokuapp.com/ | Home page main body loads with application description | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/user-stories-testing/user-story-01.JPG">
+</details>
+
+
+2. I want to be able to easily navigate around the application to different pages
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Click on 'Home' link on the navigation bar | Loads home page | Works as expected |
+Click on 'Planner' link on the navigation bar | Loads planner page | Works as expected |
+Click on 'Exercise' link on the navigation bar | Loads exercises page | Works as expected |
+Click on User name on the navigation bar and then 'Profile' from the drop-down menu| Loads user profile page | Works as expected |
+Click on User name on the navigation bar and then 'Log out' from the drop-down menu| Loads log out page | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/user-stories-testing/user-story-02-a.JPG">
+<img src="docs/user-stories-testing/user-story-02-b.JPG">
+<img src="docs/user-stories-testing/user-story-02-c.JPG">
+<img src="docs/user-stories-testing/user-story-02-e.JPG">
+<img src="docs/user-stories-testing/user-story-02-f.JPG">
+</details>
+
+
+3. I want to create my account to be able to plan my workouts
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Select 'Log in' on the navigation bar and 'Register' from the drop-down menu | Loads Registration page | Works as expected |
+Provide username | Shows error if username is shorter than 4 characters | Works as expected |
+Provide password  | Shows error if password don't meet password criteria | Works as expected |
+Click 'Register' button at the bottom of the form | User is logged-in, taken to the planner page and presented with a confirmation message | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/user-stories-testing/user-story-03-a.JPG">
+<img src="docs/user-stories-testing/user-story-03-b.JPG">
+<img src="docs/user-stories-testing/user-story-03-c.JPG">
+<img src="docs/user-stories-testing/user-story-03-d.JPG">
+</details>
+
+
+4. I want to prepare a plan for multiple weeks in advance
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Register or log in to the account to be able to create a plan | User is taken to the planner page | Works as expected |
+Click on the 'Add a new plan' button | User is taken to choose date page with a date picker | Works as expected |
+Select first day for the plan and click 'Choose' | Loads add plan page with selected first day of the week  | Works as expected |
+Fill in the plan and click 'Add plan' button | Loads view plans page with completed plan | Works as expected |
+Click on the 2nd icon (Plus sign) from the navigation icons below the current plan and repeat two above steps | Create a new plan with a different start day | Works as expected |
+Select first day from the date picker which has already been selected | Show error message and clear date picker for another selection | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/user-stories-testing/user-story-04-a.JPG">
+<img src="docs/user-stories-testing/user-story-04-b.JPG">
+<img src="docs/user-stories-testing/user-story-04-c.JPG">
+<img src="docs/user-stories-testing/user-story-04-d.JPG">
+<img src="docs/user-stories-testing/user-story-04-e.JPG">
+<img src="docs/user-stories-testing/user-story-04-f.JPG">
+</details>
+
 
 ##### Back to [top](#table-of-contents)
 
