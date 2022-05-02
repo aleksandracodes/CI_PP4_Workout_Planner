@@ -67,6 +67,11 @@ def contact(request):
             message_name = request.user.username
             message_email = request.user.email
 
+            if request.user.email:
+                message_email = request.user.email
+            else:
+                message_email = request.POST['message-email']
+
         else:
             message_name = request.POST['message-name']
             message_email = request.POST['message-email']

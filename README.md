@@ -907,7 +907,7 @@ Use right & left arrows to navigate between created plans | Display previous & n
 Click on the 'Exercises' menu on the navigation bar | Loads exercises list page paginated by 12 | Works as expected |
 Use filter to search a specific exercise depending on the body part, level or type | Displays exercises matching users criteria | Works as expected |
 Type a name or part of the exercise name and click on the 'Search' button | Loads exercises containing searched phrase in their title | Works as expected |
-Click on 'Clear' button to remove filter and display list of all exercises | Loads exercises list page paginated by 12 | Works as expected |
+Click on 'Clear' button to remove filter and display list of all exercises | Loads exercises list paginated by 12 | Works as expected |
 Click on '>>' button in the pagination feature to go to the next page displaying next 12 exercises | Loads next 12 exercises from all exercises in the database | Works as expected |
 
 <details><summary>Screenshot</summary>
@@ -920,9 +920,128 @@ Click on '>>' button in the pagination feature to go to the next page displaying
 </details>
 
 
+10. As a returning user, I want to log in to the app to see my current plans
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Click on 'Log in' on the navigation bar and 'Log in' from the drop-down menu | Loads Log in page | Works as expected |
+Provide incorrect username & password | Shows error if username and/or password are not correct | Works as expected |
+Provide correct username & password | Logs user in and loads a planner page. Displays confirmation message and username on the page screen and nav bar | Works as expected |
+Click 'View my current workout plans' on the planner page | Loads view plans page | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/user-stories-testing/user-story-10-a.jpg">
+<img src="docs/user-stories-testing/user-story-10-b.jpg">
+<img src="docs/user-stories-testing/user-story-10-c.jpg">
+<img src="docs/user-stories-testing/user-story-10-d.jpg">
+</details>
+
+
+11. I want every site visitor to be able to view the catalogue of exercises
+    
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Click on 'Exercises' on the navigation bar | Loads exercises list page | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/user-stories-testing/user-story-11-a.jpg">
+</details>
+
 
 ##### Back to [top](#table-of-contents)
 
+
+12. I want only the logged-in users to be able to create their plans
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Click on 'Planner' on the navigation bar | For not logged-in users displays an example of the plan and option to log in or register | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/user-stories-testing/user-story-12-a.jpg">
+</details>
+
+
+
+13. I want users to be able to create the plan on any day that suits their needs
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+On planner page click 'Add a new plan' | Displays choose date page with a day picker | Works as expected |
+Select any date on the calendar other than Monday, eg. Wednesday | Displays add plan page with Wednesday as the first day of the plan | Works as expected |
+Choose other date of the week as a first day, eg. Saturday | Displays add plan page with Saturday as the first day of the plan | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/user-stories-testing/user-story-13-a.jpg">
+<img src="docs/user-stories-testing/user-story-13-b.jpg">
+<img src="docs/user-stories-testing/user-story-13-c.jpg">
+<img src="docs/user-stories-testing/user-story-13-d.jpg">
+<img src="docs/user-stories-testing/user-story-13-e.jpg">
+</details>
+
+
+14. I want data entry to be validated on sign-up page
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Click on the 'Log in' on the nav bar and 'Register' from the drop-down menu | Displays Registration page | Works as expected |
+Input username shorter than 4 characters (eg. xyz) | Prevents registration. Shows warning message to lenghten username text  | Works as expected |
+Input username which has already been taken (eg. Admin) | Prevents registration. Displays 'A user with that username already exists.' message | Works as expected |
+Input incorrect format of email | Shows warning message to include '@' in the email. Prevents registration | Works as expected |
+Input 'newuser12' password |  Prevents registration. Displays 'The password is too similar to the username' message | Works as expected |
+Input '12345678' as a password | Prevents registration. Displays 'This password is entirely numeric' message | Works as expected |
+Input 'testing' as a password | Prevents registration. Displays 'This password is too short. It must contain at least 8 characters' message | Works as expected |
+Input two different values in 'Password' and 'Password (again)' fields | Prevents registration. Displays 'You must type the same password each time.' message | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/user-stories-testing/user-story-14-a.jpg">
+<img src="docs/user-stories-testing/user-story-14-b.jpg">
+<img src="docs/user-stories-testing/user-story-14-c.jpg">
+<img src="docs/user-stories-testing/user-story-14-d.jpg">
+<img src="docs/user-stories-testing/user-story-14-e.jpg">
+<img src="docs/user-stories-testing/user-story-14-f.jpg">
+<img src="docs/user-stories-testing/user-story-14-g.jpg">
+</details>
+
+
+15. I want the user to come to a 404 error page instead of having to use the browser back button if they enter a URL that does not exist
+    
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Type the wrong page in the www address | Reroute to a customised 404 page | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/user-stories-testing/user-story-15-a.jpg">
+
+</details>
+
+
+16. I want user to be able to contact me and provide their feedback
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Click on the envelope icon in the footer | Displays contact page with contact form | Works as expected |
+For user who is not logged-in fill in username, email and message fields and click 'Send message' | Initially displays contact form with no data in and after completion sends the form | Works as expected |
+For user who is logged-in and did not provide email on registration, fill in email and message fields and click 'Send message' | Initially displays contact form with prepopulated username and after input of email and message sends the form | It did not work when tested. User email was not shown in the received email. The code in home views.py was corrected and the feature re-tested. As documented in the screenshot below, it now works as expected. |
+For user who is logged-in and provided email on registration, fill in the message fields and click 'Send message' | Initially displays contact form with prepopulated username and email address and sends the form with user message | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/user-stories-testing/user-story-16-a.jpg">
+<img src="docs/user-stories-testing/user-story-16-b-a.jpg">
+<img src="docs/user-stories-testing/user-story-16-b-b.jpg">
+<img src="docs/user-stories-testing/user-story-16-b-c.jpg">
+<img src="docs/user-stories-testing/user-story-16-b-d.jpg">
+<img src="docs/user-stories-testing/user-story-16-c-a.jpg">
+<img src="docs/user-stories-testing/user-story-16-c-b.jpg">
+<img src="docs/user-stories-testing/user-story-16-c-c.jpg">
+<img src="docs/user-stories-testing/user-story-16-c-d.jpg">
+<img src="docs/user-stories-testing/user-story-16-c-e.jpg">
+<img src="docs/user-stories-testing/user-story-16-c-f.jpg">
+<img src="docs/user-stories-testing/user-story-16-d-a.jpg">
+<img src="docs/user-stories-testing/user-story-16-d-b.jpg">
+<img src="docs/user-stories-testing/user-story-16-d-c.jpg">
+<img src="docs/user-stories-testing/user-story-16-d-d.jpg">
+</details>
 
 ## Bugs
 
