@@ -30,7 +30,10 @@
     - [Frameworks, Libraries & Tools](#frameworks-libraries--tools)
   - [Features](#features)
   - [Validation](#validation)
-  - [Testing user stories](#testing-user-stories)
+  - [Testing](#testing)
+    - [Performing tests on various devices](#performing-tests-on-various-devices)
+    - [Browser compatibility](#browser-compatibility)
+    - [Testing user stories](#testing-user-stories)
   - [Bugs](#bugs)
   - [Deployment](#deployment)
   - [Credits](#credits)
@@ -1042,6 +1045,35 @@ For user who is logged-in and provided email on registration, fill in the messag
 <img src="docs/user-stories-testing/user-story-16-d-c.jpg">
 <img src="docs/user-stories-testing/user-story-16-d-d.jpg">
 </details>
+
+
+17. I want user to receive feedback if their message in contact form has been sent.
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Click on the envelope icon in the footer | Displays contact page with contact form | Works as expected |
+Fill in required contact form fields and click 'Send message' button | Display confirmation message to the user | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/user-stories-testing/user-story-17-a.jpg">
+<img src="docs/user-stories-testing/user-story-17-b.jpg">
+<img src="docs/user-stories-testing/user-story-17-c.jpg">
+</details>
+
+
+18. I want my site to be fully responsive
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Change device screen size using chrome dev tools | The web functionality remains the same on various screen sizes | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/user-stories-testing/user-story-18-a.jpg">
+<img src="docs/user-stories-testing/user-story-18-b.jpg">
+<img src="docs/user-stories-testing/user-story-18-c.jpg">
+<img src="docs/user-stories-testing/user-story-18-d.jpg">
+</details>
+
+
 
 ## Bugs
 
