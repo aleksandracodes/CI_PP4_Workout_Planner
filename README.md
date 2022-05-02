@@ -92,6 +92,12 @@ The Workout Planner is an application for creating weekly training rota which al
 9.	I want to find inspiration for my workouts and be able to use search option to find a particular exercise
 10.	As a returning user, I want to log in to the app to see my current plans
 
+19. I want to see details of a specific exercise to have an idea on how to perform it correctly
+20. I want a paginated list of exercises so that I can easily select an exercise to view
+21. I want to be able to log out from my account
+22. I want to be able to see details of my account on the profile page
+23. I want to be able to delete my account if I decide to no longer use the app
+
 ### Site Owner
 11.	I want every site visitor to be able to view the catalogue of exercises
 12.	I want only the logged-in users to be able to create their plans
@@ -275,7 +281,8 @@ At the top of the page there is a recognisable type of navigation bar with websi
 
 ### Logout
 - Confirmation screen for Logged in user to logout from their account 
-  
+- User stories covered: 21
+
 <details><summary>See feature images</summary>
 
 ![Logout](docs/features/feature-logout.jpg)
@@ -284,7 +291,8 @@ At the top of the page there is a recognisable type of navigation bar with websi
 
 ### Profile
 - Logged in user can see details about their account and workouts created
-  
+- User stories covered: 22
+
 <details><summary>See feature images</summary>
 
 ![Profile](docs/features/feature-profile.jpg)
@@ -294,6 +302,7 @@ At the top of the page there is a recognisable type of navigation bar with websi
 ### Delete account
 - User have an option to delete their account from the system.
 - The modal pops up for user to confirm their choice and are warned that this action is irreversible
+- User stories covered: 23
 
 <details><summary>See feature images</summary>
 
@@ -419,6 +428,7 @@ At the top of the page there is a recognisable type of navigation bar with websi
 
 </details>
 
+
 ### Exercise filter
 - Filter through all the exercises which allows user to find a specific exercise depending on the targetedd body part, level of difficulty or type of training. There is also an option to find an exercise by typing a part of its name
 - Filter collapses on smaller screens and expands by clicking on the 'Find an exercise' button
@@ -435,6 +445,7 @@ At the top of the page there is a recognisable type of navigation bar with websi
 ### Exercise pagination
 - Allows for display of twelve exercises per page, if there are more, the page is paginated
 - User to go the the previous/next page or the first/last page of exercises
+- User stories covered: 20
 
 <details><summary>See feature images</summary>
 
@@ -445,7 +456,8 @@ At the top of the page there is a recognisable type of navigation bar with websi
 ### Exercise detail page
 - Provides overview of the exercise
 - Users can view a detailed description on how to perform the exercise
-
+- User stories covered: 19
+  
 <details><summary>See feature images</summary>
 
 ![Exercise detail page](docs/features/feature-exercise-detail-page.jpg)
@@ -1048,6 +1060,7 @@ For user who is logged-in and provided email on registration, fill in the messag
 
 
 17. I want user to receive feedback if their message in contact form has been sent.
+
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
 Click on the envelope icon in the footer | Displays contact page with contact form | Works as expected |
@@ -1074,6 +1087,81 @@ Change device screen size using chrome dev tools | The web functionality remains
 </details>
 
 
+19. I want to see details of a specific exercise to have an idea on how to perform it correctly
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to exercise page in the navigation bar | Displays the list of all exercises paginated by 12 | Works as expected |
+Click 'View' button under an exercise picture and overview | Displays the selected exercise detail page | Works as expected for both logged in and not logged in user |
+
+<details><summary>Screenshot</summary>
+<img src="docs/user-stories-testing/user-story-19-a.jpg">
+<img src="docs/user-stories-testing/user-story-19-b.jpg">
+<img src="docs/user-stories-testing/user-story-19-c.jpg">
+<img src="docs/user-stories-testing/user-story-19-d.jpg">
+</details>
+
+
+20. I want a paginated list of exercises so that I can easily select an exercise to view
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to exercise page in the navigation bar | Displays the list of all exercises paginated by 12 | Works as expected |
+Click on the '»' symbol to go to the next page | Displays next available page | Works as expected |
+Click on the '»»' to jump to the last page | Displays last page | Works as expected  |
+Click on the '«' symbol to go to the previous page | Displays previous available page | Works as expected |
+Click on the '««' to jump to the first page | Displays first page | Works as expected  |
+Put a filter on exercises and select only exercises for legs from the body part filter and click 'Search' | Displays only exercises matching the search criteria | Works as expected |
+Test '»»' & '««' symbols to jump to the last / first page | Displays last / first page available | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/user-stories-testing/user-story-20-a.jpg">
+<img src="docs/user-stories-testing/user-story-20-b.jpg">
+<img src="docs/user-stories-testing/user-story-20-c.jpg">
+<img src="docs/user-stories-testing/user-story-20-d.jpg">
+<img src="docs/user-stories-testing/user-story-20-e.jpg">
+<img src="docs/user-stories-testing/user-story-20-f.jpg">
+</details>
+
+
+21. I want to be able to log out from my account
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+On navigation bar click on username and select 'Log out' from the drop-down menu | Displays the log out page | Works as expected |
+Click on the 'Log out' button | Logs user out and displays confirmation message | Works as expected |
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/user-stories-testing/user-story-21-a.jpg">
+<img src="docs/user-stories-testing/user-story-21-b.jpg">
+<img src="docs/user-stories-testing/user-story-21-c.jpg">
+</details>
+
+
+22. I want to be able to see details of my account on the profile page
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+On navigation bar click on username and select 'Profile' from the drop-down menu | Displays the profile page | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/user-stories-testing/user-story-22-a.jpg">
+</details>
+
+
+23.  I want to be able to delete my account if I decide to no longer use the app
+
+On navigation bar click on username and select 'Profile' from the drop-down menu | Displays the profile page | Works as expected |
+Click on the 'Delete profile' button | Pops up modal to confirm user's decision and warns about the irreversibility of this action | Works as expected |
+Click on the 'Delete' button to confirm the choice | Deletes the user account and displays the message on the main screen | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/user-stories-testing/user-story-23-a.jpg">
+<img src="docs/user-stories-testing/user-story-23-b.jpg">
+<img src="docs/user-stories-testing/user-story-23-c.jpg">
+<img src="docs/user-stories-testing/user-story-23-d.jpg">
+</details>
 
 ## Bugs
 
