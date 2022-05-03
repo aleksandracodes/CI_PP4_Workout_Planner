@@ -92,7 +92,9 @@ The Workout Planner is an application for creating weekly training rota which al
 9.	I want to find inspiration for my workouts and be able to use search option to find a particular exercise
 10.	As a returning user, I want to log in to the app to see my current plans
 
-19. I want to see details of a specific exercise to have an idea on how to perform it correctly
+
+
+19. I want to see details of a specific exercise and get an idea how to perform it correctly
 20. I want a paginated list of exercises so that I can easily select an exercise to view
 21. I want to be able to log out from my account
 22. I want to be able to see details of my account on the profile page
@@ -706,6 +708,7 @@ The WAVE WebAIM web accessibility evaluation tool was used to test the websites 
 
 <details><summary>Contact page</summary>
 - Initially there were 3 errors shown for no labels to input fields. This was fixed by adding labels and setting bootstrap class to sr-only.
+
 <img src="docs/validation/wave-contact.jpg">
 </details>
 
@@ -727,7 +730,7 @@ The WAVE WebAIM web accessibility evaluation tool was used to test the websites 
 
 <details><summary>Add plan</summary>
 
-- There were 28 error identified related to missing form labels which were fixed and as a result there are no more errors identified. Same issues for edit plan page.
+- There were 28 errors identified related to missing form labels which were fixed and as a result there are no more errors identified. Same issues for edit plan page.
   
 <img src="docs/validation/wave-add-plan.jpg">
 </details>
@@ -1087,7 +1090,7 @@ Change device screen size using chrome dev tools | The web functionality remains
 </details>
 
 
-19. I want to see details of a specific exercise to have an idea on how to perform it correctly
+19. I want to see details of a specific exercise and get an idea how to perform it correctly
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
@@ -1147,6 +1150,7 @@ On navigation bar click on username and select 'Profile' from the drop-down menu
 
 <details><summary>Screenshot</summary>
 <img src="docs/user-stories-testing/user-story-22-a.jpg">
+<img src="docs/user-stories-testing/user-story-22-b.jpg">
 </details>
 
 
@@ -1167,8 +1171,19 @@ Click on the 'Delete' button to confirm the choice | Deletes the user account an
 
 | **Bug** | **Fix** |
 | ------- | ------- |
+| The post method on the date selector did not work properly | Renamed function to 'post', removed 'if request.method == "POST":'. Also standardised the nomenclature of files - changed ‘-‘ to ‘_’ |
+| The session ID for the planner could not be obtained | Changed `"request.session[workout_plan.pk] = workout_plan.id"` into `"request.session['workout_plan.id'] = workout_plan.pk"` |
+| Unable to save forms from formset due to row containing null values | Added properties to WorkoutPlan models (blank=True, null=False, default='',) |
+| Validation:  button being a descendant of an element and vice-versa `(e.g. <a href="/planner"><button type="button" class="button">start now</button></a>` | Made an a tag with a class of link-button (`<a href="/planner" class="link-button mt-2">start now</a>`)|
+| Duplicated code of exercise filters with its appearence on the page was set with CSS and media queries which was causing html errors due to duplicated ID tags | Removed duplicated code and wrote JavaScript function to adjust filter drop-down and functionality on the smaller screens |
+| Validation: wave tool identified 3 errors due to no labels to input fields | Fixed by adding labels and setting bootstrap class to sr-only |
+| Validation: wave tool identified 28 errors for missing form fields labels in add plan and edit plan page | Added labels with no visibility set |
+| Validation: error identified for missing 1st table header field | Added value to the th element and set 'visibility: none'; |
+| Validation: wave tool identified a few error for empty links of navigation icons | Added aria-hidden='true' and set bootstrap class to sr-only |
+| Testing: no email address shown on email from logged-in user who had to manually input their address to the field on the contact form | Amended view to display contact form in views.py by adding nested if function in `if request.user.is_authenticated` |
 
 ##### Back to [top](#table-of-contents)
+
 
 ## Deployment
 
