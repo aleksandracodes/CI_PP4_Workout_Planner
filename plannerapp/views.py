@@ -20,7 +20,10 @@ class PlannerView(ListView):
     A class view to show the planner page
     """
     def get(self, request):
-            return render(request, 'plannerapp/planner.html')
+        """
+        Renders the home page
+        """
+        return render(request, 'plannerapp/planner.html')
 
 
 class ChooseDate(View):
@@ -28,12 +31,15 @@ class ChooseDate(View):
     A class view to display a workout date picker
     """
     def get(self, request):
+        """
+        Renders the first day date picker for the planner
+        """
         return render(request, 'plannerapp/choose_date.html',
                       {'workout_plan_form': WorkoutPlanForm()})
 
     def post(self, request):
         """
-         A view to select the workout start date
+        Creates a new plan with the input from the workout_plan_form
         """
         workout_plan_form = WorkoutPlanForm(request.POST)
 
@@ -90,7 +96,8 @@ class AddPlan(View):
 
     def post(self, request):
         """
-        A view to fill in the workout plan fields
+        Creates a new plan in the database
+        from the input in formset
         """
         workout_plan_id = request.session.get('workout_plan.id')
         workout_plan = WorkoutPlan.objects.get(pk=workout_plan_id)
@@ -146,6 +153,9 @@ class ViewPlans(generic.ListView):
     paginate_by = 1
 
     def get_queryset(self):
+        """
+        Display all plans from logged user
+        """
         return WorkoutPlan.objects.filter(user=self.request.user)
 
 
@@ -187,6 +197,10 @@ class EditPlan(View):
             return redirect('planner_page')
 
     def post(self, request, **kwargs):
+        """
+        Update plan in the database
+        based on formset data
+        """
         workout_plan = WorkoutPlan.objects.get(
             pk=self.kwargs['workout_plan_id'])
 
@@ -244,6 +258,9 @@ class DeletePlan(View):
     A class view for deleting existing plan
     """
     def post(self, request, **kwargs):
+        """
+        Deletes a selected plan
+        """
         record = WorkoutPlan.objects.get(pk=self.kwargs['workout_plan_id'])
         if request.method == "POST":
             record.delete()
