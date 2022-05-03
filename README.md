@@ -10,17 +10,16 @@
 
 ## Table of Contents
   - [About](#about)
-    - [About](#about-1)
-    - [User Goals](#user-goals)
-    - [Site Owner Goals](#site-owner-goals)
+  - [User Goals](#user-goals)
+  - [Site Owner Goals](#site-owner-goals)
   - [User Experience](#user-experience)
-    - [Target Audience](#target-audience)
-    - [User Requirements and Expectations](#user-requirements-and-expectations)
   - [User Stories](#user-stories)
   - [Design](#design)
     - [Colours](#colours)
     - [Fonts](#fonts)
     - [Structure](#structure)
+      - [Website pages](#website-pages)
+      - [Database](#database)
     - [Wireframes](#wireframes)
   - [Technologies Used](#technologies-used)
   - [Features](#features)
@@ -236,6 +235,7 @@ The following models were created to represent the database model structure for 
 - [Bootstrap v5.1.3](https://getbootstrap.com/). This project uses the Bootstrap library for UI components (Buttons, Card, Footer, Modal, Pagination, Navbar)
 - [Canva](https://www.canva.com/) was used to create a background image
 - [Cloudinary](https://cloudinary.com/) to store static files
+- [Dbdiagram.io](https://dbdiagram.io/home) used for the database schema diagram
 - [Favicon.io](https://favicon.io) for making the site favicon
 - [Chrome dev tools](https://developers.google.com/web/tools/chrome-devtools/) was used for debugging of the code and checking site for responsiveness
 - [Font Awesome](https://fontawesome.com/) - Icons from Font Awesome were used throughout the site
@@ -1363,3 +1363,8 @@ Final steps:
 
 ## Acknowledgements
 
+I would like to thank everyone who supported me in the development of this project:
+- Code Institute Tutors for their great assistance
+- My mentor Mo for professional guidance and helpful feedback
+- Code Institute community on Slack for resources and support
+- Friends and family for words of encouragement
