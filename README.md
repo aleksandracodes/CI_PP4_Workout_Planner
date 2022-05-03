@@ -10,7 +10,6 @@
 
 ## Table of Contents
   - [About](#about)
-  - [Table of Contents](#table-of-contents)
     - [About](#about-1)
     - [User Goals](#user-goals)
     - [Site Owner Goals](#site-owner-goals)
@@ -18,24 +17,19 @@
     - [Target Audience](#target-audience)
     - [User Requirements and Expectations](#user-requirements-and-expectations)
   - [User Stories](#user-stories)
-    - [Users](#users)
-    - [Site Owner](#site-owner)
   - [Design](#design)
-    - [Colour](#colour)
+    - [Colours](#colours)
     - [Fonts](#fonts)
     - [Structure](#structure)
     - [Wireframes](#wireframes)
   - [Technologies Used](#technologies-used)
-    - [Languages](#languages)
-    - [Frameworks, Libraries & Tools](#frameworks-libraries--tools)
   - [Features](#features)
   - [Validation](#validation)
   - [Testing](#testing)
-    - [Performing tests on various devices](#performing-tests-on-various-devices)
-    - [Browser compatibility](#browser-compatibility)
-    - [Testing user stories](#testing-user-stories)
   - [Bugs](#bugs)
-  - [Deployment](#deployment)
+  - [Configuration](#configuration)
+    - [Google emails](#google-emails)
+    - [Heroku Deployment](#heroku-deployment)
   - [Credits](#credits)
   - [Acknowledgements](#acknowledgements)
 
@@ -123,7 +117,7 @@ These colours were used throughout all the pages in such a way as to ensure adeq
 
 The pallet created using [Coolors.co](https://coolors.co/)
 <details><summary>See colour pallet</summary>
-<img src="docs/Color-pallet-PP4.png">
+<img src="docs/readme/color-pallet-PP4.png">
 </details>
 
 ### Fonts
@@ -131,6 +125,8 @@ The pallet created using [Coolors.co](https://coolors.co/)
 Google Fonts were implemented on the website. Roboto with sans-serif as fallback was used thoughout the site to present the content in a clear and legible way.
 
 ### Structure
+
+#### Website pages
 
 Simplicity, clarity and ease of navigation between pages were the key aspects for design of this website's structure.
 
@@ -152,6 +148,62 @@ At the top of the page there is a recognisable type of navigation bar with websi
   - Logout page allowing user to log out of the website.
   - Contact page with contact form which allows users to send an email to the developer and provide their feedback.
   - 404 error page.
+
+#### Database
+
+- The backend consists of Python built with the Django framework with a database of a Postgres for the deployed Heroku version(production)
+- Two database models contain all fields stored in the database and mimics the structure of what is actually stored in the Postgres database
+
+<details><summary>Show diagram</summary>
+<img src="docs/readme/database-diagram.png">
+</details>
+
+The following models were created to represent the database model structure for the website:
+
+##### User Model
+- The User model contains information about the user. It is part of the Django allauth library
+
+##### WorkoutPlan Model
+- The WorkoutPlan model contains the following fields: first_day and User
+- The model has a one-to-one relationship with User
+
+##### WorkoutTime Model
+- The WorkoutTime model contains the workout_time_name field
+- The model contains information about the workout time (AM or PM)
+
+##### Workout Model
+- The Workout model contains the following fields: workout_name, workout_time, workout_plan and day
+- It contains WorkoutTime as a foreign key
+- It contains WorkoutPlan as a foreign key
+- The day field contains the date of week for the plan
+
+
+##### Exercise Model
+- The Exercise model contains the following fields: name, description, body_part, type, equipment, level and image
+- The model represents an exercise and its details
+- The name fields contains the exercise name
+- The description field contains exercise description
+- It contains BodyPart as a foreign-key
+- It contains Type as a foreign key
+- It contains Level as a foreign key
+- The image field contains the exercise image
+
+##### BodyPart Model
+- The model contains the body type category for an exercise
+- The model contains the following fields: part
+
+##### Type Model
+- The model contains the type of an exercise
+- The model contains the following fields: type
+
+##### Equipment Model
+- The model contains the equipment type for an exercise
+- The model contains the following fields: equipment
+- It contains Exercise as many-to-many field
+
+##### Level Model
+- The model contains the level of an exercise
+- The model contains the following fields: level
 
 
 ### Wireframes
