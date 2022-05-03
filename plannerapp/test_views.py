@@ -4,10 +4,6 @@
 from django.test import TestCase
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# Internal:
-from .models import WorkoutPlan
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 class TestPlannerViews(TestCase):
     """
