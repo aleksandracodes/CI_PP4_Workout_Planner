@@ -5,7 +5,7 @@
 
 💻 [Visit live website](https://ci-pp4-workout-planner.herokuapp.com/)
 
-![Mockup image](docs/ami-responsivedesign-ci-pp4-workout-planner.jpg)
+![Mockup image](docs/readme/ami-responsivedesign-ci-pp4-workout-planner.jpg)
 
 
 ## Table of Contents
@@ -92,8 +92,7 @@ The Workout Planner is an application for creating weekly training rota which al
 9.	I want to find inspiration for my workouts and be able to use search option to find a particular exercise
 10.	As a returning user, I want to log in to the app to see my current plans
 
-
-
+-
 19. I want to see details of a specific exercise and get an idea how to perform it correctly
 20. I want a paginated list of exercises so that I can easily select an exercise to view
 21. I want to be able to log out from my account
@@ -1185,22 +1184,59 @@ Click on the 'Delete' button to confirm the choice | Deletes the user account an
 ##### Back to [top](#table-of-contents)
 
 
-## Deployment
+## Configuration
 
-### Heroku
+### Google emails
+
+To set up the project to send emails and to use a Google account as an SMTP server, the following steps are required:
+
+1. Create an email account at google.com, login, click you user icon and then on 'Manage Your Google Account'
+2. Click on the Security tab
+3. Turn on 2-step verification and follow the steps to enable
+4. Click on App passwords, click on Select app and choose Other
+5. Give your app a name and click on 'Generate'
+<br>![App password](docs/readme/gmail-configuration.jpg)
+6. A 16 digit password will be generated, note the password down
+7. Set the below variables within the settings.py file to successfully send emails
+<br><code>EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'</code>
+<br><code>EMAIL_HOST = 'smtp.gmail.com'</code>
+<br><code>EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')</code>
+<br><code>EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')</code>
+<br><code>EMAIL_PORT = '587'</code>
+<br><code>EMAIL_USE_TLS = True</code>
+8. Set up the variables EMAIL_HOST_USER and EMAIL_HOST_PASSWORD in your Heroku application (Settings -> Config Vars)
+
+
+### Heroku Deployment
 This application has been deployed from GitHub to Heroku by following the steps:
 
 1. Create or log in to your account at heroku.com
-2. Create a new app, add a unique app name (this project is named "ci-pp3-connect4") and choose your region
+2. Create a new app, add a unique app name (this project is named "ci-pp4-workout-planner") and choose your region
 3. Click on create app
-4. Go to "Settings"
-5. Under Config Vars store any sensitive data you saved in .json file. Name 'Key' field, copy the .json file and paste it to 'Value' field. Also add a key 'PORT' and value '8000'.
-6. Add required buildpacks (further dependencies). For this project, I set up 'Python' and 'node.js' in that order.
-7. Go to "Deploy" and select "GitHub" in "Deployment method"
-8. To link up our Heroku app to our Github repository code enter your repository name, click 'Search' and then 'Connect' when it shows below
-9.  Choose the branch you want to buid your app from
-10. If prefered, click on "Enable Automatic Deploys", which keeps the app up to date with your GitHub repository
-11. Wait for the app to build. Once ready you will see the “App was successfully deployed” message and a 'View' button to take you to your deployed link.
+4. Under resources search for postgres, and add a Postgres database to the app
+5. Install the plugins dj-database-url and psycopg2-binary
+6. Install django and gunicorn
+7. Add the list of requirements by writing in the terminal "pip3 freeze --local > requirements.txt"
+8. Create a Procfile in your app: 
+   ```
+   wsgi:PROJECT_NAME.wsgi
+   ```
+   (web: gunicorn workout_planner.wsgi)
+9.  In the settings.py ensure the connection is to the Heroku postgres database
+10. Ensure Debug is set to False in the settings.py file
+11. Add localhost/127.0.0.1, and ci-pp4-workout-planner.herokuapp.com to the ALLOWED_HOSTS variable in settings.py
+12. Go to Settings in your Heroku and set the environment variables in the Config Vars
+    ![Config vars](docs/readme/heroku-config-vars.jpg)
+13. Remove DISABLE_COLLECTSTATIC from Heroku settings
+14. Push the code to Heroku using the command git push heroku main
+
+Final steps:
+
+- Go to "Deploy" in the menu bar on the top
+- Deployment method: Heroku Git (direct connection to GitHub is no longer available)
+- Follow steps as shown:
+  ![Deployment steps](docs/readme/heroku-deployment.jpg)
+
 
 ### Forking the GitHub Repository
 1. Go to the GitHub repository
@@ -1211,12 +1247,16 @@ This application has been deployed from GitHub to Heroku by following the steps:
 1. Go to the GitHub repository 
 2. Locate the Code button above the list of files and click it
 3. Highlight the "HTTPS" button to clone with HTTPS and copy the link
-4. Open Git Bash
+4. Open commandline interface on your computer
 5. Change the current working directory to the one where you want the cloned directory
-6. Type git clone and paste the URL from the clipboard ($ git clone <span>https://</span>github.com/YOUR-USERNAME/YOUR-REPOSITORY)
+6. Type git clone and paste the URL from the clipboard 
+  ```
+  $ git clone https://github.com/aleksandracodes/CI_PP4_Workout_Planner
+  ```
 7. Press Enter to create your local clone
 
 ##### Back to [top](#table-of-contents)
+
 
 ## Credits
 
