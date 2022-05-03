@@ -1260,9 +1260,52 @@ Final steps:
 
 ## Credits
 
+- [Bodybuilding.com](https://www.bodybuilding.com/exercises/) & [Regainedwellness](https://www.regainedwellness.com/kneeling-squat/) for description of the exercises used within this app
+- 
+
 ### Images
 
+**Images used in this app were found via Google Search Engine. I'm not able to list all the sources but would like to emphasise that I'm not the author of any of them, except for the background image**
+- Some pictures used in this app were taken from the CrossFit® youtube channel (screenshot), e.g. bench press
+- Picture of Hip thrust exercise taken from [here](https://www.gofitnessplan.com/images/exercises/female/hip-thrust.jpg)
+- Picture of Pull up exercise taken from [here](https://www.climbing.com/skills/training-perfect-pullups-for-climbing-strength/)
+- Picture of Triceps kick back taken from [here](https://www.coachmag.co.uk/triceps-exercises/6913/how-to-do-the-triceps-kick-back)
+- Picture of Romanian Deadlift exercise taken from [here](https://www.thekuproject.com/romanian-deadlift-joint-angle-and-bar-placement/)
+- Picture of Broad jump exercise taken from [here](https://gmb.io/jump-tutorial/)
+- Picture of Jumping Jack exercise taken from [here](https://www.istockphoto.com/illustrations/jumping-jack-cartoon)
+- Picture of Hammer Curls exercise taken from [here](https://www.vectorstock.com/royalty-free-vector/woman-doing-dumbbell-bicep-hammer-curls-vector-39144519)
+- Home page images: [feepik](https://www.freepik.com/premium-vector/personal-training-concept-coach-athlete-vector-characters-training-plan-flat-fitness-illustration-training-personal-fitness-gym-exercise-workout_11293467.htm) & [PNG ALL](https://www.pngall.com/workout-png/download/43673)
+- [This](https://media.istockphoto.com/vectors/sport-trauma-vector-illustration-vector-id1265164407?k=20&m=1265164407&s=612x612&w=0&h=URdjumpMbhR5ZnpioEXsQtO4bY8mL7z04wt1ZxIqlC4=) picture was used for error pages
+- The background image was created by the developer with [Canva](https://www.canva.com/)
+
 ### Code
+
+- How to create sign in and out page inspired by [this tutorial](https://www.youtube.com/watch?v=PtQiiknWUcI) later in the developement replaced using django allauth
+- How to render formatted text in the admin area on the website by [GitHub](https://github.com/summernote/django-summernote)
+- How to represent day of the week with names instead of dates – [source](https://docs.djangoproject.com/en/dev/ref/templates/builtins/?from=olddocs#date)
+- [Youtube tutorial](https://www.youtube.com/watch?v=nle3u6Ww6Xk) on how to create exercise filter
+- Model forms:
+  - [Youtube tutorial](https://www.youtube.com/watch?v=I2-JYxnSiB0) explaining model forms and forms widget
+  - GET and POST methods on forms - [source](https://docs.djangoproject.com/en/4.0/topics/forms/#:~:text=Django's%20login%20form%20is%20returned,this%20to%20compose%20a%20URL)
+  - ModelForm and save() method - [source](https://docs.djangoproject.com/en/dev/topics/forms/modelforms/)
+- FormSets:
+  - [Geeksforgeeks](https://www.geeksforgeeks.org/django-formsets/) brilliant tutorial on how to create and use Django formsets
+  - [Stackoverflow](https://stackoverflow.com/questions/40119792/django-model-formset-factory-and-forms) - template for formset using {{formset.management_form}}
+  - [Youtube tutorial](https://www.youtube.com/watch?v=JIvJL1HizP4&t=8s) with explanation of Form Set Factory
+  - [Stackoverflow](https://stackoverflow.com/questions/11481499/django-iterate-number-in-for-loop-of-a-template) used for creating a table with forllop counter
+  - [Youtube tutorial](https://www.youtube.com/watch?v=6wHx-X1tEiY) was used for EditPlan class get method
+  - [This source](https://dev.to/greenteabiscuit/deleting-the-form-field-label-in-django-1i20) was used to learn how to delete the form field label in the planner
+- Lear about [form widgets](https://docs.djangoproject.com/en/4.0/ref/forms/widgets/)
+- [Stackoverflow](https://stackoverflow.com/questions/8609192/what-is-the-difference-between-null-true-and-blank-true-in-django) explanation between blank & null in the database
+- Pagination used in the view_plans page explained in the course materials from Code Institute
+- Pagination with filters created using [Youtube tutorial](https://www.youtube.com/watch?v=dkJ3uqkdCcY&t=1138s) and [caktusgroup.com](https://www.caktusgroup.com/blog/2018/10/18/filtering-and-pagination-django)
+- Feedback messages taken from Code Institute 'I think therefore I blog' walkthrough project
+- Collapsible navbar effect created with this [Youtube tutorial](https://www.youtube.com/watch?v=_MrShB9fh7U)
+- How to send emails with Django and Gmail – [Youtube](https://www.youtube.com/watch?v=xNqnHmXIuzU&list=PLCC34OHNcOtrZnQI6ZLvGPUWfQ6oh-D6H&index=9)  & [dev.to](https://dev.to/abderrahmanemustapha/how-to-send-email-with-django-and-gmail-in-production-the-right-way-24ab)
+-	Sticky first column in the table created with help of [this source](https://write.corbpie.com/bootstrap-sticky-first-column-horizontal-scrolling-table/)
+- Arrows for plans pagination taken from [here](https://www.toptal.com/designers/htmlarrows/arrows/)
+- [Stackoverflow](https://stackoverflow.com/questions/59598460/need-help-to-save-different-unique-date-in-django/59598515#59598515) - prevent choosing the same start day if the plan already exists
+- [Stackoverflow](https://stackoverflow.com/questions/11293380/django-catching-integrity-error-and-showing-a-customized-message-using-template/29000608#29000608) - catch Integrity Error and show a customized message using template
 
 ##### Back to [top](#table-of-contents)
 
