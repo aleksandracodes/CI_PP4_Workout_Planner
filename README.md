@@ -25,6 +25,10 @@
   - [Features](#features)
   - [Validation](#validation)
   - [Testing](#testing)
+    - [Manual testing of user stories](#manual-testing-of-user-stories)
+    - [Automated testing](#automated-testing)
+    - [Performing tests on various devices](#performing-tests-on-various-devices)
+    - [Browser compatibility](#browser-compatibility)
   - [Bugs](#bugs)
   - [Configuration](#configuration)
     - [Google emails](#google-emails)
@@ -825,23 +829,11 @@ The WAVE WebAIM web accessibility evaluation tool was used to test the websites 
 
 ## Testing
 
-### Performing tests on various devices
+The testing approach is as follows:
+1. Manual testing of user stories
+2. Automated testing
 
-The website was tested using Google Chrome Developer Tools Toggle Device Toolbar to simulate viewports of different devices.
-
-The website was tested on the following devices:
-- ASUS ZenBook (tablet screen)
-- Samsung Galaxy Tab A (tablet screen)
-- Samsung S7 (mobile screen)
-
-### Browser compatibility
-
-- Testing has been carried out on the following browsers:
-  - Googe Chrome Version 101.0.4951.41 (Official Build) (64-bit)
-  - Firefox Browser 99.0.1 (64-bit)
-  - Microsoft Edge Version 101.0.1210.32 (Official build) (64-bit)
-
-### Testing user stories
+### Manual testing of user stories
 
 1. I want to see the home page with explanation of the app
 
@@ -850,7 +842,7 @@ The website was tested on the following devices:
 Navigate to https://ci-pp4-workout-planner.herokuapp.com/ | Home page main body loads with application description | Works as expected |
 
 <details><summary>Screenshot</summary>
-<img src="docs/user-stories-testing/user-story-01.jpg">
+<img src="docs/testing/user-stories-testing/user-story-01.jpg">
 </details>
 
 
@@ -865,11 +857,11 @@ Click on User name on the navigation bar and then 'Profile' from the drop-down m
 Click on User name on the navigation bar and then 'Log out' from the drop-down menu| Loads log out page | Works as expected |
 
 <details><summary>Screenshot</summary>
-<img src="docs/user-stories-testing/user-story-02-a.jpg">
-<img src="docs/user-stories-testing/user-story-02-b.jpg">
-<img src="docs/user-stories-testing/user-story-02-c.jpg">
-<img src="docs/user-stories-testing/user-story-02-e.jpg">
-<img src="docs/user-stories-testing/user-story-02-f.jpg">
+<img src="docs/testing/user-stories-testing/user-story-02-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-02-b.jpg">
+<img src="docs/testing/user-stories-testing/user-story-02-c.jpg">
+<img src="docs/testing/user-stories-testing/user-story-02-e.jpg">
+<img src="docs/testing/user-stories-testing/user-story-02-f.jpg">
 </details>
 
 
@@ -883,11 +875,11 @@ Provide password  | Shows error if password don't meet password criteria | Works
 Click 'Register' button at the bottom of the form | User is logged-in, taken to the planner page and presented with a confirmation message | Works as expected |
 
 <details><summary>Screenshot</summary>
-<img src="docs/user-stories-testing/user-story-03-a.jpg">
-<img src="docs/user-stories-testing/user-story-03-b.jpg">
-<img src="docs/user-stories-testing/user-story-03-c.jpg">
-<img src="docs/user-stories-testing/user-story-03-d.jpg">
-<img src="docs/user-stories-testing/user-story-03-e.jpg">
+<img src="docs/testing/user-stories-testing/user-story-03-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-03-b.jpg">
+<img src="docs/testing/user-stories-testing/user-story-03-c.jpg">
+<img src="docs/testing/user-stories-testing/user-story-03-d.jpg">
+<img src="docs/testing/user-stories-testing/user-story-03-e.jpg">
 </details>
 
 
@@ -903,12 +895,12 @@ Click on the 2nd icon (Plus sign) from the navigation icons below the current pl
 Select first day from the date picker which has already been selected | Show error message and clear date picker for another selection | Works as expected |
 
 <details><summary>Screenshot</summary>
-<img src="docs/user-stories-testing/user-story-04-a.jpg">
-<img src="docs/user-stories-testing/user-story-04-b.jpg">
-<img src="docs/user-stories-testing/user-story-04-c.jpg">
-<img src="docs/user-stories-testing/user-story-04-d.jpg">
-<img src="docs/user-stories-testing/user-story-04-e.jpg">
-<img src="docs/user-stories-testing/user-story-04-f.jpg">
+<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+<img src="docs/testing/user-stories-testing/user-story-04-c.jpg">
+<img src="docs/testing/user-stories-testing/user-story-04-d.jpg">
+<img src="docs/testing/user-stories-testing/user-story-04-e.jpg">
+<img src="docs/testing/user-stories-testing/user-story-04-f.jpg">
 </details>
 
 
@@ -920,8 +912,8 @@ In the view plans page click on the 1st icon from the navigation icons below the
 Edit the plan and click on 'Save' button | Loads view plans page, displays confirmation message and shows amended plan | Works as expected |
 
 <details><summary>Screenshot</summary>
-<img src="docs/user-stories-testing/user-story-05-a.jpg">
-<img src="docs/user-stories-testing/user-story-05-b.jpg">
+<img src="docs/testing/user-stories-testing/user-story-05-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-05-b.jpg">
 </details>
 
 
@@ -933,9 +925,9 @@ In the view plans page click on the 3rd icon from the navigation icons below the
 Click on 'Delete' on the pop up modal | Deletes selected plan and displays confirmation message. Show current plans and if no plans are saved a relevant message for user | Works as expected |
 
 <details><summary>Screenshot</summary>
-<img src="docs/user-stories-testing/user-story-06-a.jpg">
-<img src="docs/user-stories-testing/user-story-06-b.jpg">
-<img src="docs/user-stories-testing/user-story-06-c.jpg">
+<img src="docs/testing/user-stories-testing/user-story-06-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-06-b.jpg">
+<img src="docs/testing/user-stories-testing/user-story-06-c.jpg">
 </details>
 
 7.  I want to see feedback messages so that I know that my plan was created, edited or deleted
@@ -948,9 +940,9 @@ In the view plans page click on the 1st icon from the navigation icons below the
 In the view plans page click on the 3rd icon from the navigation icons below the current plan, click on 'Delete' on the pop up modal | Deletes selected plan and displays confirmation message. Show current plans and if no plans are saved a relevant message for user | Works as expected |
 
 <details><summary>Screenshot</summary>
-<img src="docs/user-stories-testing/user-story-07-a.jpg">
-<img src="docs/user-stories-testing/user-story-07-b.jpg">
-<img src="docs/user-stories-testing/user-story-07-c.jpg">
+<img src="docs/testing/user-stories-testing/user-story-07-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-07-b.jpg">
+<img src="docs/testing/user-stories-testing/user-story-07-c.jpg">
 </details>
 
 
@@ -963,9 +955,9 @@ Click on 'View my current workout plans' button | Loads view plans page | Works 
 Use right & left arrows to navigate between created plans | Display previous & next plan | Works as expected |
 
 <details><summary>Screenshot</summary>
-<img src="docs/user-stories-testing/user-story-08-a.jpg">
-<img src="docs/user-stories-testing/user-story-08-b.jpg">
-<img src="docs/user-stories-testing/user-story-08-c.jpg">
+<img src="docs/testing/user-stories-testing/user-story-08-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-08-b.jpg">
+<img src="docs/testing/user-stories-testing/user-story-08-c.jpg">
 </details>
 
 
@@ -980,12 +972,12 @@ Click on 'Clear' button to remove filter and display list of all exercises | Loa
 Click on '>>' button in the pagination feature to go to the next page displaying next 12 exercises | Loads next 12 exercises from all exercises in the database | Works as expected |
 
 <details><summary>Screenshot</summary>
-<img src="docs/user-stories-testing/user-story-09-a.jpg">
-<img src="docs/user-stories-testing/user-story-09-b.jpg">
-<img src="docs/user-stories-testing/user-story-09-c.jpg">
-<img src="docs/user-stories-testing/user-story-09-d.jpg">
-<img src="docs/user-stories-testing/user-story-09-e.jpg">
-<img src="docs/user-stories-testing/user-story-09-f.jpg">
+<img src="docs/testing/user-stories-testing/user-story-09-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-09-b.jpg">
+<img src="docs/testing/user-stories-testing/user-story-09-c.jpg">
+<img src="docs/testing/user-stories-testing/user-story-09-d.jpg">
+<img src="docs/testing/user-stories-testing/user-story-09-e.jpg">
+<img src="docs/testing/user-stories-testing/user-story-09-f.jpg">
 </details>
 
 
@@ -999,10 +991,10 @@ Provide correct username & password | Logs user in and loads a planner page. Dis
 Click 'View my current workout plans' on the planner page | Loads view plans page | Works as expected |
 
 <details><summary>Screenshot</summary>
-<img src="docs/user-stories-testing/user-story-10-a.jpg">
-<img src="docs/user-stories-testing/user-story-10-b.jpg">
-<img src="docs/user-stories-testing/user-story-10-c.jpg">
-<img src="docs/user-stories-testing/user-story-10-d.jpg">
+<img src="docs/testing/user-stories-testing/user-story-10-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-10-b.jpg">
+<img src="docs/testing/user-stories-testing/user-story-10-c.jpg">
+<img src="docs/testing/user-stories-testing/user-story-10-d.jpg">
 </details>
 
 
@@ -1013,7 +1005,7 @@ Click 'View my current workout plans' on the planner page | Loads view plans pag
 Click on 'Exercises' on the navigation bar | Loads exercises list page | Works as expected |
 
 <details><summary>Screenshot</summary>
-<img src="docs/user-stories-testing/user-story-11-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-11-a.jpg">
 </details>
 
 
@@ -1027,7 +1019,7 @@ Click on 'Exercises' on the navigation bar | Loads exercises list page | Works a
 Click on 'Planner' on the navigation bar | For not logged-in users displays an example of the plan and option to log in or register | Works as expected |
 
 <details><summary>Screenshot</summary>
-<img src="docs/user-stories-testing/user-story-12-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-12-a.jpg">
 </details>
 
 
@@ -1041,11 +1033,11 @@ Select any date on the calendar other than Monday, eg. Wednesday | Displays add 
 Choose other date of the week as a first day, eg. Saturday | Displays add plan page with Saturday as the first day of the plan | Works as expected |
 
 <details><summary>Screenshot</summary>
-<img src="docs/user-stories-testing/user-story-13-a.jpg">
-<img src="docs/user-stories-testing/user-story-13-b.jpg">
-<img src="docs/user-stories-testing/user-story-13-c.jpg">
-<img src="docs/user-stories-testing/user-story-13-d.jpg">
-<img src="docs/user-stories-testing/user-story-13-e.jpg">
+<img src="docs/testing/user-stories-testing/user-story-13-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-13-b.jpg">
+<img src="docs/testing/user-stories-testing/user-story-13-c.jpg">
+<img src="docs/testing/user-stories-testing/user-story-13-d.jpg">
+<img src="docs/testing/user-stories-testing/user-story-13-e.jpg">
 </details>
 
 
@@ -1063,13 +1055,13 @@ Input 'testing' as a password | Prevents registration. Displays 'This password i
 Input two different values in 'Password' and 'Password (again)' fields | Prevents registration. Displays 'You must type the same password each time.' message | Works as expected |
 
 <details><summary>Screenshot</summary>
-<img src="docs/user-stories-testing/user-story-14-a.jpg">
-<img src="docs/user-stories-testing/user-story-14-b.jpg">
-<img src="docs/user-stories-testing/user-story-14-c.jpg">
-<img src="docs/user-stories-testing/user-story-14-d.jpg">
-<img src="docs/user-stories-testing/user-story-14-e.jpg">
-<img src="docs/user-stories-testing/user-story-14-f.jpg">
-<img src="docs/user-stories-testing/user-story-14-g.jpg">
+<img src="docs/testing/user-stories-testing/user-story-14-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-14-b.jpg">
+<img src="docs/testing/user-stories-testing/user-story-14-c.jpg">
+<img src="docs/testing/user-stories-testing/user-story-14-d.jpg">
+<img src="docs/testing/user-stories-testing/user-story-14-e.jpg">
+<img src="docs/testing/user-stories-testing/user-story-14-f.jpg">
+<img src="docs/testing/user-stories-testing/user-story-14-g.jpg">
 </details>
 
 
@@ -1080,7 +1072,7 @@ Input two different values in 'Password' and 'Password (again)' fields | Prevent
 Type the wrong page in the www address | Reroute to a customised 404 page | Works as expected |
 
 <details><summary>Screenshot</summary>
-<img src="docs/user-stories-testing/user-story-15-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-15-a.jpg">
 
 </details>
 
@@ -1095,21 +1087,21 @@ For user who is logged-in and did not provide email on registration, fill in ema
 For user who is logged-in and provided email on registration, fill in the message fields and click 'Send message' | Initially displays contact form with prepopulated username and email address and sends the form with user message | Works as expected |
 
 <details><summary>Screenshot</summary>
-<img src="docs/user-stories-testing/user-story-16-a.jpg">
-<img src="docs/user-stories-testing/user-story-16-b-a.jpg">
-<img src="docs/user-stories-testing/user-story-16-b-b.jpg">
-<img src="docs/user-stories-testing/user-story-16-b-c.jpg">
-<img src="docs/user-stories-testing/user-story-16-b-d.jpg">
-<img src="docs/user-stories-testing/user-story-16-c-a.jpg">
-<img src="docs/user-stories-testing/user-story-16-c-b.jpg">
-<img src="docs/user-stories-testing/user-story-16-c-c.jpg">
-<img src="docs/user-stories-testing/user-story-16-c-d.jpg">
-<img src="docs/user-stories-testing/user-story-16-c-e.jpg">
-<img src="docs/user-stories-testing/user-story-16-c-f.jpg">
-<img src="docs/user-stories-testing/user-story-16-d-a.jpg">
-<img src="docs/user-stories-testing/user-story-16-d-b.jpg">
-<img src="docs/user-stories-testing/user-story-16-d-c.jpg">
-<img src="docs/user-stories-testing/user-story-16-d-d.jpg">
+<img src="docs/testing/user-stories-testing/user-story-16-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-16-b-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-16-b-b.jpg">
+<img src="docs/testing/user-stories-testing/user-story-16-b-c.jpg">
+<img src="docs/testing/user-stories-testing/user-story-16-b-d.jpg">
+<img src="docs/testing/user-stories-testing/user-story-16-c-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-16-c-b.jpg">
+<img src="docs/testing/user-stories-testing/user-story-16-c-c.jpg">
+<img src="docs/testing/user-stories-testing/user-story-16-c-d.jpg">
+<img src="docs/testing/user-stories-testing/user-story-16-c-e.jpg">
+<img src="docs/testing/user-stories-testing/user-story-16-c-f.jpg">
+<img src="docs/testing/user-stories-testing/user-story-16-d-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-16-d-b.jpg">
+<img src="docs/testing/user-stories-testing/user-story-16-d-c.jpg">
+<img src="docs/testing/user-stories-testing/user-story-16-d-d.jpg">
 </details>
 
 
@@ -1121,9 +1113,9 @@ Click on the envelope icon in the footer | Displays contact page with contact fo
 Fill in required contact form fields and click 'Send message' button | Display confirmation message to the user | Works as expected |
 
 <details><summary>Screenshot</summary>
-<img src="docs/user-stories-testing/user-story-17-a.jpg">
-<img src="docs/user-stories-testing/user-story-17-b.jpg">
-<img src="docs/user-stories-testing/user-story-17-c.jpg">
+<img src="docs/testing/user-stories-testing/user-story-17-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-17-b.jpg">
+<img src="docs/testing/user-stories-testing/user-story-17-c.jpg">
 </details>
 
 
@@ -1134,10 +1126,10 @@ Fill in required contact form fields and click 'Send message' button | Display c
 Change device screen size using chrome dev tools | The web functionality remains the same on various screen sizes | Works as expected |
 
 <details><summary>Screenshot</summary>
-<img src="docs/user-stories-testing/user-story-18-a.jpg">
-<img src="docs/user-stories-testing/user-story-18-b.jpg">
-<img src="docs/user-stories-testing/user-story-18-c.jpg">
-<img src="docs/user-stories-testing/user-story-18-d.jpg">
+<img src="docs/testing/user-stories-testing/user-story-18-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-18-b.jpg">
+<img src="docs/testing/user-stories-testing/user-story-18-c.jpg">
+<img src="docs/testing/user-stories-testing/user-story-18-d.jpg">
 </details>
 
 
@@ -1149,10 +1141,10 @@ Navigate to exercise page in the navigation bar | Displays the list of all exerc
 Click 'View' button under an exercise picture and overview | Displays the selected exercise detail page | Works as expected for both logged in and not logged in user |
 
 <details><summary>Screenshot</summary>
-<img src="docs/user-stories-testing/user-story-19-a.jpg">
-<img src="docs/user-stories-testing/user-story-19-b.jpg">
-<img src="docs/user-stories-testing/user-story-19-c.jpg">
-<img src="docs/user-stories-testing/user-story-19-d.jpg">
+<img src="docs/testing/user-stories-testing/user-story-19-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-19-b.jpg">
+<img src="docs/testing/user-stories-testing/user-story-19-c.jpg">
+<img src="docs/testing/user-stories-testing/user-story-19-d.jpg">
 </details>
 
 
@@ -1169,12 +1161,12 @@ Put a filter on exercises and select only exercises for legs from the body part 
 Test '»»' & '««' symbols to jump to the last / first page | Displays last / first page available | Works as expected |
 
 <details><summary>Screenshot</summary>
-<img src="docs/user-stories-testing/user-story-20-a.jpg">
-<img src="docs/user-stories-testing/user-story-20-b.jpg">
-<img src="docs/user-stories-testing/user-story-20-c.jpg">
-<img src="docs/user-stories-testing/user-story-20-d.jpg">
-<img src="docs/user-stories-testing/user-story-20-e.jpg">
-<img src="docs/user-stories-testing/user-story-20-f.jpg">
+<img src="docs/testing/user-stories-testing/user-story-20-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-20-b.jpg">
+<img src="docs/testing/user-stories-testing/user-story-20-c.jpg">
+<img src="docs/testing/user-stories-testing/user-story-20-d.jpg">
+<img src="docs/testing/user-stories-testing/user-story-20-e.jpg">
+<img src="docs/testing/user-stories-testing/user-story-20-f.jpg">
 </details>
 
 
@@ -1187,9 +1179,9 @@ Click on the 'Log out' button | Logs user out and displays confirmation message 
 
 
 <details><summary>Screenshot</summary>
-<img src="docs/user-stories-testing/user-story-21-a.jpg">
-<img src="docs/user-stories-testing/user-story-21-b.jpg">
-<img src="docs/user-stories-testing/user-story-21-c.jpg">
+<img src="docs/testing/user-stories-testing/user-story-21-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-21-b.jpg">
+<img src="docs/testing/user-stories-testing/user-story-21-c.jpg">
 </details>
 
 
@@ -1200,23 +1192,62 @@ Click on the 'Log out' button | Logs user out and displays confirmation message 
 On navigation bar click on username and select 'Profile' from the drop-down menu | Displays the profile page | Works as expected |
 
 <details><summary>Screenshot</summary>
-<img src="docs/user-stories-testing/user-story-22-a.jpg">
-<img src="docs/user-stories-testing/user-story-22-b.jpg">
+<img src="docs/testing/user-stories-testing/user-story-22-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-22-b.jpg">
 </details>
 
 
 23.  I want to be able to delete my account if I decide to no longer use the app
 
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
 On navigation bar click on username and select 'Profile' from the drop-down menu | Displays the profile page | Works as expected |
 Click on the 'Delete profile' button | Pops up modal to confirm user's decision and warns about the irreversibility of this action | Works as expected |
 Click on the 'Delete' button to confirm the choice | Deletes the user account and displays the message on the main screen | Works as expected |
 
 <details><summary>Screenshot</summary>
-<img src="docs/user-stories-testing/user-story-23-a.jpg">
-<img src="docs/user-stories-testing/user-story-23-b.jpg">
-<img src="docs/user-stories-testing/user-story-23-c.jpg">
-<img src="docs/user-stories-testing/user-story-23-d.jpg">
+<img src="docs/testing/user-stories-testing/user-story-23-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-23-b.jpg">
+<img src="docs/testing/user-stories-testing/user-story-23-c.jpg">
+<img src="docs/testing/user-stories-testing/user-story-23-d.jpg">
 </details>
+
+
+### Automated testing
+
+Automated testing was done using the Django's unit tests from a Python standard library module: unittest. The reports were produced using the coverage tool.
+
+- Exercises app:
+
+<img src="docs/testing/coverage-exercises-app.jpg">
+
+- Home app:
+
+<img src="docs/testing/coverage-home-app.jpg">
+
+- Plannerapp app:
+
+<img src="docs/testing/coverage-plannerapp.jpg">
+
+
+### Performing tests on various devices
+
+The website was tested using Google Chrome Developer Tools Toggle Device Toolbar to simulate viewports of different devices.
+
+The website was tested on the following devices:
+- ASUS ZenBook (tablet screen)
+- Samsung Galaxy Tab A (tablet screen)
+- Samsung S7 (mobile screen)
+
+### Browser compatibility
+
+- Testing has been carried out on the following browsers:
+  - Googe Chrome Version 101.0.4951.41 (Official Build) (64-bit)
+  - Firefox Browser 99.0.1 (64-bit)
+  - Microsoft Edge Version 101.0.1210.32 (Official build) (64-bit)
+
+##### Back to [top](#table-of-contents)
+
 
 ## Bugs
 
