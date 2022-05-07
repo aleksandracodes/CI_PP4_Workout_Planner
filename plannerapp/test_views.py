@@ -16,3 +16,11 @@ class TestPlannerViews(TestCase):
         response = self.client.get('/planner/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'plannerapp/planner.html')
+
+    def test_choose_date(self):
+        """
+        This test checks the display of the date picker page
+        """
+        response = self.client.get('/planner/choose_date/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'plannerapp/choose_date.html')
