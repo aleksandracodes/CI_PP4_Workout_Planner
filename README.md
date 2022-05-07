@@ -648,6 +648,10 @@ PEP8 Validation Service was used to check the code for PEP8 requirements. All th
 <img src="docs/validation/pep8-validation-exercises-models.JPG">
 </details>
 
+<details><summary>Models.py</summary>
+<img src="docs/validation/pep8-validation-exercises-test-views.jpg">
+</details>
+
 <details><summary>Urls.py</summary>
 <img src="docs/validation/pep8-validation-exercises-urls.JPG">
 </details>
@@ -694,6 +698,10 @@ PEP8 Validation Service was used to check the code for PEP8 requirements. All th
 
 <details><summary>Models.py</summary>
 <img src="docs/validation/pep8-validation-plannerapp-models.JPG">
+</details>
+
+<details><summary>Test_views.py</summary>
+<img src="docs/validation/pep8-validation-plannerapp-test-views.jpg">
 </details>
 
 <details><summary>Urls.py</summary>
@@ -1344,7 +1352,6 @@ Final steps:
 ## Credits
 
 - [Bodybuilding.com](https://www.bodybuilding.com/exercises/) & [Regainedwellness](https://www.regainedwellness.com/kneeling-squat/) for description of the exercises used within this app
-- 
 
 ### Images
 
