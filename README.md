@@ -648,7 +648,7 @@ PEP8 Validation Service was used to check the code for PEP8 requirements. All th
 <img src="docs/validation/pep8-validation-exercises-models.JPG">
 </details>
 
-<details><summary>Models.py</summary>
+<details><summary>Test_views.py</summary>
 <img src="docs/validation/pep8-validation-exercises-test-views.jpg">
 </details>
 
