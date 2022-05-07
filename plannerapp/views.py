@@ -75,72 +75,83 @@ class AddPlan(View):
         """
         Display a field for each day to add a single workout
         """
-        # based on the current session ID (first day of schedule)
-        workout_plan_id = request.session.get('workout_plan.id')
-        workout_plan = WorkoutPlan.objects.get(pk=workout_plan_id)
-        day1 = workout_plan.first_day
-        day2 = day1 + timedelta(days=1)
-        day3 = day1 + timedelta(days=2)
-        day4 = day1 + timedelta(days=3)
-        day5 = day1 + timedelta(days=4)
-        day6 = day1 + timedelta(days=5)
-        day7 = day1 + timedelta(days=6)
+        try:
+            # based on the current session ID (first day of schedule)
+            workout_plan_id = request.session.get('workout_plan.id')
+            workout_plan = WorkoutPlan.objects.get(pk=workout_plan_id)
+            day1 = workout_plan.first_day
+            day2 = day1 + timedelta(days=1)
+            day3 = day1 + timedelta(days=2)
+            day4 = day1 + timedelta(days=3)
+            day5 = day1 + timedelta(days=4)
+            day6 = day1 + timedelta(days=5)
+            day7 = day1 + timedelta(days=6)
 
-        # 28 -> 4 rows for 7 days
-        formset = formset_factory(WorkoutForm, extra=28)
+            # 28 -> 4 rows for 7 days
+            formset = formset_factory(WorkoutForm, extra=28)
 
-        context = {'day1': day1, 'day2': day2, 'day3': day3, 'day4': day4,
-                   'day5': day5, 'day6': day6, 'day7': day7,
-                   'formset': formset, }
-        return render(request, 'plannerapp/add_plan.html', context)
+            context = {'day1': day1, 'day2': day2, 'day3': day3, 'day4': day4,
+                       'day5': day5, 'day6': day6, 'day7': day7,
+                       'formset': formset, }
+            return render(request, 'plannerapp/add_plan.html', context)
+
+        except:
+            messages.error(request, 'An error occurred...')
+            return redirect('home')
 
     def post(self, request):
         """
         Creates a new plan in the database
         from the input in formset
         """
-        workout_plan_id = request.session.get('workout_plan.id')
-        workout_plan = WorkoutPlan.objects.get(pk=workout_plan_id)
+        try:
+            workout_plan_id = request.session.get('workout_plan.id')
+            workout_plan = WorkoutPlan.objects.get(pk=workout_plan_id)
 
-        day1 = workout_plan.first_day
-        week = [
-            day1,
-            day1 + timedelta(days=1),
-            day1 + timedelta(days=2),
-            day1 + timedelta(days=3),
-            day1 + timedelta(days=4),
-            day1 + timedelta(days=5),
-            day1 + timedelta(days=6),
-        ]
+            day1 = workout_plan.first_day
+            week = [
+                day1,
+                day1 + timedelta(days=1),
+                day1 + timedelta(days=2),
+                day1 + timedelta(days=3),
+                day1 + timedelta(days=4),
+                day1 + timedelta(days=5),
+                day1 + timedelta(days=6),
+            ]
 
-        schedule_fields = formset_factory(WorkoutForm, extra=28)
-        formset = schedule_fields(request.POST)
+            schedule_fields = formset_factory(WorkoutForm, extra=28)
+            formset = schedule_fields(request.POST)
 
-        if formset.is_valid():
-            field = 0
-            for form in formset:
-                workout_name = form.cleaned_data.get('workout_name')
-                if workout_name is None:
-                    workout_name = ''
-                workout_day = week[field % 7]
+            if formset.is_valid():
+                field = 0
+                for form in formset:
+                    workout_name = form.cleaned_data.get('workout_name')
+                    if workout_name is None:
+                        workout_name = ''
+                    workout_day = week[field % 7]
 
-                if field < 14:
-                    workout_time = WorkoutTime.objects.get(
-                        workout_time_name='AM')
-                else:
-                    workout_time = WorkoutTime.objects.get(
-                        workout_time_name='PM')
+                    if field < 14:
+                        workout_time = WorkoutTime.objects.get(
+                            workout_time_name='AM')
+                    else:
+                        workout_time = WorkoutTime.objects.get(
+                            workout_time_name='PM')
 
-                workout = Workout(
-                    workout_name=workout_name,
-                    workout_time=workout_time,
-                    workout_plan=workout_plan,
-                    day=workout_day
-                )
-                workout.save()
-                field += 1
-            messages.success(request, 'Your plan has been created.')
-            return redirect('view_plans')
+                    workout = Workout(
+                        workout_name=workout_name,
+                        workout_time=workout_time,
+                        workout_plan=workout_plan,
+                        day=workout_day
+                    )
+                    workout.save()
+                    field += 1
+                messages.success(request, 'Your plan has been created.')
+                return redirect('view_plans')
+
+        except:
+            messages.error(request,
+                           'Something went wrong when adding your plan...')
+            return redirect('home')
 
 
 class ViewPlans(generic.ListView):
@@ -167,90 +178,100 @@ class EditPlan(View):
         """
         Display a formset with fields corresponding to a specific plan id
         """
-        workout_plan_id = self.kwargs['workout_plan_id']
-        workout_plan = WorkoutPlan.objects.get(pk=workout_plan_id)
+        try:
+            workout_plan_id = self.kwargs['workout_plan_id']
+            workout_plan = WorkoutPlan.objects.get(pk=workout_plan_id)
 
-        day1 = workout_plan.first_day
-        day2 = day1 + timedelta(days=1)
-        day3 = day1 + timedelta(days=2)
-        day4 = day1 + timedelta(days=3)
-        day5 = day1 + timedelta(days=4)
-        day6 = day1 + timedelta(days=5)
-        day7 = day1 + timedelta(days=6)
+            day1 = workout_plan.first_day
+            day2 = day1 + timedelta(days=1)
+            day3 = day1 + timedelta(days=2)
+            day4 = day1 + timedelta(days=3)
+            day5 = day1 + timedelta(days=4)
+            day6 = day1 + timedelta(days=5)
+            day7 = day1 + timedelta(days=6)
 
-        if request.user == workout_plan.user:
-            workouts = Workout.objects.filter(workout_plan=workout_plan_id)
-            schedule_fields = formset_factory(WorkoutForm, extra=0)
-            field_value = []
-            for workout in workouts:
-                field_value.append({'workout_name': workout.workout_name})
-            formset = schedule_fields(initial=field_value)
+            if request.user == workout_plan.user:
+                workouts = Workout.objects.filter(workout_plan=workout_plan_id)
+                schedule_fields = formset_factory(WorkoutForm, extra=0)
+                field_value = []
+                for workout in workouts:
+                    field_value.append({'workout_name': workout.workout_name})
+                formset = schedule_fields(initial=field_value)
 
-            context = {'day1': day1, 'day2': day2, 'day3': day3, 'day4': day4,
-                       'day5': day5, 'day6': day6, 'day7': day7,
-                       'workout_plan': workout_plan, 'formset': formset, }
+                context = {'day1': day1, 'day2': day2, 'day3': day3,
+                           'day4': day4, 'day5': day5, 'day6': day6,
+                           'day7': day7, 'workout_plan': workout_plan,
+                           'formset': formset, }
 
-            return render(request, 'plannerapp/edit_plan.html', context)
+                return render(request, 'plannerapp/edit_plan.html', context)
 
-        else:
-            messages.info(request, "You cannot edit other user's plans.")
-            return redirect('planner_page')
+            else:
+                messages.info(request, "You cannot edit other user's plans.")
+                return redirect('planner_page')
+
+        except:
+            messages.error(request, 'An error occurred...')
+            return redirect('home')
 
     def post(self, request, **kwargs):
         """
         Update plan in the database
         based on formset data
         """
-        workout_plan = WorkoutPlan.objects.get(
-            pk=self.kwargs['workout_plan_id'])
+        try:
+            workout_plan = WorkoutPlan.objects.get(
+                pk=self.kwargs['workout_plan_id'])
 
-        day1 = workout_plan.first_day
-        week = [
-            day1,
-            day1 + timedelta(days=1),
-            day1 + timedelta(days=2),
-            day1 + timedelta(days=3),
-            day1 + timedelta(days=4),
-            day1 + timedelta(days=5),
-            day1 + timedelta(days=6),
-        ]
+            day1 = workout_plan.first_day
+            week = [
+                day1,
+                day1 + timedelta(days=1),
+                day1 + timedelta(days=2),
+                day1 + timedelta(days=3),
+                day1 + timedelta(days=4),
+                day1 + timedelta(days=5),
+                day1 + timedelta(days=6),
+            ]
 
-        schedule_fields = formset_factory(WorkoutForm, extra=28)
-        formset = schedule_fields(request.POST)
-        workouts = Workout.objects.filter(workout_plan=workout_plan)
+            schedule_fields = formset_factory(WorkoutForm, extra=28)
+            formset = schedule_fields(request.POST)
+            workouts = Workout.objects.filter(workout_plan=workout_plan)
 
-        if formset.is_valid():
-            field = 0
-            for form in formset:
-                if workouts:
-                    workout_name = form.cleaned_data.get('workout_name')
-                    workout = workouts[field]
-                    workout.workout_name = workout_name
-                    workout.save()
+            if formset.is_valid():
+                field = 0
+                for form in formset:
+                    if workouts:
+                        workout_name = form.cleaned_data.get('workout_name')
+                        workout = workouts[field]
+                        workout.workout_name = workout_name
+                        workout.save()
 
-                else:
-                    workout_name = form.cleaned_data.get('workout_name')
-                    if workout_name is None:
-                        workout_name = ''
-                    workout_day = week[field % 7]
-
-                    if field < 14:
-                        workout_time = WorkoutTime.objects.get(
-                            workout_time_name='AM')
                     else:
-                        workout_time = WorkoutTime.objects.get(
-                            workout_time_name='PM')
+                        workout_name = form.cleaned_data.get('workout_name')
+                        if workout_name is None:
+                            workout_name = ''
+                        workout_day = week[field % 7]
 
-                    workout = Workout(
-                        workout_name=workout_name,
-                        workout_time=workout_time,
-                        workout_plan=workout_plan,
-                        day=workout_day
-                    )
-                    workout.save()
-                field += 1
-            messages.success(request, "Your plan has been amended.")
-            return redirect('view_plans')
+                        if field < 14:
+                            workout_time = WorkoutTime.objects.get(
+                                workout_time_name='AM')
+                        else:
+                            workout_time = WorkoutTime.objects.get(
+                                workout_time_name='PM')
+
+                        workout = Workout(
+                            workout_name=workout_name,
+                            workout_time=workout_time,
+                            workout_plan=workout_plan,
+                            day=workout_day
+                        )
+                        workout.save()
+                    field += 1
+                messages.success(request, "Your plan has been amended.")
+                return redirect('view_plans')
+        except:
+            messages.error(request, 'An error occurred...')
+            return redirect('home')
 
 
 class DeletePlan(View):
@@ -261,8 +282,13 @@ class DeletePlan(View):
         """
         Deletes a selected plan
         """
-        record = WorkoutPlan.objects.get(pk=self.kwargs['workout_plan_id'])
-        if request.method == "POST":
-            record.delete()
-            messages.success(request, "Your plan has been deleted.")
-            return redirect('view_plans')
+        try:
+            record = WorkoutPlan.objects.get(pk=self.kwargs['workout_plan_id'])
+            if request.method == "POST":
+                record.delete()
+                messages.success(request, "Your plan has been deleted.")
+                return redirect('view_plans')
+        except:
+            messages.error(request,
+                           'An error occurred when deleting your plan.')
+            return redirect('home')
