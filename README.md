@@ -3,7 +3,7 @@
 
 **Developer: Aleksandra Haniok**
 
-💻 [Visit live website](https://ci-pp4-workout-planner.herokuapp.com/)
+💻 [Visit live website](https://ci-pp4-workout-planner.onrender.com/)
 
 ![Mockup image](docs/readme/ami-responsivedesign-ci-pp4-workout-planner.jpg)
 
@@ -32,7 +32,8 @@
   - [Bugs](#bugs)
   - [Configuration](#configuration)
     - [Google emails](#google-emails)
-    - [Heroku Deployment](#heroku-deployment)
+    - [Forking the GitHub Repository](#forking-the-github-repository)
+    - [Making a Local Clone](#making-a-local-clone)
   - [Credits](#credits)
   - [Acknowledgements](#acknowledgements)
 
@@ -154,7 +155,7 @@ At the top of the page there is a recognisable type of navigation bar with websi
 
 #### Database
 
-- The backend consists of Python built with the Django framework with a database of a Postgres for the deployed Heroku version(production)
+- The backend consists of Python built with the Django framework with a database of a Postgres for the deployed version
 - Two database models contain all fields stored in the database and mimics the structure of what is actually stored in the Postgres database
 
 <details><summary>Show diagram</summary>
@@ -246,9 +247,9 @@ The following models were created to represent the database model structure for 
 - [Git](https://git-scm.com/) was used for version control within VSCode to push the code to GitHub
 - [GitHub](https://github.com/) was used as a remote repository to store project code
 - [Google Fonts](https://fonts.google.com/)
-- [Heroku Platform](https://id.heroku.com/login) was used to deploy the project into live environment
+- [Render Platform](https://render.com) was used to deploy the project into live environment
 - [jQuery](https://jquery.com) was used for drop-down exercises filters on smaller screens
-- [Postgres](https://www.postgresql.org/) – deployed project on Heroku uses a Postres database
+- [Postgres](https://www.postgresql.org/) – deployed project on Render uses a Postgres database
 - [Remove.bg](https://www.remove.bg/) was used to remove background on home page images & 404 page image
 - [Summernote](https://summernote.org/) - editor used for exercise description field in Admin page
 - [Visual Studio Code (VSCode)](https://code.visualstudio.com/) - code editor used to write this project
@@ -847,7 +848,7 @@ The testing approach is as follows:
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to https://ci-pp4-workout-planner.herokuapp.com/ | Home page main body loads with application description | Works as expected |
+Navigate to https://ci-pp4-workout-planner.onrender.com/ | Home page main body loads with application description | Works as expected |
 
 <details><summary>Screenshot</summary>
 <img src="docs/testing/user-stories-testing/user-story-01.jpg">
@@ -1295,39 +1296,7 @@ To set up the project to send emails and to use a Google account as an SMTP serv
 <br><code>EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')</code>
 <br><code>EMAIL_PORT = '587'</code>
 <br><code>EMAIL_USE_TLS = True</code>
-8. Set up the variables EMAIL_HOST_USER and EMAIL_HOST_PASSWORD in your Heroku application (Settings -> Config Vars)
-
-
-### Heroku Deployment
-This application has been deployed from GitHub to Heroku by following the steps:
-
-1. Create or log in to your account at heroku.com
-2. Create a new app, add a unique app name (this project is named "ci-pp4-workout-planner") and choose your region
-3. Click on create app
-4. Under resources search for postgres, and add a Postgres database to the app
-5. Install the plugins dj-database-url and psycopg2-binary
-6. Install django and gunicorn
-7. Add the list of requirements by writing in the terminal "pip3 freeze --local > requirements.txt"
-8. Create a Procfile in your app: 
-   ```
-   wsgi:PROJECT_NAME.wsgi
-   ```
-   (web: gunicorn workout_planner.wsgi)
-9.  In the settings.py ensure the connection is to the Heroku postgres database
-10. Ensure Debug is set to False in the settings.py file
-11. Add localhost/127.0.0.1, and ci-pp4-workout-planner.herokuapp.com to the ALLOWED_HOSTS variable in settings.py
-12. Go to Settings in your Heroku and set the environment variables in the Config Vars
-    ![Config vars](docs/readme/heroku-config-vars.jpg)
-13. Remove DISABLE_COLLECTSTATIC from Heroku settings
-14. Push the code to Heroku using the command git push heroku main
-
-Final steps:
-
-- Go to "Deploy" in the menu bar on the top
-- Deployment method: Heroku Git (direct connection to GitHub is no longer available)
-- Follow steps as shown:
-  ![Deployment steps](docs/readme/heroku-deployment.jpg)
-
+8. Set up the variables EMAIL_HOST_USER and EMAIL_HOST_PASSWORD in your Render application Config vars
 
 ### Forking the GitHub Repository
 1. Go to the GitHub repository
